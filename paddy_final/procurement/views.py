@@ -20,7 +20,7 @@ from .forms import (
     MSPUpdateForm, CropCreateForm,
 )
 from .decorators import farmer_required, officer_required, admin_required
-from .utils import generate_pdf_invoice
+from .utils import ensure_default_crops, generate_pdf_invoice
 
 
 # ============ Public Views ============
@@ -157,6 +157,8 @@ def farmer_book_slot(request):
     if not farmer.verified:
         messages.warning(request, 'Your account is pending verification. You cannot book slots yet.')
         return redirect('farmer_dashboard')
+
+    ensure_default_crops()
 
     if request.method == 'POST':
         form = SlotBookingForm(request.POST)
@@ -557,6 +559,7 @@ def admin_manage_users(request):
 @admin_required
 def admin_set_msp(request):
     """Create crops and set/update their MSP rates."""
+    ensure_default_crops()
     crop_form = CropCreateForm()
     if request.method == 'POST':
         if request.POST.get('action') == 'create_crop':

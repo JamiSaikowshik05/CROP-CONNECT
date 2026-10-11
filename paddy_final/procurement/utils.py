@@ -10,6 +10,29 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
 
 
+def ensure_default_crops():
+    """Create the portal's standard crops if they are missing."""
+    from .models import Crop
+
+    defaults = (
+        ('Paddy', '2441.00'),
+        ('Groundnut', '7517.00'),
+    )
+    for name, msp in defaults:
+        crop, _ = Crop.objects.get_or_create(
+            name=name,
+            defaults={
+                'msp_per_quintal': msp,
+                'season': 'Kharif 2026-27',
+                'unit': 'Quintal',
+                'is_active': True,
+            },
+        )
+        if not crop.is_active:
+            crop.is_active = True
+            crop.save(update_fields=['is_active', 'updated_at'])
+
+
 def generate_pdf_invoice(bill):
     """Generate PDF invoice for a bill."""
     buffer = BytesIO()

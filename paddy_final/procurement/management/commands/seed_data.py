@@ -14,8 +14,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         # Crops
-        paddy, _ = Crop.objects.get_or_create(name='Paddy', defaults={'msp_per_quintal': 2183, 'season': 'Kharif'})
-        groundnut, _ = Crop.objects.get_or_create(name='Groundnut', defaults={'msp_per_quintal': 5850, 'season': 'Kharif'})
+        paddy, _ = Crop.objects.get_or_create(name='Paddy', defaults={'msp_per_quintal': 2441, 'season': 'Kharif 2026-27'})
+        groundnut, _ = Crop.objects.get_or_create(name='Groundnut', defaults={'msp_per_quintal': 7517, 'season': 'Kharif 2026-27'})
         self.stdout.write('Created crops: Paddy, Groundnut')
 
         # Slots for next 14 days
@@ -28,9 +28,9 @@ class Command(BaseCommand):
 
         # Announcements
         Announcement.objects.get_or_create(
-            title='MSP for Kharif 2025-26 Announced',
+            title='MSP for Kharif 2026-27 Announced',
             defaults={
-                'content': 'Minimum Support Price for Paddy (FAQ) is ₹2183 per quintal and for Groundnut (in shell) is ₹5850 per quintal for the Kharif marketing season 2025-26.',
+                'content': 'Minimum Support Price for Paddy (Common) is Rs 2,441 per quintal and for Groundnut (in shell) is Rs 7,517 per quintal for the Kharif marketing season 2026-27.',
                 'is_active': True
             }
         )
