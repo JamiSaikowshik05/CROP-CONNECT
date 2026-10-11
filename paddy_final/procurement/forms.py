@@ -142,10 +142,38 @@ class ProcurementValidationForm(forms.ModelForm):
 class MSPUpdateForm(forms.ModelForm):
     """Admin form to update MSP."""
     msp_per_quintal = forms.DecimalField(
-        max_digits=10, decimal_places=2,
+        max_digits=10, decimal_places=2, min_value=0,
         widget=forms.NumberInput(attrs={'class': 'form-control', 'step': '0.01', 'min': '0'})
     )
 
     class Meta:
         model = Crop
         fields = ('msp_per_quintal',)
+
+
+class CropCreateForm(forms.ModelForm):
+    """Admin form to create a crop and set its initial MSP."""
+    msp_per_quintal = forms.DecimalField(
+        max_digits=10, decimal_places=2, min_value=0,
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control', 'step': '0.01', 'min': '0'
+        })
+    )
+
+    class Meta:
+        model = Crop
+        fields = ('name', 'msp_per_quintal', 'season', 'unit')
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'class': 'form-control', 'placeholder': 'e.g. Paddy'
+            }),
+            'season': forms.TextInput(attrs={
+                'class': 'form-control', 'placeholder': 'e.g. Kharif'
+            }),
+            'unit': forms.TextInput(attrs={
+                'class': 'form-control', 'placeholder': 'Quintal'
+            }),
+        }
+
+    def clean_name(self):
+        return self.cleaned_data['name'].strip()

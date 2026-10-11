@@ -15,7 +15,10 @@ from .models import (
     User, Farmer, LandDetails, Crop, Slot, SlotBooking,
     Procurement, Bill, Payment, Announcement
 )
-from .forms import FarmerRegistrationForm, SlotBookingForm, ProcurementValidationForm, MSPUpdateForm
+from .forms import (
+    FarmerRegistrationForm, SlotBookingForm, ProcurementValidationForm,
+    MSPUpdateForm, CropCreateForm,
+)
 from .decorators import farmer_required, officer_required, admin_required
 from .utils import generate_pdf_invoice
 
@@ -553,18 +556,37 @@ def admin_manage_users(request):
 
 @admin_required
 def admin_set_msp(request):
-    """Set/Update MSP for crops."""
-    crops = Crop.objects.filter(is_active=True)
+    """Create crops and set/update their MSP rates."""
+    crop_form = CropCreateForm()
     if request.method == 'POST':
-        crop_id = request.POST.get('crop_id')
-        msp = request.POST.get('msp_per_quintal')
-        if crop_id and msp:
-            crop = get_object_or_404(Crop, pk=crop_id)
-            crop.msp_per_quintal = msp
-            crop.save()
-            messages.success(request, f'MSP for {crop.name} updated to ₹{msp}/quintal.')
-    return render(request, 'admin/set_msp.html', {'crops': crops})
+        if request.POST.get('action') == 'create_crop':
+            crop_form = CropCreateForm(request.POST)
+            if crop_form.is_valid():
+                crop = crop_form.save()
+                messages.success(
+                    request,
+                    f'{crop.name} added with an MSP of \u20b9{crop.msp_per_quintal}/quintal.'
+                )
+                return redirect('admin_set_msp')
+        else:
+            crop = get_object_or_404(
+                Crop, pk=request.POST.get('crop_id'), is_active=True
+            )
+            update_form = MSPUpdateForm(request.POST, instance=crop)
+            if update_form.is_valid():
+                update_form.save()
+                messages.success(
+                    request,
+                    f'MSP for {crop.name} updated to \u20b9{crop.msp_per_quintal}/quintal.'
+                )
+                return redirect('admin_set_msp')
+            messages.error(request, 'Enter a valid MSP rate of 0 or more.')
 
+    crops = Crop.objects.filter(is_active=True)
+    return render(request, 'admin/set_msp.html', {
+        'crops': crops,
+        'crop_form': crop_form,
+    })
 
 @admin_required
 def admin_reports(request):

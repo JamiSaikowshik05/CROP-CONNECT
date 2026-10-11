@@ -2,7 +2,43 @@
 {% block title %}Set MSP Rates{% endblock %}
 {% block content %}
 <h2 class="mb-1">💰 Set Minimum Support Price (MSP)</h2>
-<p class="text-muted mb-4">Update the government guaranteed price for each crop. All new bills will use the updated rate.</p>
+<p class="text-muted mb-4">Add crops and set their government guaranteed price. All new bills will use the updated rate.</p>
+
+<div class="card mb-4">
+    <div class="card-header"><strong>➕ Add a crop and its MSP</strong></div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="create_crop">
+            {{ crop_form.non_field_errors }}
+            <div class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label" for="id_name">Crop name</label>
+                    {{ crop_form.name }}
+                    {{ crop_form.name.errors }}
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="id_msp_per_quintal">MSP (₹/quintal)</label>
+                    {{ crop_form.msp_per_quintal }}
+                    {{ crop_form.msp_per_quintal.errors }}
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="id_season">Season</label>
+                    {{ crop_form.season }}
+                    {{ crop_form.season.errors }}
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="id_unit">Unit</label>
+                    {{ crop_form.unit }}
+                    {{ crop_form.unit.errors }}
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">Add Crop</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 <div class="row g-4">
     {% for crop in crops %}
@@ -43,7 +79,7 @@
     </div>
     {% empty %}
     <div class="col-12">
-        <div class="alert alert-warning">No crops found. Please add crops first.</div>
+        <div class="alert alert-info">No crops have been added yet. Add a crop and its MSP using the form above.</div>
     </div>
     {% endfor %}
 </div>
