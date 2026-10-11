@@ -1,0 +1,446 @@
+{% extends 'base.html' %}
+{% block title %}Quality & Weight Validation{% endblock %}
+{% block extra_css %}
+<style>
+.quality-field { transition: border-color 0.2s, background 0.2s; }
+.quality-field.pass { border-color: #43a047 !important; background: #f1f8e9; }
+.quality-field.fail { border-color: #e53935 !important; background: #fff3f0; }
+.section-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; color: #666; margin-bottom: 12px;
+    border-bottom: 1px solid #eee; padding-bottom: 6px; }
+.standard-badge { font-size: 0.75rem; padding: 3px 8px; border-radius: 12px; }
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <h2 class="mb-0">🌾 Procurement Validation</h2>
+    <span class="badge fs-6 py-2 px-3 {% if is_paddy %}bg-success{% else %}bg-warning text-dark{% endif %}">
+        {{ crop_name }}
+    </span>
+</div>
+
+<!-- FARMER INFO -->
+<div class="card mb-4" style="border-left:4px solid #1b5e20;">
+    <div class="card-body py-3">
+        <div class="row g-2">
+            <div class="col-md-3"><span class="text-muted" style="font-size:0.82rem;">Farmer</span><br>
+                <strong>{{ proc.booking.farmer.user.get_full_name|default:proc.booking.farmer.user.username }}</strong></div>
+            <div class="col-md-3"><span class="text-muted" style="font-size:0.82rem;">Village / District</span><br>
+                <strong>{{ proc.booking.farmer.village }}, {{ proc.booking.farmer.district }}</strong></div>
+            <div class="col-md-2"><span class="text-muted" style="font-size:0.82rem;">Crop</span><br>
+                <strong>{{ crop_name }}</strong></div>
+            <div class="col-md-2"><span class="text-muted" style="font-size:0.82rem;">Booked Qty</span><br>
+                <strong>{{ proc.booking.estimated_quintals }} qtl</strong></div>
+            <div class="col-md-2"><span class="text-muted" style="font-size:0.82rem;">Slot Date</span><br>
+                <strong>{{ proc.booking.slot.date }}</strong></div>
+        </div>
+    </div>
+</div>
+
+<!-- QUALITY STANDARDS -->
+<div class="card mb-4" style="background:#fffde7;border:1px solid #f9a825;">
+    <div class="card-body py-3">
+        <div class="section-title" style="color:#e65100;">📋 Government Quality Standards — {{ crop_name }} (FAQ Grade)</div>
+        <div class="row g-2">
+            {% if is_paddy %}
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Moisture</div><strong style="color:#1b5e20;">≤ 17%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Foreign Matter</div><strong style="color:#1b5e20;">≤ 1%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Damaged Grains</div><strong style="color:#1b5e20;">≤ 3%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Immature Grains</div><strong style="color:#1b5e20;">≤ 3%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Chalky Grains</div><strong style="color:#1b5e20;">≤ 5%</strong></div></div>
+            {% else %}
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Moisture</div><strong style="color:#1b5e20;">≤ 8%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Foreign Matter</div><strong style="color:#1b5e20;">≤ 1%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Shelling Outturn</div><strong style="color:#1b5e20;">≥ 70%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Oil Content</div><strong style="color:#1b5e20;">≥ 45%</strong></div></div>
+            <div class="col-6 col-md-2"><div class="text-center p-2 rounded" style="background:white;border:1px solid #ffe082;"><div style="font-size:0.75rem;color:#888;">Aflatoxin</div><strong style="color:#c62828;">Must be NIL</strong></div></div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- MAIN FORM -->
+<form method="post" id="validation-form">
+{% csrf_token %}
+<div class="row g-4">
+
+    <!-- LEFT: MEASUREMENTS -->
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-header">⚖️ Weight &amp; Quality Measurements</div>
+            <div class="card-body">
+
+                <!-- Weight -->
+                <div class="mb-4">
+                    <div class="section-title">Weight</div>
+                    <div class="row g-2 align-items-end">
+                        <div class="col-7">
+                            <label class="form-label">Actual Weight (Quintals) <span class="text-danger">*</span></label>
+                            {{ form.actual_weight_quintals }}
+                            <div class="form-text">Booked: {{ proc.booking.estimated_quintals }} qtl</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="p-3 rounded text-center" style="background:#e8f5e9;border:1px solid #a5d6a7;">
+                                <div style="font-size:0.75rem;color:#555;">Expected Payment</div>
+                                <div style="font-size:1.3rem;font-weight:700;color:#1b5e20;" id="amount-display">₹0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Parameters -->
+                <div class="section-title">Common Quality Parameters</div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label">Moisture Content (%)
+                            <span class="standard-badge" style="background:#e8f5e9;color:#2e7d32;">
+                                {% if is_paddy %}Max 17%{% else %}Max 8%{% endif %}
+                            </span>
+                        </label>
+                        <input type="number" name="moisture_percent" id="id_moisture_percent"
+                            step="0.01" min="0" max="30" class="form-control quality-field"
+                            placeholder="e.g. 14.5"
+                            data-type="max" data-limit="{% if is_paddy %}17{% else %}8{% endif %}"
+                            oninput="checkField(this); calcAmount()">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Foreign Matter (%)
+                            <span class="standard-badge" style="background:#e8f5e9;color:#2e7d32;">Max 1%</span>
+                        </label>
+                        <input type="number" name="foreign_matter_percent" id="id_foreign_matter_percent"
+                            step="0.01" min="0" max="20" class="form-control quality-field"
+                            placeholder="e.g. 0.5"
+                            data-type="max" data-limit="1"
+                            oninput="checkField(this)">
+                    </div>
+                </div>
+
+                {% if is_paddy %}
+                <div class="section-title" style="color:#1b5e20;">Paddy-Specific Parameters</div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Damaged Grains (%)
+                            <span class="standard-badge" style="background:#e8f5e9;color:#2e7d32;">Max 3%</span>
+                        </label>
+                        <input type="number" name="damaged_grains_percent" id="id_damaged_grains_percent"
+                            step="0.01" min="0" max="30" class="form-control quality-field"
+                            placeholder="e.g. 1.5" data-type="max" data-limit="3"
+                            oninput="checkField(this)">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Immature Grains (%)
+                            <span class="standard-badge" style="background:#e8f5e9;color:#2e7d32;">Max 3%</span>
+                        </label>
+                        <input type="number" name="immature_grains_percent" id="id_immature_grains_percent"
+                            step="0.01" min="0" max="30" class="form-control quality-field"
+                            placeholder="e.g. 2.0" data-type="max" data-limit="3"
+                            oninput="checkField(this)">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Chalky Grains (%)
+                            <span class="standard-badge" style="background:#e8f5e9;color:#2e7d32;">Max 5%</span>
+                        </label>
+                        <input type="number" name="chalky_grains_percent" id="id_chalky_grains_percent"
+                            step="0.01" min="0" max="30" class="form-control quality-field"
+                            placeholder="e.g. 3.0" data-type="max" data-limit="5"
+                            oninput="checkField(this)">
+                    </div>
+                </div>
+                {% else %}
+                <div class="section-title" style="color:#e65100;">Groundnut-Specific Parameters</div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Shelling Outturn (%)
+                            <span class="standard-badge" style="background:#e8f5e9;color:#2e7d32;">Min 70%</span>
+                        </label>
+                        <input type="number" name="shelling_percent" id="id_shelling_percent"
+                            step="0.01" min="0" max="100" class="form-control quality-field"
+                            placeholder="e.g. 72.5" data-type="min" data-limit="70"
+                            oninput="checkField(this)">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Oil Content (%)
+                            <span class="standard-badge" style="background:#e8f5e9;color:#2e7d32;">Min 45%</span>
+                        </label>
+                        <input type="number" name="oil_content_percent" id="id_oil_content_percent"
+                            step="0.01" min="0" max="60" class="form-control quality-field"
+                            placeholder="e.g. 47.0" data-type="min" data-limit="45"
+                            oninput="checkField(this)">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Aflatoxin Test
+                            <span class="standard-badge" style="background:#ffebee;color:#c62828;">Must be NIL</span>
+                        </label>
+                        <select name="aflatoxin_present" id="id_aflatoxin_present"
+                            class="form-select" onchange="checkAflatoxin(this)">
+                            <option value="no">NIL / Not Detected ✅</option>
+                            <option value="yes">Detected ❌</option>
+                        </select>
+                        <div id="aflatoxin-warning" style="display:none;color:#c62828;font-size:0.8rem;margin-top:4px;font-weight:600;">
+                            ⚠️ Aflatoxin detected — automatic rejection required
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="section-title">Officer Remarks</div>
+                {{ form.remarks }}
+                <div class="form-text">Any observations about the crop condition, storage, or quality.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: PANELS + ACTIONS -->
+    <div class="col-md-5">
+
+        <!-- Live Rule Check -->
+        <div class="card mb-3">
+            <div class="card-header">📊 Live Quality Check</div>
+            <div class="card-body p-3">
+                <div id="quality-result" style="text-align:center;color:#888;font-size:0.9rem;">
+                    Enter measurements to see quality assessment
+                </div>
+                <div id="quality-issues" class="mt-2"></div>
+            </div>
+        </div>
+
+        <!-- Payment Preview -->
+        <div class="card mb-3" style="background:#e8f5e9;border:1px solid #a5d6a7;">
+            <div class="card-body p-3">
+                <div style="font-size:0.82rem;color:#555;margin-bottom:4px;">Payment Calculation</div>
+                <div style="font-size:0.85rem;">
+                    <span id="weight-preview">— qtl</span> ×
+                    ₹{{ proc.booking.slot.crop.msp_per_quintal }}/qtl
+                    = <strong id="total-preview">₹0</strong>
+                </div>
+                <div id="deduction-note" style="font-size:0.8rem;color:#c62828;margin-top:4px;display:none;">
+                    ⚠️ 5% deduction may apply for below-FAQ quality
+                </div>
+            </div>
+        </div>
+
+        <!-- ML QUALITY PREDICT PANEL -->
+        <div class="card mb-3" style="border:2px solid #1565c0;">
+            <div class="card-header" style="background:#1565c0;color:white;">
+                🤖 ML Quality Grade Prediction
+            </div>
+            <div class="card-body p-3">
+                <p style="font-size:0.85rem;color:#555;margin-bottom:10px;">
+                    Click to get instant ML prediction of quality grade based on your entered measurements.
+                </p>
+                <button type="button" id="ml-predict-btn"
+                    class="btn btn-primary btn-sm w-100"
+                    onclick="mlPredictQuality()">
+                    🧠 Predict Grade (ML)
+                </button>
+                <div id="ml-quality-result" class="mt-2"></div>
+            </div>
+        </div>
+
+        <!-- APPROVE -->
+        <button type="submit" name="action" value="approve"
+            class="btn btn-success w-100 mb-3 py-3"
+            style="font-size:1.05rem;font-weight:600;"
+            onclick="return confirmApprove()">
+            ✅ Approve Procurement &amp; Generate Bill
+        </button>
+
+        <!-- REJECT -->
+        <div class="card" style="border:2px solid #e53935;">
+            <div class="card-body p-3">
+                <div style="font-weight:700;color:#c62828;margin-bottom:8px;">❌ Reject for Quality Failure</div>
+                <textarea name="rejection_reason" class="form-control form-control-sm mb-2"
+                    rows="3" id="rejection-reason-field"
+                    placeholder="e.g. Moisture 22% exceeds 17% limit. Farmer advised to dry crop and return."></textarea>
+                <button type="submit" name="action" value="reject_quality"
+                    class="btn btn-danger w-100 btn-sm"
+                    onclick="return confirmReject()">
+                    Confirm Quality Rejection
+                </button>
+                <div style="font-size:0.78rem;color:#888;margin-top:6px;">
+                    Farmer will be notified with this reason on their dashboard.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</form>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const MSP      = {{ proc.booking.slot.crop.msp_per_quintal }};
+const IS_PADDY = {% if is_paddy %}true{% else %}false{% endif %};
+const CROP_NAME= '{{ crop_name }}';
+
+const STANDARDS = IS_PADDY ? {
+    moisture_percent:        {type:'max', limit:17, label:'Moisture'},
+    foreign_matter_percent:  {type:'max', limit:1,  label:'Foreign Matter'},
+    damaged_grains_percent:  {type:'max', limit:3,  label:'Damaged Grains'},
+    immature_grains_percent: {type:'max', limit:3,  label:'Immature Grains'},
+    chalky_grains_percent:   {type:'max', limit:5,  label:'Chalky Grains'},
+} : {
+    moisture_percent:       {type:'max', limit:8,  label:'Moisture'},
+    foreign_matter_percent: {type:'max', limit:1,  label:'Foreign Matter'},
+    shelling_percent:       {type:'min', limit:70, label:'Shelling Outturn'},
+    oil_content_percent:    {type:'min', limit:45, label:'Oil Content'},
+};
+
+function getCookie(name) {
+    let v = null;
+    document.cookie.split(';').forEach(c => {
+        c = c.trim();
+        if (c.startsWith(name + '=')) v = decodeURIComponent(c.slice(name.length + 1));
+    });
+    return v;
+}
+
+function getVal(name, def) {
+    const el = document.querySelector('[name="' + name + '"]');
+    return el && el.value !== '' ? el.value : def;
+}
+
+function checkField(el) {
+    const val = parseFloat(el.value);
+    if (isNaN(val) || el.value === '') { el.classList.remove('pass','fail'); updateQualityPanel(); return; }
+    const std = STANDARDS[el.name];
+    if (!std) return;
+    const pass = std.type === 'max' ? val <= std.limit : val >= std.limit;
+    el.classList.toggle('pass', pass);
+    el.classList.toggle('fail', !pass);
+    updateQualityPanel();
+}
+
+function checkAflatoxin(el) {
+    document.getElementById('aflatoxin-warning').style.display = el.value === 'yes' ? 'block' : 'none';
+    updateQualityPanel();
+}
+
+function updateQualityPanel() {
+    const issues = [];
+    for (const [name, std] of Object.entries(STANDARDS)) {
+        const el = document.querySelector('[name="' + name + '"]');
+        if (!el || el.value === '') continue;
+        const val = parseFloat(el.value);
+        if (isNaN(val)) continue;
+        const pass = std.type === 'max' ? val <= std.limit : val >= std.limit;
+        if (!pass) issues.push(std.label + ': ' + val + '% (' + (std.type==='max'?'max':'min') + ' ' + std.limit + '%)');
+    }
+    const aflatoxin = document.querySelector('[name="aflatoxin_present"]');
+    if (!IS_PADDY && aflatoxin && aflatoxin.value === 'yes') issues.push('Aflatoxin DETECTED');
+
+    const panel = document.getElementById('quality-result');
+    const issuesList = document.getElementById('quality-issues');
+    const deductionNote = document.getElementById('deduction-note');
+
+    if (issues.length === 0) {
+        panel.innerHTML = '<span style="color:#1b5e20;font-weight:700;font-size:1rem;">✅ FAQ Grade — All parameters pass</span>';
+        issuesList.innerHTML = '';
+        if (deductionNote) deductionNote.style.display = 'none';
+    } else {
+        panel.innerHTML = '<span style="color:#c62828;font-weight:700;font-size:1rem;">⚠️ ' + issues.length + ' parameter(s) failing</span>';
+        let html = '<ul class="mb-0 mt-2" style="font-size:0.82rem;color:#c62828;">';
+        issues.forEach(i => html += '<li>' + i + '</li>');
+        issuesList.innerHTML = html + '</ul>';
+        if (deductionNote) deductionNote.style.display = 'block';
+    }
+}
+
+function calcAmount() {
+    const wt = parseFloat(document.querySelector('[name="actual_weight_quintals"]').value) || 0;
+    const total = wt * MSP;
+    document.getElementById('weight-preview').textContent = wt + ' qtl';
+    document.getElementById('total-preview').textContent = '₹' + total.toLocaleString('en-IN', {maximumFractionDigits:0});
+    document.getElementById('amount-display').textContent = '₹' + total.toLocaleString('en-IN', {maximumFractionDigits:0});
+}
+
+function confirmApprove() {
+    const wt = document.querySelector('[name="actual_weight_quintals"]').value;
+    if (!wt || parseFloat(wt) <= 0) { alert('Please enter the actual weight before approving.'); return false; }
+    const total = (parseFloat(wt) * MSP).toLocaleString('en-IN');
+    return confirm('Confirm approval?\n\nWeight: ' + wt + ' quintals\nTotal Bill: ₹' + total + '\n\nThis will generate a bill.');
+}
+
+function confirmReject() {
+    const reason = document.getElementById('rejection-reason-field').value.trim();
+    if (!reason || reason.length < 10) { alert('Please write a detailed rejection reason.'); return false; }
+    return confirm('Reject this procurement?\n\nFarmer will see:\n"' + reason + '"');
+}
+
+/* ── ML QUALITY PREDICTION ── */
+async function mlPredictQuality() {
+    const btn    = document.getElementById('ml-predict-btn');
+    const result = document.getElementById('ml-quality-result');
+
+    btn.disabled = true;
+    btn.textContent = '⏳ Predicting...';
+    result.innerHTML = '<div class="d-flex align-items-center gap-2 mt-2"><div class="spinner-border spinner-border-sm text-primary"></div><span style="font-size:0.85rem;">Running ML model...</span></div>';
+
+    const payload = {
+        crop:        CROP_NAME,
+        moisture:    parseFloat(getVal('moisture_percent',   14)),
+        foreign:     parseFloat(getVal('foreign_matter_percent', 0.5)),
+        damaged:     parseFloat(getVal('damaged_grains_percent', 1)),
+        immature:    parseFloat(getVal('immature_grains_percent', 1)),
+        chalky:      parseFloat(getVal('chalky_grains_percent',  2)),
+        shelling:    parseFloat(getVal('shelling_percent',    72)),
+        oil_content: parseFloat(getVal('oil_content_percent', 47)),
+        aflatoxin:   (getVal('aflatoxin_present', 'no') === 'yes') ? 1 : 0,
+    };
+
+    try {
+        const resp = await fetch('/ml/predict-quality/', {
+            method:  'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken':  getCookie('csrftoken'),
+            },
+            body: JSON.stringify(payload),
+        });
+
+        if (!resp.ok) {
+            throw new Error('Server returned ' + resp.status);
+        }
+
+        const d = await resp.json();
+
+        if (d.error) {
+            result.innerHTML = '<div class="alert alert-danger py-2 mt-2" style="font-size:0.82rem;">Error: ' + d.error + '</div>';
+            btn.disabled = false; btn.textContent = '🧠 Predict Grade (ML)';
+            return;
+        }
+
+        const bg = {success:'#e8f5e9', warning:'#fff8e1', danger:'#ffebee'}[d.color] || '#f9f9f9';
+        const br = {success:'#a5d6a7', warning:'#ffe082', danger:'#ef9a9a'}[d.color]  || '#ddd';
+
+        let html = '<div class="p-3 rounded mt-2" style="background:' + bg + ';border:1px solid ' + br + ';">';
+        html += '<div style="font-size:1rem;font-weight:700;">' + (d.icon||'') + ' ML Grade: <strong>' + d.grade + '</strong>';
+        if (d.confidence) html += ' <span style="font-size:0.82rem;font-weight:400;">(Confidence: ' + d.confidence + '%)</span>';
+        html += '</div>';
+        html += '<div style="font-size:0.85rem;margin-top:4px;">' + (d.message||'') + '</div>';
+
+        if (d.failures && d.failures.length) {
+            html += '<ul style="font-size:0.8rem;color:#c62828;margin:8px 0 0;padding-left:18px;">';
+            d.failures.forEach(f => html += '<li>' + f + '</li>');
+            html += '</ul>';
+        }
+
+        if (d.proba_faq !== undefined) {
+            html += '<div style="font-size:0.75rem;color:#777;margin-top:8px;padding-top:6px;border-top:1px solid rgba(0,0,0,0.1);">';
+            html += '📊 FAQ: ' + d.proba_faq + '% &nbsp;|&nbsp; Below FAQ: ' + d.proba_below + '% &nbsp;|&nbsp; Rejected: ' + d.proba_rejected + '%';
+            html += '</div>';
+        }
+        html += '</div>';
+        result.innerHTML = html;
+
+    } catch(e) {
+        result.innerHTML = '<div class="alert alert-danger py-2 mt-2" style="font-size:0.82rem;">⚠️ Prediction failed: ' + e.message + '. Check server is running.</div>';
+    }
+
+    btn.disabled = false;
+    btn.textContent = '🧠 Predict Grade (ML)';
+}
+</script>
+{% endblock %}

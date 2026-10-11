@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CropConnect{% endblock %} | CropConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gov-green: #1B5E20;
+            --gov-green-light: #2E7D32;
+            --gov-green-dark: #0D3D12;
+        }
+        body { font-family: 'Noto Sans', Arial, sans-serif; background-color: #F5F5F5; color: #333; line-height: 1.6; }
+        .gov-header {
+            background: linear-gradient(135deg, var(--gov-green-dark) 0%, var(--gov-green) 50%, var(--gov-green-light) 100%);
+            color: white; padding: 12px 0; border-bottom: 3px solid #FFD54F;
+        }
+        .gov-header .logo-area { display: flex; align-items: center; gap: 15px; }
+        .gov-header .logo-placeholder {
+            width: 60px; height: 60px; background: rgba(255,255,255,0.2);
+            border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+        }
+        .gov-header h1 { font-size: 1.4rem; font-weight: 700; margin: 0; }
+        .gov-header .subtitle { font-size: 0.85rem; opacity: 0.95; }
+        .nav-bar { background: var(--gov-green) !important; padding: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .nav-bar .navbar-nav .nav-link { color: rgba(255,255,255,0.95) !important; font-weight: 500; padding: 12px 18px; transition: background 0.2s; }
+        .nav-bar .navbar-nav .nav-link:hover { background: rgba(0,0,0,0.15); }
+        .banner-section {
+            background: linear-gradient(rgba(27,94,32,0.7), rgba(27,94,32,0.7)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200') center/cover;
+            color: white; padding: 60px 0; text-align: center;
+        }
+        .banner-section h2 { font-size: 2rem; font-weight: 700; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+        .card { border: none; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .card-header { background: var(--gov-green); color: white; font-weight: 600; border-radius: 8px 8px 0 0; padding: 12px 20px; }
+        .btn-primary { background: var(--gov-green); border-color: var(--gov-green); }
+        .btn-primary:hover { background: var(--gov-green-light); border-color: var(--gov-green-light); }
+        .footer { background: var(--gov-green-dark); color: white; padding: 40px 0 20px; margin-top: 50px; }
+        .footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+        .footer a:hover { color: #FFD54F; }
+        .footer .helpdesk { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; }
+
+        /* AI CHATBOT */
+        #ai-chat-btn {
+            position: fixed; bottom: 28px; right: 28px; z-index: 1050;
+            width: 58px; height: 58px; border-radius: 50%;
+            background: var(--gov-green); color: white; border: none;
+            box-shadow: 0 4px 16px rgba(27,94,32,0.45);
+            font-size: 1.5rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.2s;
+        }
+        #ai-chat-btn:hover { transform: scale(1.08); }
+        #ai-chat-panel {
+            position: fixed; bottom: 100px; right: 28px; z-index: 1049;
+            width: 360px; max-height: 520px;
+            background: white; border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            display: none; flex-direction: column; overflow: hidden;
+        }
+        #ai-chat-panel.open { display: flex; }
+        .ai-chat-header {
+            background: var(--gov-green); color: white;
+            padding: 14px 18px; display: flex; align-items: center; gap: 10px;
+        }
+        .ai-chat-header .ai-avatar {
+            width: 34px; height: 34px; border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+        }
+        .ai-chat-header .close-btn { margin-left: auto; background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; }
+        #ai-chat-messages {
+            flex: 1; overflow-y: auto; padding: 14px;
+            display: flex; flex-direction: column; gap: 10px; background: #f8f9fa;
+        }
+        .chat-bubble { max-width: 85%; padding: 10px 13px; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; }
+        .chat-bubble.bot { background: white; border: 1px solid #e0e0e0; border-bottom-left-radius: 4px; align-self: flex-start; color: #333; }
+        .chat-bubble.user { background: var(--gov-green); color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
+        .chat-bubble.typing { color: #888; font-style: italic; }
+        .ai-quick-btns { padding: 8px 14px; display: flex; gap: 6px; flex-wrap: wrap; border-top: 1px solid #eee; background: white; }
+        .ai-quick-btn {
+            font-size: 0.75rem; padding: 5px 10px;
+            border: 1px solid var(--gov-green); color: var(--gov-green);
+            background: white; border-radius: 20px; cursor: pointer; transition: all 0.15s;
+        }
+        .ai-quick-btn:hover { background: var(--gov-green); color: white; }
+        #ai-chat-input-row { display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid #eee; background: white; }
+        #ai-chat-input {
+            flex: 1; border: 1px solid #ddd; border-radius: 22px;
+            padding: 8px 14px; font-size: 0.88rem; outline: none;
+        }
+        #ai-chat-input:focus { border-color: var(--gov-green); }
+        #ai-chat-send {
+            background: var(--gov-green); color: white; border: none;
+            border-radius: 50%; width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1rem; flex-shrink: 0;
+        }
+        #ai-chat-send:disabled { opacity: 0.5; }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header class="gov-header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="logo-placeholder">🌾</div>
+                <div>
+                    <h1>CropConnect</h1>
+                    <div class="subtitle">Government of India &bull; Ministry of Agriculture &amp; Farmers Welfare</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg nav-bar">
+        <div class="container">
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    {% if user.is_authenticated %}
+                        {% if user.role == 'FARMER' %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'farmer_dashboard' %}">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'farmer_book_slot' %}">Book Slot</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'farmer_booking_status' %}">My Bookings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'farmer_payment_status' %}">Payments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'farmer_marketplace' %}" style="color:#FFD54F !important;font-weight:700;">🏪 Marketplace</a></li>
+                        {% elif user.role == 'OFFICER' %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'officer_dashboard' %}">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'officer_verify_land' %}">Verify Land</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'officer_approve_booking' %}">Approve Bookings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'officer_validate_procurement' %}">Validate Crop</a></li>
+                        {% elif user.role == 'ADMIN' %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_manage_users' %}">Users</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_set_msp' %}">Set MSP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_approve_payments' %}">Payments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_manage_buyers' %}" style="color:#FFD54F !important;">🏭 Buyers</a></li>
+                        {% elif user.role == 'BUYER' %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'buyer_dashboard' %}">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'buyer_create_offer' %}">Post Offer</a></li>
+                        {% endif %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'farmer_register' %}">Register as Farmer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'buyer_register' %}">Register as Buyer</a></li>
+                    {% endif %}
+                </ul>
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            {{ user.get_full_name|default:user.username }}
+                            <small style="opacity:0.75;font-size:0.75rem;">({{ user.role }})</small>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% if user.role == 'FARMER' %}<li><a class="dropdown-item" href="{% url 'farmer_dashboard' %}">My Dashboard</a></li>
+                            {% elif user.role == 'OFFICER' %}<li><a class="dropdown-item" href="{% url 'officer_dashboard' %}">My Dashboard</a></li>
+                            {% elif user.role == 'ADMIN' %}<li><a class="dropdown-item" href="{% url 'admin_dashboard' %}">My Dashboard</a></li>
+                            {% elif user.role == 'BUYER' %}<li><a class="dropdown-item" href="{% url 'buyer_dashboard' %}">My Dashboard</a></li>{% endif %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="{% url 'logout' %}">🚪 Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    {% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main class="container py-4">
+        {% if request.path != '/' %}
+        <button type="button" class="btn btn-outline-secondary btn-sm mb-3" onclick="window.history.back();">&larr; Back</button>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>CropConnect</h5>
+                    <p>CropConnect — Direct crop procurement platform. No middlemen. Fair prices.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Tel: 6304629308<br>Email: support@cropconnect.gov.in</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Helpdesk</h5>
+                    <div class="helpdesk">
+                        Phone: 6304629308<br>
+                        Email: support@cropconnect.gov.in<br>
+                        Hours: 9:00 AM - 6:00 PM (Mon-Sat)
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3 border-secondary">
+            <p class="text-center mb-0">&copy; Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    {% if user.is_authenticated %}
+    <!-- AI FARM ASSISTANT -->
+    <button id="ai-chat-btn" title="AI Farm Assistant" onclick="toggleChat()">&#129302;</button>
+
+    <div id="ai-chat-panel">
+        <div class="ai-chat-header">
+            <div class="ai-avatar">&#127807;</div>
+            <div>
+                <div style="font-weight:600;font-size:0.95rem;">AI Farm Assistant</div>
+                <div style="font-size:0.75rem;opacity:0.85;">Ask anything about procurement</div>
+            </div>
+            <button class="close-btn" onclick="toggleChat()">&#10005;</button>
+        </div>
+        <div id="ai-chat-messages">
+            <div class="chat-bubble bot">
+                &#128075; Namaste! I am your AI assistant for the CropConnect.<br><br>
+                I can help with slot bookings, MSP rates, documents, and payments.<br><br>
+                &#2344;&#2350;&#2360;&#2381;&#2340;&#2375;! &#2310;&#2346; &#2361;&#2367;&#2306;&#2342;&#2368; &#2350;&#2375;&#2306; &#2349;&#2368; &#2346;&#2370;&#2331; &#2360;&#2325;&#2340;&#2375; &#2361;&#2376;&#2306;.
+            </div>
+        </div>
+        <div class="ai-quick-btns">
+            <button class="ai-quick-btn" onclick="sendQuick('What is MSP and how is my payment calculated?')">💰 MSP & Payment?</button>
+            <button class="ai-quick-btn" onclick="sendQuick('How do I book a slot to sell my crop?')">📅 Book slot?</button>
+            <button class="ai-quick-btn" onclick="sendQuick('What documents do I need to register?')">📋 Documents?</button>
+            <button class="ai-quick-btn" onclick="sendQuick('When will I receive my payment in bank?')">🏦 Payment timeline?</button>
+            <button class="ai-quick-btn" onclick="sendQuick('My booking was rejected because quantity is too high. What should I do?')">❌ Rejected: quantity?</button>
+            <button class="ai-quick-btn" onclick="sendQuick('My booking was rejected because of document mismatch. How to fix?')">📄 Rejected: documents?</button>
+            <button class="ai-quick-btn" onclick="sendQuick('My booking was rejected and no reason was given. What do I do?')">❓ No rejection reason?</button>
+            <button class="ai-quick-btn" onclick="sendQuick('How many kg is one quintal and how do I calculate my crop quantity?')">⚖️ Quintal calculation?</button>
+        </div>
+        <div id="ai-chat-input-row">
+            <input type="text" id="ai-chat-input" placeholder="Type your question..." onkeydown="if(event.key==='Enter') sendChat()">
+            <button id="ai-chat-send" onclick="sendChat()">&#10148;</button>
+        </div>
+    </div>
+
+    <script>
+    const chatHistory = [];
+    function toggleChat() {
+        const panel = document.getElementById('ai-chat-panel');
+        panel.classList.toggle('open');
+        if (panel.classList.contains('open')) document.getElementById('ai-chat-input').focus();
+    }
+    function sendQuick(msg) {
+        document.getElementById('ai-chat-input').value = msg;
+        sendChat();
+    }
+    function addBubble(text, role) {
+        const msgs = document.getElementById('ai-chat-messages');
+        const div = document.createElement('div');
+        div.className = 'chat-bubble ' + role;
+        div.innerText = text;
+        msgs.appendChild(div);
+        msgs.scrollTop = msgs.scrollHeight;
+        return div;
+    }
+    async function sendChat() {
+        const input = document.getElementById('ai-chat-input');
+        const msg = input.value.trim();
+        if (!msg) return;
+        input.value = '';
+        addBubble(msg, 'user');
+        chatHistory.push({role: 'user', content: msg});
+        const sendBtn = document.getElementById('ai-chat-send');
+        sendBtn.disabled = true;
+        const typing = addBubble('Thinking...', 'bot typing');
+        try {
+            const resp = await fetch('/ai/chat/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'X-CSRFToken': getCookie('csrftoken')},
+                body: JSON.stringify({message: msg, history: chatHistory.slice(-6)})
+            });
+            const data = await resp.json();
+            typing.remove();
+            const reply = data.reply || data.error || 'Sorry, something went wrong.';
+            addBubble(reply, 'bot');
+            chatHistory.push({role: 'assistant', content: reply});
+        } catch(e) {
+            typing.remove();
+            addBubble('Network error. Please try again.', 'bot');
+        }
+        sendBtn.disabled = false;
+        input.focus();
+    }
+    function getCookie(name) {
+        let v = null;
+        document.cookie.split(';').forEach(c => {
+            c = c.trim();
+            if (c.startsWith(name + '=')) v = decodeURIComponent(c.slice(name.length + 1));
+        });
+        return v;
+    }
+    </script>
+    {% endif %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

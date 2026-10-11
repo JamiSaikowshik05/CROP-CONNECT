@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Buyer Dashboard{% endblock %}
+{% block content %}
+<h2 class="mb-4">🏭 {{ buyer.company_name }} — Dashboard</h2>
+<div class="row mb-4 g-3">
+    <div class="col-md-3"><div class="card bg-primary text-white"><div class="card-body"><h6>Active Offers</h6><h2>{{ active_offers.count }}</h2></div></div></div>
+    <div class="col-md-3"><div class="card bg-success text-white"><div class="card-body"><h6>Total Deals</h6><h2>{{ total_deals }}</h2></div></div></div>
+    <div class="col-md-3"><div class="card bg-info text-white"><div class="card-body"><h6>Confirmed Deals</h6><h2>{{ confirmed_deals }}</h2></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h6>Total Value</h6><h4 style="color:#1b5e20;">₹{{ total_value|floatformat:0 }}</h4></div></div></div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h5>My Offers</h5>
+    <a href="{% url 'buyer_create_offer' %}" class="btn btn-success">+ Post New Offer</a>
+</div>
+
+<div class="table-responsive">
+<table class="table table-hover">
+    <thead class="table-dark"><tr><th>Crop</th><th>Price/qtl</th><th>vs MSP</th><th>Max Qty</th><th>Valid Until</th><th>Status</th><th>Deals</th><th></th></tr></thead>
+    <tbody>
+    {% for offer in offers %}
+    <tr>
+        <td><strong>{{ offer.crop.name }}</strong></td>
+        <td><strong>₹{{ offer.price_per_quintal }}</strong></td>
+        <td>
+            {% if offer.is_above_msp %}<span class="badge bg-success">+₹{{ offer.premium_over_msp }} above MSP</span>
+            {% else %}<span class="badge bg-warning text-dark">₹{{ offer.premium_over_msp }} below MSP</span>{% endif %}
+        </td>
+        <td>{{ offer.max_quantity_qtl }} qtl</td>
+        <td>{{ offer.valid_until }}</td>
+        <td><span class="badge bg-{% if offer.status == 'ACTIVE' %}success{% elif offer.status == 'PAUSED' %}warning text-dark{% else %}secondary{% endif %}">{{ offer.status }}</span></td>
+        <td>{{ offer.deals.count }}</td>
+        <td><a href="{% url 'buyer_offer_deals' offer.id %}" class="btn btn-sm btn-outline-primary">View Deals</a></td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="8" class="text-muted">No offers yet. <a href="{% url 'buyer_create_offer' %}">Post your first offer →</a></td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% if deals %}
+<h5 class="mt-4">Recent Deal Requests from Farmers</h5>
+<div class="table-responsive">
+<table class="table table-sm">
+    <thead><tr><th>Farmer</th><th>Crop</th><th>Qty</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for deal in deals %}
+    <tr>
+        <td>{{ deal.farmer.user.get_full_name|default:deal.farmer.user.username }}</td>
+        <td>{{ deal.offer.crop.name }}</td>
+        <td>{{ deal.quantity_qtl }} qtl</td>
+        <td>₹{{ deal.total_amount }}</td>
+        <td><span class="badge bg-{% if deal.status == 'PAID' %}success{% elif deal.status == 'CONFIRMED' %}primary{% elif deal.status == 'PENDING' %}warning text-dark{% else %}secondary{% endif %}">{{ deal.get_status_display }}</span></td>
+        <td><a href="{% url 'buyer_offer_deals' deal.offer.id %}" class="btn btn-sm btn-outline-secondary">Manage</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endif %}
+{% endblock %}

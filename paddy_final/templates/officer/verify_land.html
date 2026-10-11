@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Verify Land Details{% endblock %}
+{% block content %}
+<h2 class="mb-1">🏞️ Verify Farmer Land Details</h2>
+<p class="text-muted mb-4">Once you verify the land, the farmer will be able to book procurement slots.</p>
+
+<div class="card">
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>Farmer</th>
+                    <th>Aadhaar</th>
+                    <th>Survey No</th>
+                    <th>Area (Acres)</th>
+                    <th>Village / Mandal</th>
+                    <th>District</th>
+                    <th>Submitted On</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for land in lands %}
+                <tr>
+                    <td>
+                        <strong>{{ land.farmer.user.get_full_name|default:land.farmer.user.username }}</strong><br>
+                        <small class="text-muted">{{ land.farmer.user.phone|default:"No phone" }}</small>
+                    </td>
+                    <td>{{ land.farmer.aadhaar|slice:":4" }}****{{ land.farmer.aadhaar|slice:"-4:" }}</td>
+                    <td><strong>{{ land.survey_no }}</strong></td>
+                    <td>{{ land.total_area_acres }} acres</td>
+                    <td>{{ land.village }}, {{ land.mandal }}</td>
+                    <td>{{ land.district }}</td>
+                    <td style="font-size:0.82rem;">{{ land.created_at|date:"d M Y" }}</td>
+                    <td>
+                        <form method="post" action="{% url 'officer_verify_land_approve' land.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success btn-sm"
+                                onclick="return confirm('Verify land for {{ land.farmer.user.get_full_name|default:land.farmer.user.username }}? Survey No: {{ land.survey_no }}')">
+                                ✅ Verify
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="8" class="text-center text-muted py-4">
+                        ✅ No pending land verifications. All farmers are verified.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a href="{% url 'officer_dashboard' %}" class="btn btn-outline-secondary">← Back to Dashboard</a>
+</div>
+{% endblock %}

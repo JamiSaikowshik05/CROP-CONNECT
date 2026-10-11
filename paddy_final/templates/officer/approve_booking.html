@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% block title %}Approve Bookings{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center mb-3 gap-2">
+  <h2 class="mb-0">Approve Slot Bookings</h2>
+  <span class="badge bg-secondary ms-2">Govt Rule: Max {{ max_qtl_per_acre|floatformat:0 }} qtl/acre</span>
+</div>
+
+<!-- Risk Legend -->
+<div class="d-flex gap-3 mb-4 flex-wrap">
+  <div class="d-flex align-items-center gap-2 px-3 py-2 rounded border border-success bg-success bg-opacity-10">
+    <span class="badge bg-success fs-6">✅ LOW</span>
+    <span class="text-muted small">≤ 25 qtl/acre — Safe to approve</span>
+  </div>
+  <div class="d-flex align-items-center gap-2 px-3 py-2 rounded border border-warning bg-warning bg-opacity-10">
+    <span class="badge bg-warning text-dark fs-6">⚠️ MEDIUM</span>
+    <span class="text-muted small">25–35 qtl/acre — Verify documents</span>
+  </div>
+  <div class="d-flex align-items-center gap-2 px-3 py-2 rounded border border-danger bg-danger bg-opacity-10">
+    <span class="badge bg-danger fs-6">🚨 HIGH</span>
+    <span class="text-muted small">&gt; 35 qtl/acre — Do NOT approve without field visit</span>
+  </div>
+</div>
+
+{% if not bookings_with_risk %}
+  <div class="alert alert-info">No pending bookings at the moment.</div>
+{% else %}
+<div class="table-responsive">
+<table class="table table-hover align-middle">
+  <thead class="table-dark">
+    <tr>
+      <th>Farmer</th>
+      <th>District</th>
+      <th>Crop</th>
+      <th>Date</th>
+      <th>Land (Acres)</th>
+      <th>Qty (Qtl)</th>
+      <th>Qtl/Acre</th>
+      <th>Max Allowed</th>
+      <th class="text-center">Risk Level</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in bookings_with_risk %}
+    {% with b=item.booking %}
+    <tr id="row-{{ b.id }}" class="{% if item.risk_level == 'HIGH' %}table-danger{% elif item.risk_level == 'MEDIUM' %}table-warning{% endif %}">
+      <td>
+        <strong>{{ b.farmer.user.get_full_name|default:b.farmer.user.username }}</strong><br>
+        <small class="text-muted">{{ b.farmer.village }}, {{ b.farmer.mandal }}</small>
+      </td>
+      <td>{{ b.farmer.district }}</td>
+      <td>{{ b.slot.crop.name }}</td>
+      <td>{{ b.slot.date }}</td>
+      <td><strong>{{ item.total_land|floatformat:2 }}</strong></td>
+      <td><strong>{{ b.estimated_quintals }}</strong></td>
+      <td>
+        <strong class="text-{% if item.risk_level == 'HIGH' %}danger{% elif item.risk_level == 'MEDIUM' %}warning{% else %}success{% endif %}">
+          {{ item.qty_per_acre }} qtl/ac
+        </strong>
+      </td>
+      <td>{{ item.allowed_max_qtl }} qtl</td>
+      <td class="text-center">
+        <span class="badge bg-{{ item.risk_color }} px-3 py-2" style="font-size:0.85rem;cursor:pointer;"
+              data-bs-toggle="collapse" data-bs-target="#risk-detail-{{ b.id }}"
+              title="Click to see details">
+          {{ item.risk_icon }} {{ item.risk_level }} RISK
+        </span>
+        {% if item.exceeds_govt_limit %}
+        <br><small class="text-danger fw-bold mt-1 d-block">+{{ item.excess_pct }}% over limit</small>
+        {% endif %}
+      </td>
+      <td>
+        <form method="post" action="{% url 'officer_approve_booking_do' b.id %}" style="display:inline;">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="approve">
+          <button type="submit" class="btn btn-success btn-sm"
+            {% if item.risk_level == 'HIGH' %}
+              onclick="return confirm('⚠️ HIGH RISK booking!\n\nThis farmer booked {{ item.qty_per_acre }} qtl/acre which EXCEEDS the 25 qtl/acre government limit.\nMax allowed for {{ item.total_land|floatformat:1 }} acres = {{ item.allowed_max_qtl }} qtl.\n\nAre you sure you want to approve?');"
+            {% endif %}>
+            Approve
+          </button>
+        </form>
+        <button class="btn btn-danger btn-sm ms-1" onclick="showReject({{ b.id }})">Reject</button>
+        <button class="btn btn-outline-secondary btn-sm ms-1"
+                data-bs-toggle="collapse" data-bs-target="#risk-detail-{{ b.id }}">
+          ▼ Details
+        </button>
+      </td>
+    </tr>
+
+    <!-- Collapsible Risk Detail Row -->
+    <tr>
+      <td colspan="10" class="p-0 border-0">
+        <div class="collapse" id="risk-detail-{{ b.id }}">
+          <div class="alert alert-{{ item.risk_color }} m-3">
+            <div class="d-flex align-items-start gap-3">
+              <span style="font-size:2rem;line-height:1;">{{ item.risk_icon }}</span>
+              <div class="w-100">
+                <h6 class="mb-2">
+                  <span class="badge bg-{{ item.risk_color }}">{{ item.risk_level }} RISK</span>
+                  &nbsp; Quantity vs Government Limit Analysis
+                </h6>
+                <div class="row g-2 mb-3">
+                  <div class="col-sm-6">
+                    <table class="table table-sm table-borderless mb-0">
+                      <tr>
+                        <td class="text-muted pe-3">Land area:</td>
+                        <td><strong>{{ item.total_land|floatformat:2 }} acres</strong></td>
+                      </tr>
+                      <tr>
+                        <td class="text-muted pe-3">Quantity booked:</td>
+                        <td><strong>{{ b.estimated_quintals }} qtl</strong></td>
+                      </tr>
+                      <tr>
+                        <td class="text-muted pe-3">Rate (qtl/acre):</td>
+                        <td>
+                          <strong class="text-{% if item.risk_level == 'HIGH' %}danger{% elif item.risk_level == 'MEDIUM' %}warning{% else %}success{% endif %}">
+                            {{ item.qty_per_acre }} qtl/acre
+                          </strong>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="col-sm-6">
+                    <table class="table table-sm table-borderless mb-0">
+                      <tr>
+                        <td class="text-muted pe-3">Govt limit:</td>
+                        <td><strong>25.0 qtl/acre</strong></td>
+                      </tr>
+                      <tr>
+                        <td class="text-muted pe-3">Max allowed:</td>
+                        <td><strong>{{ item.allowed_max_qtl }} qtl</strong> <small class="text-muted">({{ item.total_land|floatformat:1 }}ac × 25)</small></td>
+                      </tr>
+                      {% if item.exceeds_govt_limit %}
+                      <tr>
+                        <td class="text-muted pe-3">Excess:</td>
+                        <td class="text-danger fw-bold">+{{ item.excess_pct }}% above limit</td>
+                      </tr>
+                      {% endif %}
+                    </table>
+                  </div>
+                </div>
+                <div class="p-2 rounded bg-white bg-opacity-50">
+                  <strong>📋 Recommendation:</strong> {{ item.risk_msg }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Reject form row (hidden) -->
+    <tr id="reject-row-{{ b.id }}" style="display:none;background:#fff8f8;">
+      <td colspan="10">
+        <form method="post" action="{% url 'officer_approve_booking_do' b.id %}">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="reject">
+          <div class="input-group">
+            <input type="text" name="reason" class="form-control"
+                   placeholder="Reason for rejection (required)" required>
+            <button type="submit" class="btn btn-danger">Confirm Reject</button>
+            <button type="button" class="btn btn-secondary" onclick="hideReject({{ b.id }})">Cancel</button>
+          </div>
+        </form>
+      </td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function showReject(id) {
+    document.getElementById('reject-row-' + id).style.display = '';
+}
+function hideReject(id) {
+    document.getElementById('reject-row-' + id).style.display = 'none';
+}
+</script>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% block title %}Marketplace — Choose Your Buyer{% endblock %}
+{% block content %}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <h2 class="mb-0">🏪 Crop Marketplace</h2>
+    <span class="badge bg-success fs-6">Dual Channel</span>
+</div>
+<p class="text-muted">Compare Government MSP vs Private Buyer offers. Choose the best price for your crop.</p>
+
+<!-- CHANNEL COMPARISON CARDS -->
+{% for cc in crop_comparison %}
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        <span>🌾 {{ cc.crop.name }}</span>
+        <span class="badge bg-warning text-dark">Govt MSP: ₹{{ cc.msp }}/qtl</span>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+
+            <!-- CHANNEL 1: GOVERNMENT -->
+            <div class="col-md-4">
+                <div class="p-3 rounded h-100" style="background:#e8f5e9;border:2px solid #43a047;">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span style="font-size:1.5rem;">🏛️</span>
+                        <div>
+                            <div style="font-weight:700;color:#1b5e20;">Government MSP</div>
+                            <div style="font-size:0.78rem;color:#555;">Guaranteed • Safe • No middleman</div>
+                        </div>
+                    </div>
+                    <div style="font-size:2rem;font-weight:800;color:#1b5e20;">₹{{ cc.msp }}</div>
+                    <div style="font-size:0.82rem;color:#555;">per quintal</div>
+                    <hr style="border-color:#a5d6a7;">
+                    <ul style="font-size:0.82rem;padding-left:18px;color:#2e7d32;">
+                        <li>100% guaranteed payment</li>
+                        <li>Direct bank transfer</li>
+                        <li>7–10 days payment</li>
+                        <li>No negotiation needed</li>
+                    </ul>
+                    <a href="{% url 'farmer_book_slot' %}" class="btn btn-success btn-sm w-100 mt-2">
+                        📅 Book Govt Slot
+                    </a>
+                </div>
+            </div>
+
+            <!-- CHANNEL 2: BEST PRIVATE OFFER -->
+            <div class="col-md-4">
+                {% if cc.best_private %}
+                <div class="p-3 rounded h-100" style="background:{% if cc.premium and cc.premium > 0 %}#e3f2fd;border:2px solid #1976d2{% else %}#fff8e1;border:2px solid #fbc02d{% endif %};">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span style="font-size:1.5rem;">🏭</span>
+                        <div>
+                            <div style="font-weight:700;color:#1a237e;">{{ cc.best_private.buyer.company_name }}</div>
+                            <div style="font-size:0.78rem;color:#555;">{{ cc.best_private.buyer.get_buyer_type_display }} • ⭐{{ cc.best_private.buyer.rating }}</div>
+                        </div>
+                    </div>
+                    <div style="font-size:2rem;font-weight:800;color:{% if cc.premium and cc.premium > 0 %}#1565c0{% else %}#e65100{% endif %};">
+                        ₹{{ cc.best_private.price_per_quintal }}
+                    </div>
+                    <div style="font-size:0.82rem;color:#555;">per quintal</div>
+                    {% if cc.premium %}
+                    <div class="mt-1">
+                        {% if cc.premium > 0 %}
+                        <span class="badge bg-success">+₹{{ cc.premium }} above MSP</span>
+                        {% elif cc.premium < 0 %}
+                        <span class="badge bg-danger">₹{{ cc.premium|floatformat:0 }} below MSP</span>
+                        {% else %}
+                        <span class="badge bg-secondary">Same as MSP</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    <hr>
+                    <ul style="font-size:0.82rem;padding-left:18px;">
+                        <li>Payment in {{ cc.best_private.payment_days }} days</li>
+                        <li>Advance: {{ cc.best_private.advance_percent }}%</li>
+                        <li>Pickup: {{ cc.best_private.pickup_location }}</li>
+                        <li>Valid till: {{ cc.best_private.valid_until }}</li>
+                    </ul>
+                    <a href="{% url 'farmer_offer_detail' cc.best_private.id %}" class="btn btn-primary btn-sm w-100 mt-2">
+                        🤖 View + AI Advice
+                    </a>
+                </div>
+                {% else %}
+                <div class="p-3 rounded h-100 text-center" style="background:#f5f5f5;border:2px dashed #ccc;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                    <div style="font-size:2rem;">🔍</div>
+                    <p class="text-muted mb-0">No private offers for {{ cc.crop.name }} yet</p>
+                    <small class="text-muted">Check back soon</small>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- ALL OFFERS for this crop -->
+            <div class="col-md-4">
+                <div class="p-3 rounded h-100" style="background:#fafafa;border:1px solid #e0e0e0;">
+                    <div style="font-weight:600;margin-bottom:10px;">All Offers for {{ cc.crop.name }}</div>
+                    {% if cc.all_offers %}
+                    <div style="max-height:180px;overflow-y:auto;">
+                        {% for o in cc.all_offers %}
+                        <div class="d-flex justify-content-between align-items-center py-1" style="border-bottom:1px solid #eee;font-size:0.85rem;">
+                            <div>
+                                <strong>{{ o.buyer.company_name }}</strong><br>
+                                <small class="text-muted">{{ o.buyer.get_buyer_type_display }}</small>
+                            </div>
+                            <div class="text-end">
+                                <strong style="color:{% if o.is_above_msp %}#1b5e20{% else %}#c62828{% endif %};">₹{{ o.price_per_quintal }}</strong><br>
+                                <a href="{% url 'farmer_offer_detail' o.id %}" style="font-size:0.75rem;">View →</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="text-muted small">No offers yet</p>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<!-- MY ACTIVE DEALS -->
+{% if my_deals %}
+<div class="card mt-4">
+    <div class="card-header">📋 My Recent Private Deals</div>
+    <div class="card-body">
+        <table class="table table-sm">
+            <thead><tr><th>Buyer</th><th>Crop</th><th>Qty</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+            {% for deal in my_deals %}
+            <tr>
+                <td>{{ deal.offer.buyer.company_name }}</td>
+                <td>{{ deal.offer.crop.name }}</td>
+                <td>{{ deal.quantity_qtl }} qtl</td>
+                <td>₹{{ deal.total_amount }}</td>
+                <td>
+                    <span class="badge bg-{% if deal.status == 'PAID' %}success{% elif deal.status == 'CONFIRMED' %}primary{% elif deal.status == 'CANCELLED' %}danger{% else %}warning text-dark{% endif %}">
+                        {{ deal.get_status_display }}
+                    </span>
+                </td>
+                <td><a href="{% url 'farmer_my_deals' %}" class="btn btn-sm btn-outline-secondary">Details</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'farmer_my_deals' %}">View all my deals →</a>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

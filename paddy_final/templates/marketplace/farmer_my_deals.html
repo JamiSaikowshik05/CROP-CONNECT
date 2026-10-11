@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}My Private Deals{% endblock %}
+{% block content %}
+<h2 class="mb-4">📋 My Private Buyer Deals</h2>
+
+{% if not deals %}
+<div class="alert alert-info">
+    You have no private deals yet. <a href="{% url 'farmer_marketplace' %}">Browse the marketplace →</a>
+</div>
+{% else %}
+<div class="table-responsive">
+<table class="table table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Buyer</th><th>Type</th><th>Crop</th><th>Qty</th>
+            <th>Price/qtl</th><th>Total</th><th>Status</th><th>Date</th><th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for deal in deals %}
+    <tr>
+        <td><strong>{{ deal.offer.buyer.company_name }}</strong><br><small class="text-muted">⭐{{ deal.offer.buyer.rating }}</small></td>
+        <td>{{ deal.offer.buyer.get_buyer_type_display }}</td>
+        <td>{{ deal.offer.crop.name }}</td>
+        <td>{{ deal.quantity_qtl }} qtl</td>
+        <td>₹{{ deal.agreed_price }}</td>
+        <td><strong>₹{{ deal.total_amount }}</strong></td>
+        <td>
+            <span class="badge bg-{% if deal.status == 'PAID' %}success{% elif deal.status == 'CONFIRMED' %}primary{% elif deal.status == 'DELIVERED' %}info{% elif deal.status == 'CANCELLED' %}danger{% elif deal.status == 'DISPUTED' %}warning text-dark{% else %}secondary{% endif %}">
+                {{ deal.get_status_display }}
+            </span>
+        </td>
+        <td style="font-size:0.82rem;">{{ deal.created_at|date:"d M Y" }}</td>
+        <td>
+            {% if deal.status == 'PENDING' %}
+            <form method="post" action="{% url 'farmer_cancel_deal' deal.id %}" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="reason" value="Farmer cancelled">
+                <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Cancel this deal?')">Cancel</button>
+            </form>
+            {% elif deal.status == 'CONFIRMED' %}
+            <span class="text-success" style="font-size:0.82rem;">✅ Bring crop on {{ deal.delivery_date|default:"agreed date" }}</span>
+            {% elif deal.status == 'PAID' %}
+            <span class="text-success" style="font-size:0.82rem;">💰 Payment done</span>
+            {% endif %}
+        </td>
+    </tr>
+    {% if deal.ai_recommendation %}
+    <tr style="background:#f9f9f9;">
+        <td colspan="9" style="font-size:0.8rem;color:#555;padding:6px 16px;">
+            <strong>🤖 AI Advice when you accepted:</strong> {{ deal.ai_recommendation|truncatewords:30 }}
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endif %}
+
+<div class="mt-3">
+    <a href="{% url 'farmer_marketplace' %}" class="btn btn-outline-success">← Back to Marketplace</a>
+    <a href="{% url 'farmer_dashboard' %}" class="btn btn-outline-secondary ms-2">Dashboard</a>
+</div>
+{% endblock %}

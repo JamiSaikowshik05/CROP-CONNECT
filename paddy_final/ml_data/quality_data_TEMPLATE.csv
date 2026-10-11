@@ -1,0 +1,9 @@
+crop,moisture_percent,foreign_matter_percent,damaged_grains_percent,immature_grains_percent,chalky_grains_percent,shelling_percent,oil_content_percent,aflatoxin_present,grade
+Paddy,14.5,0.5,1.5,2.0,3.0,0,0,0,FAQ
+Paddy,18.0,1.5,4.0,3.5,6.0,0,0,0,Below_FAQ
+Paddy,22.0,2.0,6.0,5.0,8.0,0,0,0,Rejected
+Groundnut,7.0,0.5,0,0,0,74.0,48.0,0,FAQ
+Groundnut,9.5,1.2,0,0,0,68.0,43.0,0,Below_FAQ
+Groundnut,12.0,2.0,0,0,0,60.0,38.0,1,Rejected
+Paddy,15.0,0.8,2.0,1.5,4.0,0,0,0,FAQ
+Groundnut,7.5,0.6,0,0,0,72.0,46.0,0,FAQ

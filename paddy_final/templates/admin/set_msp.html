@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Set MSP Rates{% endblock %}
+{% block content %}
+<h2 class="mb-1">💰 Set Minimum Support Price (MSP)</h2>
+<p class="text-muted mb-4">Update the government guaranteed price for each crop. All new bills will use the updated rate.</p>
+
+<div class="row g-4">
+    {% for crop in crops %}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header d-flex align-items-center gap-2">
+                <span>{% if crop.name == 'Paddy' %}🌾{% else %}🥜{% endif %}</span>
+                <strong>{{ crop.name }}</strong>
+                <span class="badge bg-success ms-auto">Active</span>
+            </div>
+            <div class="card-body">
+                <div class="mb-3 p-3 rounded" style="background:#e8f5e9;text-align:center;">
+                    <div style="font-size:0.82rem;color:#555;">Current MSP</div>
+                    <div style="font-size:1.8rem;font-weight:800;color:#1b5e20;">₹{{ crop.msp_per_quintal }}</div>
+                    <div style="font-size:0.8rem;color:#555;">per quintal</div>
+                    {% if crop.season %}
+                    <div style="font-size:0.78rem;color:#888;margin-top:4px;">Season: {{ crop.season }}</div>
+                    {% endif %}
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="crop_id" value="{{ crop.id }}">
+                    <div class="mb-3">
+                        <label class="form-label">New MSP Rate (₹/quintal)</label>
+                        <input type="number" name="msp_per_quintal"
+                            value="{{ crop.msp_per_quintal }}"
+                            step="0.01" min="0"
+                            class="form-control" required
+                            placeholder="e.g. 2183">
+                    </div>
+                    <button type="submit" class="btn btn-success w-100"
+                        onclick="return confirm('Update MSP for {{ crop.name }} to ₹' + this.form.msp_per_quintal.value + '/quintal?')">
+                        💾 Update MSP
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-warning">No crops found. Please add crops first.</div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'admin_dashboard' %}" class="btn btn-outline-secondary">← Back to Dashboard</a>
+</div>
+{% endblock %}

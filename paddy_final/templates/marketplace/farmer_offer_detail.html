@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% block title %}Offer from {{ offer.buyer.company_name }}{% endblock %}
+{% block content %}
+
+<h2 class="mb-1">🤝 Deal Offer Details</h2>
+<p class="text-muted mb-4">Review this offer carefully before accepting</p>
+
+<div class="row g-4">
+
+    <!-- LEFT: OFFER DETAILS -->
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">🏭 {{ offer.buyer.company_name }}</div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <tr><td class="text-muted">Buyer Type</td><td><strong>{{ offer.buyer.get_buyer_type_display }}</strong></td></tr>
+                    <tr><td class="text-muted">Crop</td><td><strong>{{ offer.crop.name }}</strong></td></tr>
+                    <tr><td class="text-muted">Offer Price</td><td><strong style="font-size:1.3rem;color:#1b5e20;">₹{{ offer.price_per_quintal }}/qtl</strong></td></tr>
+                    <tr><td class="text-muted">Govt MSP</td><td>₹{{ offer.crop.msp_per_quintal }}/qtl</td></tr>
+                    <tr><td class="text-muted">Difference</td>
+                        <td>
+                            {% if offer.is_above_msp %}
+                            <span class="badge bg-success">+₹{{ offer.premium_over_msp }} above MSP ✅</span>
+                            {% else %}
+                            <span class="badge bg-danger">₹{{ offer.premium_over_msp }} below MSP ⚠️</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr><td class="text-muted">Min Quantity</td><td>{{ offer.min_quantity_qtl }} quintals</td></tr>
+                    <tr><td class="text-muted">Max Quantity</td><td>{{ offer.max_quantity_qtl }} quintals</td></tr>
+                    <tr><td class="text-muted">Payment In</td><td>{{ offer.payment_days }} days after delivery</td></tr>
+                    <tr><td class="text-muted">Advance</td><td>{{ offer.advance_percent }}% at time of deal</td></tr>
+                    <tr><td class="text-muted">Pickup Location</td><td>{{ offer.pickup_location }}</td></tr>
+                    <tr><td class="text-muted">Valid Until</td><td>{{ offer.valid_until }}</td></tr>
+                    <tr><td class="text-muted">Buyer Rating</td><td>⭐ {{ offer.buyer.rating }}/5.0 ({{ offer.buyer.total_deals }} deals)</td></tr>
+                </table>
+                {% if offer.description %}
+                <div class="mt-2 p-3 rounded" style="background:#f9f9f9;font-size:0.9rem;">
+                    <strong>Buyer's Note:</strong><br>{{ offer.description }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: AI ADVICE + DEAL FORM -->
+    <div class="col-md-6">
+
+        <!-- AI RECOMMENDATION -->
+        <div class="card mb-3">
+            <div class="card-header" style="background:#1b5e20;color:white;">
+                🤖 Krishi Mitra AI Recommendation
+            </div>
+            <div class="card-body" style="white-space:pre-line;font-size:0.92rem;line-height:1.7;">
+                {{ ai_advice }}
+            </div>
+        </div>
+
+        <!-- GOVT MSP COMPARISON -->
+        <div class="card mb-3">
+            <div class="card-header">⚖️ Your Options</div>
+            <div class="card-body p-0">
+                <table class="table mb-0">
+                    <thead><tr><th></th><th>🏛️ Government</th><th>🏭 This Offer</th></tr></thead>
+                    <tbody>
+                        <tr><td>Price/qtl</td><td>₹{{ offer.crop.msp_per_quintal }}</td><td><strong>₹{{ offer.price_per_quintal }}</strong></td></tr>
+                        <tr><td>Payment</td><td>7-10 days</td><td>{{ offer.payment_days }} days</td></tr>
+                        <tr><td>Advance</td><td>0%</td><td>{{ offer.advance_percent }}%</td></tr>
+                        <tr><td>Risk</td><td><span class="badge bg-success">Zero</span></td>
+                            <td><span class="badge bg-{% if offer.is_above_msp %}primary{% else %}warning text-dark{% endif %}">{% if offer.is_above_msp %}Low{% else %}Medium{% endif %}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- DEAL FORM -->
+        {% if existing_deal %}
+        <div class="alert alert-info">
+            You already have a deal request for this offer.
+            Status: <strong>{{ existing_deal.get_status_display }}</strong>
+            <br><a href="{% url 'farmer_my_deals' %}">View my deals →</a>
+        </div>
+        {% else %}
+        <div class="card">
+            <div class="card-header">✅ Accept This Offer</div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label">Quantity (quintals)</label>
+                        <input type="number" name="quantity_qtl" class="form-control" step="0.01"
+                            min="{{ offer.min_quantity_qtl }}" max="{{ offer.max_quantity_qtl }}"
+                            placeholder="e.g. 10" required id="qty-input" oninput="calcTotal()">
+                        <div class="form-text">Min: {{ offer.min_quantity_qtl }} qtl | Max: {{ offer.max_quantity_qtl }} qtl</div>
+                    </div>
+                    <div class="mb-3 p-3 rounded" style="background:#e8f5e9;" id="total-box" style="display:none;">
+                        <strong>Expected Payment: <span id="total-amount">₹0</span></strong><br>
+                        <small class="text-muted">at ₹{{ offer.price_per_quintal }}/qtl × your quantity</small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Your Notes (optional)</label>
+                        <textarea name="farmer_notes" class="form-control" rows="2" placeholder="Any questions for the buyer?"></textarea>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success flex-fill">
+                            🤝 Send Deal Request
+                        </button>
+                        <a href="{% url 'farmer_marketplace' %}" class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+                    </div>
+                    <div class="mt-2 text-muted" style="font-size:0.8rem;">
+                        By submitting, you are requesting this deal. The buyer will confirm within 24 hours.
+                        You can still book a government slot separately.
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="mt-3 text-center">
+            <a href="{% url 'farmer_book_slot' %}" class="btn btn-outline-success">
+                🏛️ Book Government Slot Instead
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function calcTotal() {
+    const qty = parseFloat(document.getElementById('qty-input').value) || 0;
+    const price = {{ offer.price_per_quintal }};
+    const total = qty * price;
+    document.getElementById('total-amount').textContent = '₹' + total.toLocaleString('en-IN', {maximumFractionDigits: 0});
+    document.getElementById('total-box').style.display = total > 0 ? 'block' : 'none';
+}
+</script>
+{% endblock %}

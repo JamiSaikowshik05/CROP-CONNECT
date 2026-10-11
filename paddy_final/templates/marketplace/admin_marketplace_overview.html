@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Marketplace Overview{% endblock %}
+{% block content %}
+<h2 class="mb-4">📊 Marketplace Overview — Dual Channel Stats</h2>
+<div class="row g-3 mb-4">
+    <div class="col-md-3"><div class="card bg-primary text-white"><div class="card-body"><h6>Approved Buyers</h6><h2>{{ total_buyers }}</h2></div></div></div>
+    <div class="col-md-3"><div class="card bg-success text-white"><div class="card-body"><h6>Active Offers</h6><h2>{{ active_offers }}</h2></div></div></div>
+    <div class="col-md-3"><div class="card bg-info text-white"><div class="card-body"><h6>Total Deals</h6><h2>{{ total_deals }}</h2></div></div></div>
+    <div class="col-md-3"><div class="card"><div class="card-body"><h6>Completed Value</h6><h4 style="color:#1b5e20;">₹{{ completed_val|floatformat:0 }}</h4></div></div></div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">Buyers by Type</div>
+            <div class="card-body">
+                {% for bt in buyers_by_type %}
+                <div class="d-flex justify-content-between py-1 border-bottom">
+                    <span>{{ bt.buyer_type }}</span><strong>{{ bt.c }}</strong>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">Recent Deals</div>
+            <div class="card-body p-0">
+                <table class="table table-sm mb-0">
+                    <thead><tr><th>Farmer</th><th>Buyer</th><th>Crop</th><th>Amount</th><th>Status</th></tr></thead>
+                    <tbody>
+                    {% for deal in recent_deals %}
+                    <tr>
+                        <td>{{ deal.farmer.user.get_full_name|default:deal.farmer.user.username }}</td>
+                        <td>{{ deal.offer.buyer.company_name }}</td>
+                        <td>{{ deal.offer.crop.name }}</td>
+                        <td>₹{{ deal.total_amount }}</td>
+                        <td><span class="badge bg-{% if deal.status == 'PAID' %}success{% elif deal.status == 'CONFIRMED' %}primary{% elif deal.status == 'PENDING' %}warning text-dark{% else %}secondary{% endif %} badge-sm">{{ deal.status }}</span></td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="5" class="text-muted">No deals yet.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="{% url 'admin_manage_buyers' %}" class="btn btn-outline-primary">Manage Buyers →</a>
+{% endblock %}

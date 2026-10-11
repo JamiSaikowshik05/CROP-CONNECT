@@ -1,0 +1,9 @@
+crop,district,season,soil,land_acres,rainfall_mm,avg_temp,total_yield_quintals
+Paddy,Guntur,Kharif,Alluvial,5.0,950,28,110.5
+Paddy,Krishna,Kharif,Black,3.0,870,27,65.0
+Paddy,Nellore,Rabi,Red,2.5,600,26,48.0
+Groundnut,Anantapur,Kharif,Red,4.0,700,30,38.0
+Groundnut,Kurnool,Kharif,Black,6.0,750,31,58.5
+Groundnut,Prakasam,Rabi,Sandy,2.0,500,29,18.0
+Paddy,Srikakulam,Kharif,Alluvial,8.0,1100,26,185.0
+Paddy,Chittoor,Rabi,Loam,1.5,550,25,30.0

@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block title %}Payment Status{% endblock %}
+{% block content %}
+
+<h2 class="mb-1">💰 My Payment Status</h2>
+<p class="text-muted mb-4">Track every bill — approved, rejected, or transferred to your bank account.</p>
+
+{% if not bills %}
+<div class="alert alert-info">
+    No payment records yet. Complete a procurement to see bills here.
+    <a href="{% url 'farmer_book_slot' %}" class="btn btn-success btn-sm ms-3">📅 Book a Slot</a>
+</div>
+{% else %}
+
+{% for bill in bills %}
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2"
+         style="background:{% if bill.payment and bill.payment.status == 'TRANSFERRED' %}#1b5e20{% elif bill.payment and bill.payment.status == 'APPROVED' %}#1565c0{% elif bill.payment and bill.payment.status == 'REJECTED' %}#b71c1c{% else %}#424242{% endif %};color:white;">
+        <div>
+            <strong>Bill No: {{ bill.bill_number }}</strong> &nbsp;|&nbsp;
+            {{ bill.procurement.booking.slot.crop.name }} &nbsp;|&nbsp;
+            {{ bill.created_at|date:"d M Y" }}
+        </div>
+        <div>
+            {% if bill.payment %}
+                {% if bill.payment.status == 'TRANSFERRED' %}
+                <span class="badge fs-6 py-2 px-3" style="background:rgba(255,255,255,0.25);">✅ Money Credited to Bank</span>
+                {% elif bill.payment.status == 'APPROVED' %}
+                <span class="badge fs-6 py-2 px-3" style="background:rgba(255,255,255,0.25);">🔄 Transfer in Progress</span>
+                {% elif bill.payment.status == 'REJECTED' %}
+                <span class="badge fs-6 py-2 px-3" style="background:rgba(255,255,255,0.25);">❌ Payment Rejected</span>
+                {% else %}
+                <span class="badge fs-6 py-2 px-3" style="background:rgba(255,255,255,0.25);">⏳ Pending Approval</span>
+                {% endif %}
+            {% else %}
+            <span class="badge fs-6 py-2 px-3" style="background:rgba(255,255,255,0.25);">⏳ Pending</span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row g-4">
+            <!-- BILL DETAILS -->
+            <div class="col-md-4">
+                <h6 class="text-muted mb-3">Bill Details</h6>
+                <table class="table table-sm table-borderless">
+                    <tr><td class="text-muted">Crop</td><td><strong>{{ bill.procurement.booking.slot.crop.name }}</strong></td></tr>
+                    <tr><td class="text-muted">Date</td><td>{{ bill.procurement.booking.slot.date }}</td></tr>
+                    <tr><td class="text-muted">Weight</td><td><strong>{{ bill.quantity_quintals }} qtl</strong></td></tr>
+                    <tr><td class="text-muted">MSP Rate</td><td>₹{{ bill.msp_per_quintal }}/qtl</td></tr>
+                    <tr style="border-top:2px solid #e0e0e0;">
+                        <td class="text-muted"><strong>Total</strong></td>
+                        <td><strong style="font-size:1.2rem;color:#1b5e20;">₹{{ bill.total_amount }}</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- PAYMENT JOURNEY -->
+            <div class="col-md-4">
+                <h6 class="text-muted mb-3">Payment Journey</h6>
+                <!-- Step 1 -->
+                <div class="d-flex align-items-start gap-2 mb-2">
+                    <div style="width:26px;height:26px;border-radius:50%;background:#1b5e20;color:white;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">1</div>
+                    <div><div style="font-weight:600;font-size:0.88rem;">Bill Generated ✅</div><div style="font-size:0.78rem;color:#555;">{{ bill.created_at|date:"d M Y" }}</div></div>
+                </div>
+                <div style="margin-left:13px;border-left:2px solid #e0e0e0;height:14px;"></div>
+                <!-- Step 2 -->
+                <div class="d-flex align-items-start gap-2 mb-2">
+                    <div style="width:26px;height:26px;border-radius:50%;background:{% if bill.payment and bill.payment.status != 'PENDING' %}#1b5e20{% else %}#bbb{% endif %};color:white;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">2</div>
+                    <div>
+                        <div style="font-weight:600;font-size:0.88rem;">Admin Review
+                            {% if bill.payment %}
+                                {% if bill.payment.status == 'PENDING' %}<span class="badge bg-warning text-dark">Pending</span>
+                                {% elif bill.payment.status == 'REJECTED' %}<span class="badge bg-danger">Rejected ❌</span>
+                                {% else %}<span class="badge bg-success">Approved ✅</span>{% endif %}
+                            {% endif %}
+                        </div>
+                        {% if bill.payment and bill.payment.approved_at %}<div style="font-size:0.78rem;color:#555;">{{ bill.payment.approved_at|date:"d M Y" }}</div>{% endif %}
+                    </div>
+                </div>
+                <div style="margin-left:13px;border-left:2px solid #e0e0e0;height:14px;"></div>
+                <!-- Step 3 -->
+                <div class="d-flex align-items-start gap-2">
+                    <div style="width:26px;height:26px;border-radius:50%;background:{% if bill.payment and bill.payment.status == 'TRANSFERRED' %}#1b5e20{% else %}#bbb{% endif %};color:white;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">3</div>
+                    <div>
+                        <div style="font-weight:600;font-size:0.88rem;">Money in Bank
+                            {% if bill.payment and bill.payment.status == 'TRANSFERRED' %}<span class="badge bg-success">Credited ✅</span>
+                            {% elif bill.payment and bill.payment.status == 'REJECTED' %}<span class="badge bg-danger">Not Credited</span>
+                            {% else %}<span class="badge bg-secondary">Pending</span>{% endif %}
+                        </div>
+                        {% if bill.payment and bill.payment.utr_number %}<div style="font-size:0.78rem;color:#555;">UTR: <strong>{{ bill.payment.utr_number }}</strong></div>{% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATUS BOX + ACTION -->
+            <div class="col-md-4">
+                {% if bill.payment and bill.payment.status == 'TRANSFERRED' %}
+                <div class="p-3 rounded text-center" style="background:#e8f5e9;border:2px solid #43a047;">
+                    <div style="font-size:2rem;">✅</div>
+                    <div style="font-weight:700;color:#1b5e20;font-size:1.1rem;">Money Credited!</div>
+                    <div style="font-size:0.85rem;color:#2e7d32;">₹{{ bill.total_amount }} sent to your bank</div>
+                    {% if bill.payment.utr_number %}<div style="font-size:0.8rem;margin-top:6px;">UTR: {{ bill.payment.utr_number }}</div>{% endif %}
+                    <a href="{% url 'farmer_download_invoice' bill.id %}" class="btn btn-success btn-sm mt-3 w-100">⬇ Download Invoice</a>
+                </div>
+
+                {% elif bill.payment and bill.payment.status == 'APPROVED' %}
+                <div class="p-3 rounded text-center" style="background:#e3f2fd;border:2px solid #1976d2;">
+                    <div style="font-size:2rem;">🔄</div>
+                    <div style="font-weight:700;color:#1565c0;">Approved!</div>
+                    <div style="font-size:0.85rem;color:#555;">Transfer in progress. Will be credited in 2–5 working days.</div>
+                    <a href="{% url 'farmer_download_invoice' bill.id %}" class="btn btn-primary btn-sm mt-3 w-100">⬇ Download Invoice</a>
+                </div>
+
+                {% elif bill.payment and bill.payment.status == 'REJECTED' %}
+                <div class="p-3 rounded" style="background:#ffebee;border:2px solid #e53935;">
+                    <div style="font-size:1.5rem;text-align:center;">❌</div>
+                    <div style="font-weight:700;color:#b71c1c;text-align:center;margin-bottom:8px;">Payment Rejected</div>
+                    {% if bill.payment.remarks %}
+                    <div style="background:#fff;border-left:4px solid #e53935;padding:10px;border-radius:4px;margin-bottom:10px;">
+                        <div style="font-size:0.75rem;color:#888;margin-bottom:4px;">REASON FROM ADMIN:</div>
+                        <div style="font-size:0.88rem;color:#333;">{{ bill.payment.remarks }}</div>
+                    </div>
+                    {% else %}
+                    <div style="background:#fff;border-left:4px solid #e53935;padding:10px;border-radius:4px;margin-bottom:10px;">
+                        <div style="font-size:0.85rem;color:#888;">No reason given. Please call helpdesk.</div>
+                    </div>
+                    {% endif %}
+                    <div style="font-size:0.8rem;color:#555;margin-bottom:6px;">Quote your Bill No: <strong>{{ bill.bill_number }}</strong></div>
+                    <a href="tel:6304629308" class="btn btn-danger btn-sm w-100">📞 Call 6304629308</a>
+                </div>
+
+                {% else %}
+                <div class="p-3 rounded text-center" style="background:#fafafa;border:2px dashed #bdbdbd;">
+                    <div style="font-size:2rem;">⏳</div>
+                    <div style="font-weight:600;color:#555;">Pending Admin Approval</div>
+                    <div style="font-size:0.82rem;color:#888;margin-top:6px;">Usually approved within 1–3 working days.</div>
+                    <a href="{% url 'farmer_download_invoice' bill.id %}" class="btn btn-outline-secondary btn-sm mt-3 w-100">⬇ Download Invoice</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+
+<!-- STATUS GUIDE -->
+<div class="card mt-2">
+    <div class="card-header">📖 Payment Status Guide</div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-3"><div class="p-2 rounded text-center" style="background:#e8f5e9;border:1px solid #a5d6a7;"><div>✅ <strong>Credited</strong></div><small class="text-muted">Money in your bank account.</small></div></div>
+            <div class="col-md-3"><div class="p-2 rounded text-center" style="background:#e3f2fd;border:1px solid #90caf9;"><div>🔄 <strong>Approved</strong></div><small class="text-muted">Transfer in 2–5 working days.</small></div></div>
+            <div class="col-md-3"><div class="p-2 rounded text-center" style="background:#fff8e1;border:1px solid #ffe082;"><div>⏳ <strong>Pending</strong></div><small class="text-muted">Admin reviewing. 1–3 days.</small></div></div>
+            <div class="col-md-3"><div class="p-2 rounded text-center" style="background:#ffebee;border:1px solid #ef9a9a;"><div>❌ <strong>Rejected</strong></div><small class="text-muted">See reason above. Call helpdesk.</small></div></div>
+        </div>
+        <div class="mt-3 p-3 rounded" style="background:#f5f5f5;">
+            <strong>📞 Helpdesk:</strong> 6304629308 &nbsp;|&nbsp;
+            <strong>📧</strong> support@cropconnect.gov.in &nbsp;|&nbsp;
+            <strong>🕐</strong> 9 AM – 6 PM (Mon–Sat)
+        </div>
+    </div>
+</div>
+
+<div class="mt-3 d-flex gap-2">
+    <a href="{% url 'farmer_booking_status' %}" class="btn btn-outline-secondary">← My Bookings</a>
+    <a href="{% url 'farmer_dashboard' %}" class="btn btn-outline-primary">Dashboard</a>
+</div>
+{% endblock %}

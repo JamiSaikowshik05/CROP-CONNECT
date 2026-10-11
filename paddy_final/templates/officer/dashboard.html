@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}Officer Dashboard{% endblock %}
+{% block content %}
+<h2 class="mb-4">📋 Officer Dashboard</h2>
+
+<div class="row mb-4 g-3">
+    <div class="col-md-4">
+        <div class="card h-100" style="border-left:4px solid #1976d2;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="text-muted" style="font-size:0.85rem;">Pending Land Verifications</div>
+                        <h2 class="mb-1" style="color:#1976d2;">{{ pending_verifications }}</h2>
+                    </div>
+                    <span style="font-size:2rem;">🏞️</span>
+                </div>
+                <a href="{% url 'officer_verify_land' %}" class="btn btn-primary btn-sm mt-2 w-100">
+                    ✅ Verify Land Now
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100" style="border-left:4px solid #f57c00;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="text-muted" style="font-size:0.85rem;">Pending Slot Approvals</div>
+                        <h2 class="mb-1" style="color:#f57c00;">{{ pending_bookings }}</h2>
+                    </div>
+                    <span style="font-size:2rem;">📅</span>
+                </div>
+                <a href="{% url 'officer_approve_booking' %}" class="btn btn-warning btn-sm mt-2 w-100 text-dark">
+                    📋 Approve Bookings
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100" style="border-left:4px solid #1b5e20;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="text-muted" style="font-size:0.85rem;">Pending Procurement</div>
+                        <h2 class="mb-1" style="color:#1b5e20;">{{ pending_procurements }}</h2>
+                    </div>
+                    <span style="font-size:2rem;">⚖️</span>
+                </div>
+                <a href="{% url 'officer_validate_procurement' %}" class="btn btn-success btn-sm mt-2 w-100">
+                    ⚖️ Validate Crop Weight
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span>Recent Pending Bookings</span>
+        <a href="{% url 'officer_approve_booking' %}" class="btn btn-sm btn-outline-light">View All →</a>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-dark">
+                <tr><th>Farmer</th><th>Village</th><th>Crop</th><th>Slot Date</th><th>Qty (Qtl)</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+                {% for b in recent_bookings %}
+                <tr>
+                    <td><strong>{{ b.farmer.user.get_full_name|default:b.farmer.user.username }}</strong></td>
+                    <td>{{ b.farmer.village }}, {{ b.farmer.district }}</td>
+                    <td>{{ b.slot.crop.name }}</td>
+                    <td>{{ b.slot.date }}</td>
+                    <td>{{ b.estimated_quintals }}</td>
+                    <td>
+                        <a href="{% url 'officer_approve_booking' %}" class="btn btn-sm btn-warning text-dark">
+                            Process
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="6" class="text-center text-muted py-3">No pending bookings.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

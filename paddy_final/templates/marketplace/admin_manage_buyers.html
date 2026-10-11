@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Manage Buyers{% endblock %}
+{% block content %}
+<h2 class="mb-4">🏭 Manage Private Buyers</h2>
+<div class="table-responsive">
+<table class="table table-hover align-middle">
+    <thead class="table-dark">
+        <tr><th>Company</th><th>Type</th><th>District</th><th>GST</th><th>Registered</th><th>Status</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+    {% for buyer in buyers %}
+    <tr>
+        <td><strong>{{ buyer.company_name }}</strong><br><small class="text-muted">{{ buyer.contact_name }} | {{ buyer.user.phone }}</small></td>
+        <td>{{ buyer.get_buyer_type_display }}</td>
+        <td>{{ buyer.district }}, {{ buyer.state }}</td>
+        <td>{{ buyer.gst_number|default:"—" }}</td>
+        <td style="font-size:0.82rem;">{{ buyer.created_at|date:"d M Y" }}</td>
+        <td>
+            <span class="badge bg-{% if buyer.status == 'APPROVED' %}success{% elif buyer.status == 'PENDING' %}warning text-dark{% else %}danger{% endif %}">
+                {{ buyer.get_status_display }}
+            </span>
+        </td>
+        <td>
+            {% if buyer.status == 'PENDING' %}
+            <form method="post" action="{% url 'admin_approve_buyer' buyer.id %}" style="display:inline;">
+                {% csrf_token %}<button name="action" value="approve" class="btn btn-success btn-sm">Approve</button>
+            </form>
+            {% endif %}
+            {% if buyer.status == 'APPROVED' %}
+            <form method="post" action="{% url 'admin_approve_buyer' buyer.id %}" style="display:inline;">
+                {% csrf_token %}<button name="action" value="block" class="btn btn-danger btn-sm">Block</button>
+            </form>
+            {% endif %}
+            {% if buyer.status == 'BLOCKED' %}
+            <form method="post" action="{% url 'admin_approve_buyer' buyer.id %}" style="display:inline;">
+                {% csrf_token %}<button name="action" value="approve" class="btn btn-warning btn-sm">Unblock</button>
+            </form>
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="7" class="text-muted">No buyers registered yet.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<a href="{% url 'admin_marketplace_overview' %}" class="btn btn-outline-primary mt-3">📊 Marketplace Overview →</a>
+{% endblock %}

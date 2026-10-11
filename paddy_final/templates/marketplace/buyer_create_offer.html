@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Post New Offer{% endblock %}
+{% block content %}
+<h2 class="mb-4">📢 Post a New Buying Offer</h2>
+<div class="row justify-content-center">
+<div class="col-md-7">
+<div class="card">
+<div class="card-header">Offer Details</div>
+<div class="card-body">
+<form method="post">
+{% csrf_token %}
+<div class="row g-3">
+    <div class="col-md-6">
+        <label class="form-label">Crop *</label>
+        <select name="crop_id" class="form-select" required>
+            {% for crop in crops %}<option value="{{ crop.id }}">{{ crop.name }} (MSP: ₹{{ crop.msp_per_quintal }})</option>{% endfor %}
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Your Offer Price (₹/quintal) *</label>
+        <input name="price_per_quintal" type="number" step="0.01" class="form-control" required placeholder="e.g. 2300">
+        <div class="form-text">MSP is the government baseline price. Offer above MSP to attract farmers.</div>
+    </div>
+    <div class="col-md-6"><label class="form-label">Minimum Quantity (qtl)</label><input name="min_quantity_qtl" type="number" step="0.01" class="form-control" value="1"></div>
+    <div class="col-md-6"><label class="form-label">Maximum Quantity (qtl) *</label><input name="max_quantity_qtl" type="number" step="0.01" class="form-control" required placeholder="e.g. 500"></div>
+    <div class="col-md-6"><label class="form-label">Valid From *</label><input name="valid_from" type="date" class="form-control" required></div>
+    <div class="col-md-6"><label class="form-label">Valid Until *</label><input name="valid_until" type="date" class="form-control" required></div>
+    <div class="col-12"><label class="form-label">Pickup Location *</label><input name="pickup_location" class="form-control" required placeholder="e.g. Near NH-16, Guntur"></div>
+    <div class="col-md-6"><label class="form-label">Advance Payment %</label><input name="advance_percent" type="number" class="form-control" value="0" min="0" max="100"></div>
+    <div class="col-md-6"><label class="form-label">Payment Within (days) *</label><input name="payment_days" type="number" class="form-control" value="7" min="1"></div>
+    <div class="col-12"><label class="form-label">Description / Terms</label><textarea name="description" class="form-control" rows="3" placeholder="Quality requirements, transport arrangements, etc."></textarea></div>
+    <div class="col-12 d-flex gap-2">
+        <button class="btn btn-success flex-fill">Post Offer</button>
+        <a href="{% url 'buyer_dashboard' %}" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+</div>
+</form>
+</div></div></div></div>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<h2 class="mb-4">⚙️ Admin Dashboard</h2>
+
+<!-- STATS -->
+<div class="row mb-4 g-3">
+    <div class="col-md-2 col-6">
+        <div class="card text-center" style="border-top:4px solid #1976d2;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Farmers</div>
+                <h3 style="color:#1976d2;">{{ total_farmers }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-6">
+        <div class="card text-center" style="border-top:4px solid #00acc1;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Bookings</div>
+                <h3 style="color:#00acc1;">{{ total_bookings }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 col-6">
+        <div class="card text-center" style="border-top:4px solid #1b5e20;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Procurements</div>
+                <h3 style="color:#1b5e20;">{{ total_procurements }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-center" style="border-top:4px solid #f57c00;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Total Amount (₹)</div>
+                <h4 style="color:#f57c00;">{{ total_amount|floatformat:0 }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-center" style="border-top:4px solid #c62828;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Pending Payments</div>
+                <h3 style="color:#c62828;">{{ pending_payments }}</h3>
+                <a href="{% url 'admin_approve_payments' %}" class="btn btn-danger btn-sm mt-1">Approve Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- QUICK ACTION BUTTONS -->
+<div class="card mb-4">
+    <div class="card-header">Quick Actions</div>
+    <div class="card-body d-flex flex-wrap gap-2">
+        <a href="{% url 'admin_manage_users' %}" class="btn btn-primary">
+            👥 Manage Users
+        </a>
+        <a href="{% url 'admin_set_msp' %}" class="btn btn-success">
+            💰 Set MSP Rates
+        </a>
+        <a href="{% url 'admin_approve_payments' %}" class="btn btn-danger">
+            💳 Approve Payments
+            {% if pending_payments %}<span class="badge bg-white text-danger ms-1">{{ pending_payments }}</span>{% endif %}
+        </a>
+        <a href="{% url 'admin_reports' %}" class="btn btn-info text-white">
+            📊 Reports
+        </a>
+        <a href="{% url 'admin_manage_buyers' %}" class="btn btn-warning text-dark">
+            🏭 Manage Buyers
+        </a>
+        <a href="{% url 'ml_dashboard' %}" class="btn btn-dark">🤖 ML Dashboard</a>
+        <a href="{% url 'admin_marketplace_overview' %}" class="btn btn-outline-primary">
+            🏪 Marketplace Overview
+        </a>
+    </div>
+</div>
+
+<!-- CROP STATS CHART -->
+<div class="row g-3">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Procurement Amount by Crop (₹)</div>
+            <div class="card-body">
+                <canvas id="cropChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Crop Summary</div>
+            <div class="card-body p-0">
+                <table class="table mb-0">
+                    <thead class="table-dark"><tr><th>Crop</th><th>Total Amount (₹)</th></tr></thead>
+                    <tbody>
+                        {% for s in crop_stats %}
+                        <tr>
+                            <td><strong>{{ s.name }}</strong></td>
+                            <td>₹{{ s.total_amt|floatformat:0 }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="2" class="text-muted text-center">No data yet</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('cropChart');
+    if (ctx) {
+        const labels = [{% for s in crop_stats %}'{{ s.name }}'{% if not forloop.last %}, {% endif %}{% endfor %}];
+        const data = [{% for s in crop_stats %}{{ s.total_amt|default:0 }}{% if not forloop.last %}, {% endif %}{% endfor %}];
+        if (labels.length) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{ label: 'Total Amount (₹)', data: data, backgroundColor: ['rgba(27,94,32,0.8)','rgba(230,162,0,0.8)'] }]
+                },
+                options: { responsive: true, scales: { y: { beginAtZero: true } } }
+            });
+        }
+    }
+});
+</script>
+{% endblock %}

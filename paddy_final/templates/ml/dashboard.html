@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% block title %}ML Analytics Dashboard{% endblock %}
+{% block content %}
+
+<h2 class="mb-1">🤖 ML Analytics Dashboard</h2>
+<p class="text-muted mb-4">Machine Learning models performance and portal analytics</p>
+
+<!-- MODEL STATUS -->
+<div class="card mb-4">
+    <div class="card-header">🧠 Trained ML Models Status</div>
+    <div class="card-body">
+        <div class="row g-3">
+            {% for m in models_status %}
+            <div class="col-md-4">
+                <div class="p-3 rounded d-flex align-items-center gap-3"
+                     style="background:{% if m.loaded %}#e8f5e9{% else %}#ffebee{% endif %};
+                            border:1px solid {% if m.loaded %}#a5d6a7{% else %}#ef9a9a{% endif %};">
+                    <span style="font-size:2rem;">{% if m.loaded %}✅{% else %}❌{% endif %}</span>
+                    <div>
+                        <div style="font-weight:700;">{{ m.name }}</div>
+                        <div style="font-size:0.8rem;color:#555;">{{ m.file }}</div>
+                        <div style="font-size:0.78rem;color:{% if m.loaded %}#1b5e20{% else %}#c62828{% endif %};">
+                            {% if m.loaded %}Loaded & Ready{% else %}Not found — run train_models.py{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- STATS ROW -->
+<div class="row g-3 mb-4">
+    <div class="col-md-3 col-6">
+        <div class="card text-center" style="border-top:4px solid #1b5e20;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Total Farmers</div>
+                <h2 style="color:#1b5e20;">{{ total_farmers }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-center" style="border-top:4px solid #1565c0;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Total Bookings</div>
+                <h2 style="color:#1565c0;">{{ total_bookings }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-center" style="border-top:4px solid #43a047;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Approval Rate</div>
+                <h2 style="color:#43a047;">{{ approval_rate }}%</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="card text-center" style="border-top:4px solid #e53935;">
+            <div class="card-body py-3">
+                <div style="font-size:0.82rem;color:#888;">Rejection Rate</div>
+                <h2 style="color:#e53935;">{{ rejection_rate }}%</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- QUALITY STATS -->
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">⚖️ Procurement Quality</div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Approved (FAQ Grade)</span>
+                    <strong class="text-success">{{ quality_approved }}</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Rejected (Quality fail)</span>
+                    <strong class="text-danger">{{ quality_rejected }}</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span>Avg Moisture %</span>
+                    <strong>{{ avg_moisture }}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">🧪 Test ML Models Live</div>
+            <div class="card-body d-flex flex-wrap gap-2">
+                <a href="#yield-test" class="btn btn-success" onclick="showTest('yield')">
+                    🌾 Test Yield Predictor
+                </a>
+                <a href="#quality-test" class="btn btn-primary" onclick="showTest('quality')">
+                    ⚗️ Test Quality Predictor
+                </a>
+                <a href="{% url 'admin_manage_buyers' %}" class="btn btn-outline-secondary">
+                    ← Admin Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- YIELD TEST PANEL -->
+<div class="card mb-4" id="yield-test" style="display:none;">
+    <div class="card-header">🌾 Crop Yield Predictor — Live Test</div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-2">
+                <label class="form-label">Crop</label>
+                <select id="yt-crop" class="form-select form-select-sm">
+                    <option>Paddy</option><option>Groundnut</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Land (Acres)</label>
+                <input id="yt-land" type="number" class="form-control form-control-sm" value="5" step="0.5">
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Season</label>
+                <select id="yt-season" class="form-select form-select-sm">
+                    <option>Kharif</option><option>Rabi</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">District</label>
+                <select id="yt-district" class="form-select form-select-sm">
+                    <option>Guntur</option><option>Krishna</option><option>Prakasam</option>
+                    <option>Nellore</option><option>Kurnool</option><option>Anantapur</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Rainfall (mm)</label>
+                <input id="yt-rain" type="number" class="form-control form-control-sm" value="900">
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-success w-100 btn-sm" onclick="testYield()">Predict</button>
+            </div>
+        </div>
+        <div id="yield-result" class="mt-3"></div>
+    </div>
+</div>
+
+<!-- QUALITY TEST PANEL -->
+<div class="card mb-4" id="quality-test" style="display:none;">
+    <div class="card-header">⚗️ Quality Grade Predictor — Live Test</div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-2">
+                <label class="form-label">Crop</label>
+                <select id="qt-crop" class="form-select form-select-sm" onchange="toggleQuality(this.value)">
+                    <option>Paddy</option><option>Groundnut</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Moisture %</label>
+                <input id="qt-moisture" type="number" class="form-control form-control-sm" value="14" step="0.1">
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Foreign Matter %</label>
+                <input id="qt-foreign" type="number" class="form-control form-control-sm" value="0.5" step="0.1">
+            </div>
+            <div class="col-md-2" id="qt-damaged-div">
+                <label class="form-label">Damaged Grains %</label>
+                <input id="qt-damaged" type="number" class="form-control form-control-sm" value="1.5" step="0.1">
+            </div>
+            <div class="col-md-2" id="qt-shelling-div" style="display:none;">
+                <label class="form-label">Shelling %</label>
+                <input id="qt-shelling" type="number" class="form-control form-control-sm" value="72" step="0.1">
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-primary w-100 btn-sm" onclick="testQuality()">Predict Grade</button>
+            </div>
+        </div>
+        <div id="quality-result" class="mt-3"></div>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a href="{% url 'admin_dashboard' %}" class="btn btn-outline-secondary">← Back to Dashboard</a>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function showTest(type) {
+    if (type === 'yield') {
+        const el = document.getElementById('yield-test');
+        el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    } else {
+        const el = document.getElementById('quality-test');
+        el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+    return false;
+}
+
+function toggleQuality(crop) {
+    document.getElementById('qt-damaged-div').style.display  = crop === 'Paddy' ? '' : 'none';
+    document.getElementById('qt-shelling-div').style.display = crop === 'Groundnut' ? '' : 'none';
+}
+
+async function testYield() {
+    const body = {
+        crop:        document.getElementById('yt-crop').value,
+        land_acres:  document.getElementById('yt-land').value,
+        season:      document.getElementById('yt-season').value,
+        district:    document.getElementById('yt-district').value,
+        rainfall_mm: document.getElementById('yt-rain').value,
+        avg_temp:    28, soil: 'Alluvial'
+    };
+    document.getElementById('yield-result').innerHTML = '<div class="spinner-border spinner-border-sm text-success"></div> Predicting...';
+    try {
+        const r = await fetch('/ml/predict-yield/', {
+            method:'POST',
+            headers:{'Content-Type':'application/json','X-CSRFToken': getCookie('csrftoken')},
+            body: JSON.stringify(body)
+        });
+        const d = await r.json();
+        document.getElementById('yield-result').innerHTML = `
+            <div class="p-3 rounded" style="background:#e8f5e9;border:1px solid #a5d6a7;">
+                <strong>🌾 Predicted Yield: ${d.predicted_yield} quintals</strong>
+                (${d.per_acre} qtl/acre)<br>
+                Range: ${d.range_low} – ${d.range_high} qtl<br>
+                <strong>Recommended booking quantity: ${d.recommended_booking} qtl</strong><br>
+                <span style="color:#555;font-size:0.88rem;">${d.tip}</span>
+            </div>`;
+    } catch(e) { document.getElementById('yield-result').innerHTML = '<p class="text-danger">Error: ' + e + '</p>'; }
+}
+
+async function testQuality() {
+    const crop = document.getElementById('qt-crop').value;
+    const body = {
+        crop, moisture: document.getElementById('qt-moisture').value,
+        foreign: document.getElementById('qt-foreign').value,
+        damaged: document.getElementById('qt-damaged').value || 0,
+        immature: 1, chalky: 2,
+        shelling: document.getElementById('qt-shelling').value || 72,
+        oil_content: 47, aflatoxin: 0
+    };
+    document.getElementById('quality-result').innerHTML = '<div class="spinner-border spinner-border-sm text-primary"></div> Predicting...';
+    try {
+        const r = await fetch('/ml/predict-quality/', {
+            method:'POST',
+            headers:{'Content-Type':'application/json','X-CSRFToken': getCookie('csrftoken')},
+            body: JSON.stringify(body)
+        });
+        const d = await r.json();
+        const colors = {success:'#e8f5e9',warning:'#fff8e1',danger:'#ffebee'};
+        const borders = {success:'#a5d6a7',warning:'#ffe082',danger:'#ef9a9a'};
+        let html = `<div class="p-3 rounded" style="background:${colors[d.color]};border:1px solid ${borders[d.color]};">
+            <strong>${d.icon} Grade: ${d.grade}</strong> (Confidence: ${d.confidence}%)<br>
+            ${d.message}<br>`;
+        if (d.failures && d.failures.length) {
+            html += '<ul class="mb-0 mt-2" style="font-size:0.85rem;color:#c62828;">';
+            d.failures.forEach(f => html += `<li>${f}</li>`);
+            html += '</ul>';
+        }
+        html += '</div>';
+        document.getElementById('quality-result').innerHTML = html;
+    } catch(e) { document.getElementById('quality-result').innerHTML = '<p class="text-danger">Error: ' + e + '</p>'; }
+}
+
+function getCookie(name) {
+    let v = null;
+    document.cookie.split(';').forEach(c => {
+        c = c.trim();
+        if (c.startsWith(name + '=')) v = decodeURIComponent(c.slice(name.length + 1));
+    });
+    return v;
+}
+</script>
+{% endblock %}

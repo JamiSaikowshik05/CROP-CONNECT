@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Deals for {{ offer.crop.name }} Offer{% endblock %}
+{% block content %}
+<h2 class="mb-1">Deal Requests — {{ offer.crop.name }} @ ₹{{ offer.price_per_quintal }}/qtl</h2>
+<p class="text-muted mb-4">Farmers who requested to sell to you for this offer</p>
+
+{% if not deals %}
+<div class="alert alert-info">No deal requests yet. Farmers will see your offer on the marketplace.</div>
+{% else %}
+{% for deal in deals %}
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span><strong>{{ deal.farmer.user.get_full_name|default:deal.farmer.user.username }}</strong> — {{ deal.farmer.village }}, {{ deal.farmer.district }}</span>
+        <span class="badge bg-{% if deal.status == 'PAID' %}success{% elif deal.status == 'CONFIRMED' %}primary{% elif deal.status == 'PENDING' %}warning text-dark{% elif deal.status == 'CANCELLED' %}danger{% else %}secondary{% endif %}">
+            {{ deal.get_status_display }}
+        </span>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <strong>Quantity:</strong> {{ deal.quantity_qtl }} quintals<br>
+                <strong>Amount:</strong> ₹{{ deal.total_amount }}<br>
+                <strong>Requested:</strong> {{ deal.created_at|date:"d M Y" }}<br>
+                {% if deal.delivery_date %}<strong>Delivery Date:</strong> {{ deal.delivery_date }}<br>{% endif %}
+                {% if deal.farmer_notes %}<strong>Farmer's Note:</strong> {{ deal.farmer_notes }}{% endif %}
+            </div>
+            <div class="col-md-8">
+                {% if deal.status == 'PENDING' %}
+                <form method="post" action="{% url 'buyer_confirm_deal' deal.id %}">
+                    {% csrf_token %}
+                    <div class="row g-2 mb-2">
+                        <div class="col-md-6"><input name="delivery_date" type="date" class="form-control form-control-sm" placeholder="Delivery date"></div>
+                        <div class="col-md-6"><input name="delivery_address" class="form-control form-control-sm" placeholder="Delivery address" value="{{ offer.pickup_location }}"></div>
+                        <div class="col-12"><input name="buyer_notes" class="form-control form-control-sm" placeholder="Message to farmer (optional)"></div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button name="action" value="confirm" class="btn btn-success btn-sm">✅ Confirm Deal</button>
+                        <button name="action" value="cancel" class="btn btn-danger btn-sm">❌ Reject</button>
+                    </div>
+                </form>
+                {% elif deal.status == 'CONFIRMED' %}
+                <div class="alert alert-success py-2 mb-2">Deal confirmed. Waiting for farmer to deliver crop.</div>
+                <form method="post" action="{% url 'buyer_confirm_deal' deal.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button name="action" value="mark_paid" class="btn btn-primary btn-sm">💰 Mark as Paid</button>
+                </form>
+                {% elif deal.status == 'PAID' %}
+                <div class="alert alert-success py-2">✅ Deal completed and paid.</div>
+                {% elif deal.status == 'CANCELLED' %}
+                <div class="alert alert-secondary py-2">Deal was cancelled.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+<a href="{% url 'buyer_dashboard' %}" class="btn btn-outline-secondary mt-2">← Back to Dashboard</a>
+{% endblock %}
