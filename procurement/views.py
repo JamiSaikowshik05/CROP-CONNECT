@@ -44,21 +44,25 @@ def home(request):
     return redirect('login')
 
 
-def _public_home(request):
-    """Public landing page: basic information only, no deal details.
 
-    Only COUNTS of active private offers are shown here. Buyer names, prices,
-    pickup locations and deal terms stay behind login (see api_crop_offers and
-    farmer_marketplace, both login-protected).
-    """
+def home(request):
+    """Display the public homepage to every visitor."""
     today = date.today()
+
     crops = list(Crop.objects.filter(is_active=True))
+
     for crop in crops:
         crop.active_offer_count = BuyerOffer.objects.filter(
-            crop=crop, status=BuyerOffer.Status.ACTIVE,
-            valid_from__lte=today, valid_until__gte=today,
+            crop=crop,
+            status=BuyerOffer.Status.ACTIVE,
+            valid_from__lte=today,
+            valid_until__gte=today,
         ).count()
-    announcements = Announcement.objects.filter(is_active=True)[:3]
+
+    announcements = Announcement.objects.filter(
+        is_active=True
+    )[:3]
+
     return render(request, 'home.html', {
         'crops': crops,
         'announcements': announcements,
