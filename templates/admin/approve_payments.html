@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block title %}Payments to approve{% endblock %}
+{% block extra_css %}{% include 'admin/_style.html' %}{% endblock %}
+
+{% block content %}
+<div class="admin-head mb-4">
+    <a href="{% url 'admin_dashboard' %}" class="admin-back">← Back to dashboard</a>
+    <h2>Payments to approve</h2>
+    <p>First make the bank transfer. Then approve the payment here so the farmer sees it as paid.
+       If a payment has a problem, reject it and write a reason. The farmer can read that reason on their payment page.</p>
+</div>
+
+<div class="admin-card mb-4 {% if payments %}needs-action{% else %}all-clear{% endif %}">
+    {% if payments %}
+        <strong>{{ payments|length }}</strong> payment{{ payments|length|pluralize }} waiting. Work through them from the top.
+    {% else %}
+        <span class="clear-text">No payments are waiting. You are all caught up.</span>
+    {% endif %}
+</div>
+
+{% for pay in payments %}
+<div class="admin-card mb-4" id="pay-card-{{ pay.id }}">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+        <div>
+            <div class="label">{{ pay.bill.procurement.booking.farmer.user.get_full_name|default:pay.bill.procurement.booking.farmer.user.username }}</div>
+            <div class="text-muted small">Bill {{ pay.bill.bill_number }} · {{ pay.bill.procurement.booking.slot.crop.name }}</div>
+        </div>
+        <div class="text-end">
+            <div class="small text-muted">Total to pay</div>
+            <div style="font-size:1.6rem;font-weight:700;color:#1b5e20;">₹{{ pay.bill.total_amount }}</div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-5">
+            <h6 class="fw-bold">Farmer and bank details</h6>
+            <table class="table table-sm table-borderless mb-0">
+                <tr><td class="text-muted">Village</td><td>{{ pay.bill.procurement.booking.farmer.village }}, {{ pay.bill.procurement.booking.farmer.district }}</td></tr>
+                <tr><td class="text-muted">Aadhaar</td><td>{{ pay.bill.procurement.booking.farmer.aadhaar|slice:":4" }}****{{ pay.bill.procurement.booking.farmer.aadhaar|slice:"-4:" }}</td></tr>
+                <tr><td class="text-muted">Bank</td><td>{{ pay.bill.procurement.booking.farmer.bank_name }}</td></tr>
+                <tr><td class="text-muted">Account number</td><td>****{{ pay.bill.procurement.booking.farmer.bank_account_no|slice:"-4:" }}</td></tr>
+                <tr><td class="text-muted">IFSC</td><td>{{ pay.bill.procurement.booking.farmer.bank_ifsc }}</td></tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h6 class="fw-bold">Bill details</h6>
+            <table class="table table-sm table-borderless mb-0">
+                <tr><td class="text-muted">Crop</td><td>{{ pay.bill.procurement.booking.slot.crop.name }}</td></tr>
+                <tr><td class="text-muted">Quantity</td><td>{{ pay.bill.quantity_quintals }} quintals</td></tr>
+                <tr><td class="text-muted">Rate</td><td>₹{{ pay.bill.msp_per_quintal }} per quintal</td></tr>
+                <tr><td class="text-muted">Slot date</td><td>{{ pay.bill.procurement.booking.slot.date }}</td></tr>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <h6 class="fw-bold">Your decision</h6>
+            <form method="post" action="{% url 'admin_approve_payment_do' pay.id %}" class="mb-3">
+                {% csrf_token %}
+                <label class="form-label small mb-1">Bank reference (UTR) number <span class="text-muted">(optional)</span></label>
+                <input type="text" name="utr_number" class="form-control form-control-sm mb-2" placeholder="e.g. UTR123456789">
+                <label class="form-label small mb-1">Note for the farmer <span class="text-muted">(optional)</span></label>
+                <textarea name="remarks" class="form-control form-control-sm mb-2" rows="2" placeholder="Any note for the farmer"></textarea>
+                <button type="submit" name="action" value="approve" class="btn btn-success w-100">
+                    Approve: money has been transferred
+                </button>
+                <div class="form-text">Click only after the bank transfer is done.</div>
+            </form>
+
+            <button type="button" class="btn btn-outline-danger btn-sm w-100" onclick="showRejectForm({{ pay.id }})">
+                Reject this payment
+            </button>
+            <div id="reject-form-{{ pay.id }}" class="mt-2 p-3 rounded" style="display:none;background:#ffebee;border:1px solid #ef9a9a;">
+                <form method="post" action="{% url 'admin_approve_payment_do' pay.id %}">
+                    {% csrf_token %}
+                    <label class="form-label small fw-bold text-danger mb-1" for="reject-remarks-{{ pay.id }}">Reason for rejection *</label>
+                    <textarea name="remarks" id="reject-remarks-{{ pay.id }}" class="form-control form-control-sm" rows="3" required
+                              placeholder="For example: the bank account number does not match. Please update your bank details and apply again."></textarea>
+                    <div class="form-text text-danger">The farmer sees this reason on their payment page.</div>
+                    <div class="d-flex gap-2 mt-2">
+                        <button type="submit" name="action" value="reject" class="btn btn-danger btn-sm flex-fill"
+                                onclick="return validateRejectRemarks({{ pay.id }})">Confirm rejection</button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="hideRejectForm({{ pay.id }})">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% if processed_payments %}
+<div class="admin-section">Recently processed</div>
+<div class="table-card">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr><th>Farmer</th><th>Bill</th><th>Amount</th><th>Result</th><th>Date</th><th>Note</th></tr>
+            </thead>
+            <tbody>
+                {% for pay in processed_payments %}
+                <tr>
+                    <td>{{ pay.bill.procurement.booking.farmer.user.get_full_name|default:pay.bill.procurement.booking.farmer.user.username }}</td>
+                    <td>{{ pay.bill.bill_number }}</td>
+                    <td>₹{{ pay.bill.total_amount }}</td>
+                    <td>
+                        {% if pay.status == 'TRANSFERRED' %}<span class="pill ok">Paid (transferred)</span>
+                        {% elif pay.status == 'APPROVED' %}<span class="pill info">Approved</span>
+                        {% else %}<span class="pill stop">Rejected</span>{% endif %}
+                    </td>
+                    <td style="font-size:0.85rem;">{{ pay.approved_at|date:"d M Y" }}</td>
+                    <td style="font-size:0.85rem;color:#5b6f5f;">
+                        {% if pay.remarks %}{{ pay.remarks|truncatewords:10 }}{% else %}—{% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function showRejectForm(id) {
+    document.getElementById('reject-form-' + id).style.display = 'block';
+    document.getElementById('reject-remarks-' + id).focus();
+}
+function hideRejectForm(id) {
+    document.getElementById('reject-form-' + id).style.display = 'none';
+}
+function validateRejectRemarks(id) {
+    const val = document.getElementById('reject-remarks-' + id).value.trim();
+    if (!val) {
+        alert('Please write a reason for the rejection. The farmer will see it on their payment page.');
+        return false;
+    }
+    if (val.length < 10) {
+        alert('Please write a more detailed reason (at least 10 characters) so the farmer understands what to fix.');
+        return false;
+    }
+    return confirm('Reject this payment?\n\nThe farmer will see this reason:\n"' + val + '"');
+}
+</script>
+{% endblock %}

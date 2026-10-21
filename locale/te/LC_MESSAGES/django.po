@@ -1,0 +1,3085 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CropConnect\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Language"
+msgstr "భాష"
+
+msgid "Select language"
+msgstr "భాషను ఎంచుకోండి"
+
+msgid "Dashboard"
+msgstr "డాష్‌బోర్డ్"
+
+msgid "Buyers"
+msgstr "కొనుగోలుదారులు"
+
+msgid "🏭 Buyers"
+msgstr "🏭 కొనుగోలుదారులు"
+
+msgid "🏪 Marketplace"
+msgstr "🏪 మార్కెట్‌ప్లేస్"
+
+msgid "🚪 Logout"
+msgstr "🚪 లాగ్ అవుట్"
+
+msgid "My Dashboard"
+msgstr "నా డాష్‌బోర్డ్"
+
+msgid "Book Slot"
+msgstr "స్లాట్ బుక్ చేయండి"
+
+msgid "Book a Slot"
+msgstr "స్లాట్ బుక్ చేయండి"
+
+msgid "Book a slot"
+msgstr "స్లాట్ బుక్ చేయండి"
+
+msgid "Book Procurement Slot"
+msgstr "కొనుగోలు స్లాట్ బుక్ చేయండి"
+
+msgid "Book New Slot"
+msgstr "కొత్త స్లాట్ బుక్ చేయండి"
+
+msgid "Book Govt Slot"
+msgstr "ప్రభుత్వ స్లాట్ బుక్ చేయండి"
+
+msgid "Book Govt Slot (MSP)"
+msgstr "ప్రభుత్వ స్లాట్ బుక్ చేయండి (MSP)"
+
+msgid "My Bookings"
+msgstr "నా బుకింగ్‌లు"
+
+msgid "All My Bookings"
+msgstr "నా బుకింగ్‌లన్నీ"
+
+msgid "My Booking Status"
+msgstr "నా బుకింగ్ స్థితి"
+
+msgid "Payments"
+msgstr "చెల్లింపులు"
+
+msgid "Payment Status"
+msgstr "చెల్లింపు స్థితి"
+
+msgid "My Payment Status"
+msgstr "నా చెల్లింపు స్థితి"
+
+msgid "Marketplace"
+msgstr "మార్కెట్‌ప్లేస్"
+
+msgid "Crop Marketplace"
+msgstr "పంటల మార్కెట్‌ప్లేస్"
+
+msgid "Marketplace Overview"
+msgstr "మార్కెట్‌ప్లేస్ సమీక్ష"
+
+msgid "Manage Buyers"
+msgstr "కొనుగోలుదారులను నిర్వహించండి"
+
+msgid "Private Buyers"
+msgstr "ప్రైవేట్ కొనుగోలుదారులు"
+
+msgid "Browse Private Buyers"
+msgstr "ప్రైవేట్ కొనుగోలుదారులను చూడండి"
+
+msgid "My Private Deals"
+msgstr "నా ప్రైవేట్ ఒప్పందాలు"
+
+msgid "Post Offer"
+msgstr "ఆఫర్‌ను పోస్ట్ చేయండి"
+
+msgid "Post New Offer"
+msgstr "కొత్త ఆఫర్‌ను పోస్ట్ చేయండి"
+
+msgid "Contact"
+msgstr "సంప్రదించండి"
+
+msgid "Login"
+msgstr "లాగిన్"
+
+msgid "Login here"
+msgstr "ఇక్కడ లాగిన్ చేయండి"
+
+msgid "Login to compare →"
+msgstr "ధరలను పోల్చడానికి లాగిన్ చేయండి →"
+
+msgid "Register as Farmer"
+msgstr "రైతుగా నమోదు చేయండి"
+
+msgid "Register as Buyer"
+msgstr "కొనుగోలుదారుగా నమోదు చేయండి"
+
+msgid "Register as a buyer"
+msgstr "కొనుగోలుదారుగా నమోదు చేయండి"
+
+msgid "Logout"
+msgstr "లాగ్ అవుట్"
+
+msgid "Users"
+msgstr "వినియోగదారులు"
+
+msgid "Manage Users"
+msgstr "వినియోగదారులను నిర్వహించండి"
+
+msgid "Set MSP"
+msgstr "MSP ధరను నిర్ణయించండి"
+
+msgid "Set MSP Rates"
+msgstr "MSP ధరలను నిర్ణయించండి"
+
+msgid "Approve Payments"
+msgstr "చెల్లింపులను ఆమోదించండి"
+
+msgid "Approve Bookings"
+msgstr "బుకింగ్‌లను ఆమోదించండి"
+
+msgid "Verify Land"
+msgstr "భూమిని ధృవీకరించండి"
+
+msgid "Verify Land Details"
+msgstr "భూమి వివరాలను ధృవీకరించండి"
+
+msgid "Validate Crop"
+msgstr "పంటను తనిఖీ చేయండి"
+
+msgid "Validate Procurement"
+msgstr "కొనుగోలును తనిఖీ చేయండి"
+
+msgid "Reports"
+msgstr "నివేదికలు"
+
+msgid "Reports & Analytics"
+msgstr "నివేదికలు మరియు విశ్లేషణ"
+
+msgid "Helpdesk"
+msgstr "సహాయ కేంద్రం"
+
+msgid "Back"
+msgstr "వెనుకకు"
+
+msgid "Back to Dashboard"
+msgstr "డాష్‌బోర్డ్‌కు తిరిగి వెళ్లండి"
+
+msgid "Back to Login"
+msgstr "లాగిన్‌కు తిరిగి వెళ్లండి"
+
+msgid "Back to Marketplace"
+msgstr "మార్కెట్‌ప్లేస్‌కు తిరిగి వెళ్లండి"
+
+msgid "Back to home"
+msgstr "హోమ్‌కు తిరిగి వెళ్లండి"
+
+msgid "Close"
+msgstr "మూసివేయండి"
+
+msgid "Cancel"
+msgstr "రద్దు చేయండి"
+
+msgid "Save"
+msgstr "సేవ్ చేయండి"
+
+msgid "Submit"
+msgstr "సమర్పించండి"
+
+msgid "Update"
+msgstr "నవీకరించండి"
+
+msgid "Delete"
+msgstr "తొలగించండి"
+
+msgid "Search"
+msgstr "వెతకండి"
+
+msgid "Filter"
+msgstr "వడపోసి చూడండి"
+
+msgid "Refresh"
+msgstr "మళ్లీ లోడ్ చేయండి"
+
+msgid "Retry"
+msgstr "మళ్లీ ప్రయత్నించండి"
+
+msgid "Loading..."
+msgstr "లోడ్ అవుతోంది..."
+
+msgid "Getting AI advice..."
+msgstr "AI సలహా పొందుతోంది..."
+
+msgid "Could not load advice. Please try again."
+msgstr "సలహా పొందలేకపోయాం. మళ్లీ ప్రయత్నించండి."
+
+msgid "Analysing rejection..."
+msgstr "తిరస్కరణ కారణాన్ని విశ్లేషిస్తోంది..."
+
+msgid "Thinking..."
+msgstr "ఆలోచిస్తోంది..."
+
+msgid "Sorry, something went wrong."
+msgstr "క్షమించండి, సమస్య ఏర్పడింది."
+
+msgid "Network error. Please try again."
+msgstr "నెట్‌వర్క్ సమస్య. మళ్లీ ప్రయత్నించండి."
+
+msgid "Select Crop"
+msgstr "పంటను ఎంచుకోండి"
+
+msgid "Paddy"
+msgstr "వరి"
+
+msgid "Groundnut"
+msgstr "వేరుశనగ"
+
+msgid "Farmer"
+msgstr "రైతు"
+
+msgid "Farmers"
+msgstr "రైతులు"
+
+msgid "Officer"
+msgstr "అధికారి"
+
+msgid "Admin"
+msgstr "నిర్వాహకుడు"
+
+msgid "Buyer"
+msgstr "కొనుగోలుదారు"
+
+msgid "Username"
+msgstr "వినియోగదారు పేరు"
+
+msgid "Username *"
+msgstr "వినియోగదారు పేరు *"
+
+msgid "Password"
+msgstr "పాస్‌వర్డ్"
+
+msgid "Password *"
+msgstr "పాస్‌వర్డ్ *"
+
+msgid "Confirm Password"
+msgstr "పాస్‌వర్డ్‌ను నిర్ధారించండి"
+
+msgid "Confirm Password *"
+msgstr "పాస్‌వర్డ్‌ను నిర్ధారించండి *"
+
+msgid "Email"
+msgstr "ఇమెయిల్"
+
+msgid "Phone"
+msgstr "ఫోన్"
+
+msgid "Phone Number"
+msgstr "ఫోన్ నంబర్"
+
+msgid "First Name"
+msgstr "మొదటి పేరు"
+
+msgid "Last Name"
+msgstr "ఇంటి పేరు"
+
+msgid "Full Name"
+msgstr "పూర్తి పేరు"
+
+msgid "Farmer Registration"
+msgstr "రైతు నమోదు"
+
+msgid "Buyer Registration"
+msgstr "కొనుగోలుదారు నమోదు"
+
+msgid "Farmer Login"
+msgstr "రైతు లాగిన్"
+
+msgid "Officer Login"
+msgstr "అధికారి లాగిన్"
+
+msgid "Administrator Login"
+msgstr "నిర్వాహకుడి లాగిన్"
+
+msgid "Buyer Login"
+msgstr "కొనుగోలుదారు లాగిన్"
+
+msgid "Private Buyer Login"
+msgstr "ప్రైవేట్ కొనుగోలుదారు లాగిన్"
+
+msgid "New farmer?"
+msgstr "కొత్త రైతువా?"
+
+msgid "New buyer?"
+msgstr "కొత్త కొనుగోలుదారువా?"
+
+msgid "Already registered?"
+msgstr "ఇప్పటికే నమోదు చేసుకున్నారా?"
+
+msgid "Register here"
+msgstr "ఇక్కడ నమోదు చేసుకోండి"
+
+msgid "Aadhaar"
+msgstr "ఆధార్"
+
+msgid "Aadhaar Number"
+msgstr "ఆధార్ నంబర్"
+
+msgid "Bank"
+msgstr "బ్యాంక్"
+
+msgid "Bank Name"
+msgstr "బ్యాంక్ పేరు"
+
+msgid "Bank Account Number"
+msgstr "బ్యాంక్ ఖాతా నంబర్"
+
+msgid "Account No"
+msgstr "ఖాతా నంబర్"
+
+msgid "IFSC"
+msgstr "IFSC"
+
+msgid "IFSC Code"
+msgstr "IFSC కోడ్"
+
+msgid "12-digit number on your Aadhaar card"
+msgstr "మీ ఆధార్ కార్డుపై ఉన్న 12 అంకెల నంబర్"
+
+msgid "Found on your bank passbook. e.g. SBIN0001234"
+msgstr "మీ బ్యాంక్ పాస్‌బుక్‌లో ఉంటుంది. ఉదా: SBIN0001234"
+
+msgid "Survey No"
+msgstr "సర్వే నంబర్"
+
+msgid "Survey Number"
+msgstr "సర్వే నంబర్"
+
+msgid "Land Details"
+msgstr "భూమి వివరాలు"
+
+msgid "Total Land Area (Acres)"
+msgstr "మొత్తం భూమి విస్తీర్ణం (ఎకరాలు)"
+
+msgid "Area (Acres)"
+msgstr "విస్తీర్ణం (ఎకరాలు)"
+
+msgid "Village"
+msgstr "గ్రామం"
+
+msgid "Mandal"
+msgstr "మండలం"
+
+msgid "District"
+msgstr "జిల్లా"
+
+msgid "State"
+msgstr "రాష్ట్రం"
+
+msgid "Pincode"
+msgstr "పిన్‌కోడ్"
+
+msgid "Crop"
+msgstr "పంట"
+
+msgid "Crop *"
+msgstr "పంట *"
+
+msgid "Date"
+msgstr "తేదీ"
+
+msgid "Slot Date"
+msgstr "స్లాట్ తేదీ"
+
+msgid "Estimated Quantity (Quintals)"
+msgstr "అంచనా పరిమాణం (క్వింటాళ్లు)"
+
+msgid "Quantity (quintals)"
+msgstr "పరిమాణం (క్వింటాళ్లు)"
+
+msgid "Quantity booked:"
+msgstr "బుక్ చేసిన పరిమాణం:"
+
+msgid "Booked Qty"
+msgstr "బుక్ చేసిన పరిమాణం"
+
+msgid "Booked On"
+msgstr "బుక్ చేసిన తేదీ"
+
+msgid "Actual Weight (Quintals)"
+msgstr "వాస్తవ బరువు (క్వింటాళ్లు)"
+
+msgid "Weight"
+msgstr "బరువు"
+
+msgid "Status"
+msgstr "స్థితి"
+
+msgid "Action"
+msgstr "చర్య"
+
+msgid "Actions"
+msgstr "చర్యలు"
+
+msgid "Pending"
+msgstr "పెండింగ్‌లో ఉంది"
+
+msgid "Approved"
+msgstr "ఆమోదించబడింది"
+
+msgid "Rejected"
+msgstr "తిరస్కరించబడింది"
+
+msgid "Completed"
+msgstr "పూర్తయింది"
+
+msgid "Active"
+msgstr "క్రియాశీలం"
+
+msgid "Inactive"
+msgstr "నిష్క్రియం"
+
+msgid "Pending Approval"
+msgstr "ఆమోదం కోసం వేచి ఉంది"
+
+msgid "Pending Admin Approval"
+msgstr "నిర్వాహకుడి ఆమోదం కోసం వేచి ఉంది"
+
+msgid "Approved ✅"
+msgstr "ఆమోదించబడింది ✅"
+
+msgid "Rejected ❌"
+msgstr "తిరస్కరించబడింది ❌"
+
+msgid "Approve"
+msgstr "ఆమోదించండి"
+
+msgid "Reject"
+msgstr "తిరస్కరించండి"
+
+msgid "Confirm Reject"
+msgstr "తిరస్కరణను నిర్ధారించండి"
+
+msgid "Reason for Rejection"
+msgstr "తిరస్కరణకు కారణం"
+
+msgid "Remarks"
+msgstr "వ్యాఖ్యలు"
+
+msgid "Remarks (optional)"
+msgstr "వ్యాఖ్యలు (ఐచ్ఛికం)"
+
+msgid "Amount"
+msgstr "మొత్తం"
+
+msgid "Total"
+msgstr "మొత్తం"
+
+msgid "Total Amount (₹)"
+msgstr "మొత్తం (₹)"
+
+msgid "Expected Payment"
+msgstr "అంచనా చెల్లింపు"
+
+msgid "Payment Calculation"
+msgstr "చెల్లింపు లెక్కింపు"
+
+msgid "Payment Status Guide"
+msgstr "చెల్లింపు స్థితి మార్గదర్శి"
+
+msgid "MSP Rate"
+msgstr "MSP ధర"
+
+msgid "MSP Configuration"
+msgstr "MSP ధరల సెట్టింగ్"
+
+msgid "Current MSP"
+msgstr "ప్రస్తుత MSP ధర"
+
+msgid "Current MSP Rates"
+msgstr "ప్రస్తుత MSP ధరలు"
+
+msgid "New MSP Rate (₹/quintal)"
+msgstr "కొత్త MSP ధర (₹/క్వింటాల్)"
+
+msgid "Government MSP"
+msgstr "ప్రభుత్వ MSP ధర"
+
+msgid "Government price (MSP)"
+msgstr "ప్రభుత్వ ధర (MSP)"
+
+msgid "Price/qtl"
+msgstr "ధర/క్వింటాల్"
+
+msgid "Offer Price"
+msgstr "ఆఫర్ ధర"
+
+msgid "Your Offer Price (₹/quintal) *"
+msgstr "మీ ఆఫర్ ధర (₹/క్వింటాల్) *"
+
+msgid "per quintal"
+msgstr "ప్రతి క్వింటాల్‌కు"
+
+msgid "quintal"
+msgstr "క్వింటాల్"
+
+msgid "quintals"
+msgstr "క్వింటాళ్లు"
+
+msgid "Season"
+msgstr "సీజన్"
+
+msgid "Season:"
+msgstr "సీజన్:"
+
+msgid "Kharif"
+msgstr "ఖరీఫ్"
+
+msgid "Rabi"
+msgstr "రబీ"
+
+msgid "All seasons"
+msgstr "అన్ని సీజన్లు"
+
+msgid "Moisture"
+msgstr "తేమ"
+
+msgid "Moisture %"
+msgstr "తేమ %"
+
+msgid "Foreign Matter"
+msgstr "విదేశీ పదార్థాలు"
+
+msgid "Damaged Grains"
+msgstr "దెబ్బతిన్న గింజలు"
+
+msgid "Immature Grains"
+msgstr "పక్వం కాని గింజలు"
+
+msgid "Chalky Grains"
+msgstr "తెల్లమచ్చ గింజలు"
+
+msgid "Oil Content"
+msgstr "నూనె శాతం"
+
+msgid "Shelling Outturn"
+msgstr "పొట్టు తొలగింపు దిగుబడి"
+
+msgid "Aflatoxin"
+msgstr "అఫ్లాటాక్సిన్"
+
+msgid "Quality & Weight Validation"
+msgstr "నాణ్యత మరియు బరువు తనిఖీ"
+
+msgid "Select the date you want to bring your crop to the procurement centre."
+msgstr "మీ పంటను కొనుగోలు కేంద్రానికి తీసుకురావాలనుకునే తేదీని ఎంచుకోండి."
+
+msgid "Choose a date from the available slots to bring your crop in."
+msgstr "మీ పంటను తీసుకురావడానికి అందుబాటులో ఉన్న తేదీని ఎంచుకోండి."
+
+msgid ""
+"Select your crop, date, and estimated quantity. An officer will approve your"
+" booking."
+msgstr ""
+"మీ పంట, తేదీ, అంచనా పరిమాణాన్ని ఎంచుకోండి. అధికారి మీ బుకింగ్‌ను "
+"ఆమోదిస్తారు."
+
+msgid ""
+"You cannot book a slot until a procurement officer has verified your land "
+"records."
+msgstr ""
+"కొనుగోలు అధికారి మీ భూమి రికార్డులను ధృవీకరించే వరకు స్లాట్ బుక్ చేయలేరు."
+
+msgid ""
+"An officer will verify your land details within 1–3 working days. After "
+"verification you can book procurement slots."
+msgstr ""
+"1–3 పని దినాల్లో అధికారి మీ భూమి వివరాలను ధృవీకరిస్తారు. ధృవీకరణ తర్వాత "
+"కొనుగోలు స్లాట్‌లను బుక్ చేయవచ్చు."
+
+msgid "Before you start, keep these ready:"
+msgstr "ప్రారంభించే ముందు ఈ వివరాలను సిద్ధంగా ఉంచండి:"
+
+msgid "See the full checklist"
+msgstr "పూర్తి జాబితాను చూడండి"
+
+msgid "Enter your Aadhaar, bank account and land details once."
+msgstr "మీ ఆధార్, బ్యాంక్ ఖాతా, భూమి వివరాలను ఒకసారి నమోదు చేయండి."
+
+msgid ""
+"Compare Government MSP vs Private Buyer offers. Choose the best price for "
+"your crop."
+msgstr ""
+"ప్రభుత్వ MSP ధరను ప్రైవేట్ కొనుగోలుదారుల ఆఫర్‌లతో పోల్చి మీ పంటకు ఉత్తమమైన "
+"ధరను ఎంచుకోండి."
+
+msgid "Compare Government MSP price"
+msgstr "ప్రభుత్వ MSP ధరను పోల్చండి"
+
+msgid ""
+"See the Government price and private buyer offers together. Pick the one "
+"that suits you."
+msgstr ""
+"ప్రభుత్వ ధరను, ప్రైవేట్ కొనుగోలుదారుల ఆఫర్‌లను కలిపి చూడండి. మీకు "
+"సరిపోయేదాన్ని ఎంచుకోండి."
+
+msgid "Choose whoever pays more"
+msgstr "ఎక్కువ ధర ఇచ్చేవారిని ఎంచుకోండి"
+
+msgid ""
+"Rice mills, wholesalers and exporters also make offers. An offer may be "
+"above MSP or below it. Login to see each buyer's price and compare it with "
+"the Government price before you decide."
+msgstr ""
+"బియ్యం మిల్లులు, టోకు వ్యాపారులు, ఎగుమతిదారులు కూడా ఆఫర్‌లు ఇస్తారు. ఆఫర్ "
+"MSP కంటే ఎక్కువ లేదా తక్కువ ఉండవచ్చు. నిర్ణయం తీసుకునే ముందు లాగిన్ చేసి "
+"ధరలను పోల్చండి."
+
+msgid ""
+"Sell your paddy & groundnut directly to government at MSP price — no "
+"middleman"
+msgstr "వరి, వేరుశనగను మధ్యవర్తులు లేకుండా ప్రభుత్వ MSP ధరకు నేరుగా అమ్మండి"
+
+msgid "Sell your paddy & groundnut at a fair price"
+msgstr "వరి, వేరుశనగను న్యాయమైన ధరకు అమ్మండి"
+
+msgid ""
+"Register to sell your paddy & groundnut directly to the government at MSP "
+"price — no middleman."
+msgstr ""
+"వరి, వేరుశనగను మధ్యవర్తులు లేకుండా ప్రభుత్వ MSP ధరకు నేరుగా అమ్మేందుకు నమోదు"
+" చేసుకోండి."
+
+msgid "How It Works"
+msgstr "ఇది ఎలా పనిచేస్తుంది"
+
+msgid "How the process works"
+msgstr "ప్రక్రియ ఎలా పనిచేస్తుంది"
+
+msgid "How it works: 4 simple steps"
+msgstr "ఇది ఎలా పనిచేస్తుంది: 4 సులభమైన దశలు"
+
+msgid "Key Features"
+msgstr "ముఖ్యమైన లక్షణాలు"
+
+msgid "Announcements and safety information"
+msgstr "ప్రకటనలు మరియు భద్రతా సమాచారం"
+
+msgid "Latest announcements"
+msgstr "తాజా ప్రకటనలు"
+
+msgid "Your bookings, payments and invoices"
+msgstr "మీ బుకింగ్‌లు, చెల్లింపులు, ఇన్‌వాయిస్‌లు"
+
+msgid ""
+"Your slot bookings and payment status, all on one screen after you login."
+msgstr ""
+"లాగిన్ తర్వాత మీ స్లాట్ బుకింగ్‌లు, చెల్లింపు స్థితి ఒకే తెరపై కనిపిస్తాయి."
+
+msgid ""
+"Track every bill — approved, rejected, or transferred to your bank account."
+msgstr "ప్రతి బిల్లును చూడండి — ఆమోదం, తిరస్కరణ లేదా బ్యాంకుకు బదిలీ స్థితి."
+
+msgid "No bookings yet."
+msgstr "ఇంకా బుకింగ్‌లు లేవు."
+
+msgid "No pending bookings."
+msgstr "పెండింగ్ బుకింగ్‌లు లేవు."
+
+msgid "No pending bookings at the moment."
+msgstr "ప్రస్తుతం పెండింగ్ బుకింగ్‌లు లేవు."
+
+msgid "No payment records yet. Complete a procurement to see bills here."
+msgstr ""
+"ఇంకా చెల్లింపు వివరాలు లేవు. బిల్లులు చూడటానికి పంట విక్రయాన్ని పూర్తి "
+"చేయండి."
+
+msgid "No offers yet."
+msgstr "ఇంకా ఆఫర్‌లు లేవు."
+
+msgid "No offers listed right now"
+msgstr "ప్రస్తుతం ఆఫర్‌లు లేవు"
+
+msgid "No deal requests yet. Farmers will see your offer on the marketplace."
+msgstr ""
+"ఇంకా ఒప్పంద అభ్యర్థనలు లేవు. రైతులు మీ ఆఫర్‌ను మార్కెట్‌ప్లేస్‌లో చూస్తారు."
+
+msgid "No deals yet."
+msgstr "ఇంకా ఒప్పందాలు లేవు."
+
+msgid "No users found."
+msgstr "వినియోగదారులు కనబడలేదు."
+
+msgid "No buyers registered yet."
+msgstr "ఇంకా కొనుగోలుదారులు నమోదు కాలేదు."
+
+msgid "No pending payments at the moment."
+msgstr "ప్రస్తుతం పెండింగ్ చెల్లింపులు లేవు."
+
+msgid "All payments processed!"
+msgstr "అన్ని చెల్లింపులు పూర్తయ్యాయి!"
+
+msgid "No pending land verifications. All farmers are verified."
+msgstr "భూమి ధృవీకరణ కోసం ఎవరూ వేచి లేరు. రైతులందరి భూమి ధృవీకరించబడింది."
+
+msgid "All offers for"
+msgstr "అన్ని ఆఫర్‌లు:"
+
+msgid "Offer Details"
+msgstr "ఆఫర్ వివరాలు"
+
+msgid "Deal Requests"
+msgstr "ఒప్పంద అభ్యర్థనలు"
+
+msgid "Confirmed Deals"
+msgstr "నిర్ధారించిన ఒప్పందాలు"
+
+msgid "Recent Bookings"
+msgstr "ఇటీవలి బుకింగ్‌లు"
+
+msgid "Recent Deals"
+msgstr "ఇటీవలి ఒప్పందాలు"
+
+msgid "Recent Pending Bookings"
+msgstr "ఇటీవలి పెండింగ్ బుకింగ్‌లు"
+
+msgid "Recent Deal Requests from Farmers"
+msgstr "రైతుల నుంచి వచ్చిన తాజా ఒప్పంద అభ్యర్థనలు"
+
+msgid "Quick Actions"
+msgstr "త్వరిత చర్యలు"
+
+msgid "Total Farmers"
+msgstr "మొత్తం రైతులు"
+
+msgid "Total Bookings"
+msgstr "మొత్తం బుకింగ్‌లు"
+
+msgid "Total Deals"
+msgstr "మొత్తం ఒప్పందాలు"
+
+msgid "Total Value"
+msgstr "మొత్తం విలువ"
+
+msgid "Approval Rate"
+msgstr "ఆమోద శాతం"
+
+msgid "Rejection Rate"
+msgstr "తిరస్కరణ శాతం"
+
+msgid "Village / District"
+msgstr "గ్రామం / జిల్లా"
+
+msgid "Village / Mandal"
+msgstr "గ్రామం / మండలం"
+
+msgid "Buyer Type"
+msgstr "కొనుగోలుదారు రకం"
+
+msgid "Buyer Type *"
+msgstr "కొనుగోలుదారు రకం *"
+
+msgid "Company Name *"
+msgstr "సంస్థ పేరు *"
+
+msgid "Contact Person *"
+msgstr "సంప్రదించాల్సిన వ్యక్తి *"
+
+msgid "Address *"
+msgstr "చిరునామా *"
+
+msgid "License No."
+msgstr "లైసెన్స్ నంబర్"
+
+msgid "GST Number"
+msgstr "GST నంబర్"
+
+msgid "Pickup Location"
+msgstr "పంట తీసుకునే స్థలం"
+
+msgid "Pickup Location *"
+msgstr "పంట తీసుకునే స్థలం *"
+
+msgid "Pickup:"
+msgstr "తీసుకునే స్థలం:"
+
+msgid "Requested:"
+msgstr "అభ్యర్థించిన పరిమాణం:"
+
+msgid "Booked:"
+msgstr "బుక్ చేసినది:"
+
+msgid "Govt limit:"
+msgstr "ప్రభుత్వ పరిమితి:"
+
+msgid "Minimum Quantity (qtl)"
+msgstr "కనిష్ఠ పరిమాణం (క్వింటాళ్లు)"
+
+msgid "Maximum Quantity (qtl) *"
+msgstr "గరిష్ఠ పరిమాణం (క్వింటాళ్లు) *"
+
+msgid "Valid From *"
+msgstr "చెల్లుబాటు ప్రారంభం *"
+
+msgid "Valid Until *"
+msgstr "చెల్లుబాటు ముగింపు *"
+
+msgid "Advance Payment %"
+msgstr "ముందస్తు చెల్లింపు %"
+
+msgid "Payment Within (days) *"
+msgstr "చెల్లింపు గడువు (రోజులు) *"
+
+msgid "Description / Terms"
+msgstr "వివరణ / నిబంధనలు"
+
+msgid "Your Notes (optional)"
+msgstr "మీ గమనికలు (ఐచ్ఛికం)"
+
+msgid "No middleman"
+msgstr "మధ్యవర్తులు లేరు"
+
+msgid "No middleman, ever"
+msgstr "ఎప్పటికీ మధ్యవర్తులు లేరు"
+
+msgid "100% guaranteed payment"
+msgstr "చెల్లింపు పూర్తిగా హామీ"
+
+msgid "Money sent directly to your bank"
+msgstr "డబ్బు నేరుగా మీ బ్యాంక్ ఖాతాకు పంపబడుతుంది"
+
+msgid "Direct bank transfer"
+msgstr "నేరుగా బ్యాంక్ ఖాతాకు బదిలీ"
+
+msgid "Money in your bank account."
+msgstr "మీ బ్యాంక్ ఖాతాలో డబ్బు జమ అయింది."
+
+msgid "Money Credited!"
+msgstr "డబ్బు జమ అయింది!"
+
+msgid "Transfer in Progress"
+msgstr "బదిలీ జరుగుతోంది"
+
+msgid "Transfer in 2–5 working days."
+msgstr "2–5 పని దినాల్లో బదిలీ అవుతుంది."
+
+msgid "Helpdesk phone number"
+msgstr "సహాయ కేంద్రం ఫోన్ నంబర్"
+
+msgid "Hours: 9:00 AM - 6:00 PM (Mon-Sat)"
+msgstr "సమయం: ఉదయం 9:00 - సాయంత్రం 6:00 (సోమవారం–శనివారం)"
+
+msgid "Government of India • Ministry of Agriculture & Farmers Welfare"
+msgstr "భారత ప్రభుత్వం • వ్యవసాయం మరియు రైతు సంక్షేమ మంత్రిత్వ శాఖ"
+
+msgid "Government of India — Ministry of Agriculture & Farmers Welfare"
+msgstr "భారత ప్రభుత్వం — వ్యవసాయం మరియు రైతు సంక్షేమ మంత్రిత్వ శాఖ"
+
+msgid "Role"
+msgstr "పాత్ర"
+
+msgid "Type"
+msgstr "రకం"
+
+msgid "Crop Summary"
+msgstr "పంట సారాంశం"
+
+msgid "Payment Journey"
+msgstr "చెల్లింపు ప్రక్రియ"
+
+msgid "Submitted On"
+msgstr "సమర్పించిన తేదీ"
+
+msgid "Joined"
+msgstr "చేరిన తేదీ"
+
+msgid "Admin Dashboard"
+msgstr "నిర్వాహకుడి డాష్‌బోర్డ్"
+
+msgid "Farmer Dashboard"
+msgstr "రైతు డాష్‌బోర్డ్"
+
+msgid "Officer Dashboard"
+msgstr "అధికారి డాష్‌బోర్డ్"
+
+msgid "Buyer Dashboard"
+msgstr "కొనుగోలుదారు డాష్‌బోర్డ్"
+
+msgid "ML Dashboard"
+msgstr "ML డాష్‌బోర్డ్"
+
+msgid "ML Analytics Dashboard"
+msgstr "ML విశ్లేషణ డాష్‌బోర్డ్"
+
+msgid "Machine Learning models performance and portal analytics"
+msgstr "మెషిన్ లెర్నింగ్ నమూనాల పనితీరు మరియు పోర్టల్ విశ్లేషణ"
+
+msgid "Use ML predictor to estimate quantity"
+msgstr "పరిమాణాన్ని అంచనా వేయడానికి ML సాధనాన్ని ఉపయోగించండి"
+
+msgid "Predict"
+msgstr "అంచనా వేయండి"
+
+msgid "Predict Grade"
+msgstr "నాణ్యత గ్రేడ్‌ను అంచనా వేయండి"
+
+msgid "Predict Yield"
+msgstr "దిగుబడిని అంచనా వేయండి"
+
+msgid "RISK"
+msgstr "ప్రమాద స్థాయి"
+
+msgid "Risk"
+msgstr "ప్రమాదం"
+
+msgid "Risk Level"
+msgstr "ప్రమాద స్థాయి"
+
+msgid "Approve Now"
+msgstr "ఇప్పుడే ఆమోదించండి"
+
+msgid "Verify Land Now"
+msgstr "ఇప్పుడే భూమిని ధృవీకరించండి"
+
+msgid "View Dashboard"
+msgstr "డాష్‌బోర్డ్ చూడండి"
+
+msgid "View All →"
+msgstr "అన్నీ చూడండి →"
+
+msgid "View Marketplace"
+msgstr "మార్కెట్‌ప్లేస్ చూడండి"
+
+msgid "View Deals"
+msgstr "ఒప్పందాలను చూడండి"
+
+msgid "Download Invoice"
+msgstr "ఇన్‌వాయిస్ డౌన్‌లోడ్ చేయండి"
+
+msgid "Contact Us"
+msgstr "మమ్మల్ని సంప్రదించండి"
+
+msgid "About CropConnect"
+msgstr "CropConnect గురించి"
+
+msgid "Helpdesk:"
+msgstr "సహాయ కేంద్రం:"
+
+msgid "Toll Free:"
+msgstr "టోల్ ఫ్రీ:"
+
+msgid "See reason above. Call helpdesk."
+msgstr "పైన తెలిపిన కారణాన్ని చూడండి. సహాయ కేంద్రానికి కాల్ చేయండి."
+
+msgid "This booking has not been rejected."
+msgstr "ఈ బుకింగ్ తిరస్కరించబడలేదు."
+
+msgid "Booking not found"
+msgstr "బుకింగ్ కనబడలేదు"
+
+msgid "No reason given. Please call helpdesk."
+msgstr "కారణం ఇవ్వలేదు. దయచేసి సహాయ కేంద్రానికి కాల్ చేయండి."
+
+msgid "AI Farm Assistant"
+msgstr "AI రైతు సహాయకుడు"
+
+msgid "Ask anything about procurement"
+msgstr "కొనుగోలు గురించి ఏదైనా అడగండి"
+
+msgid "I can help with slot bookings, MSP rates, documents, and payments."
+msgstr ""
+"స్లాట్ బుకింగ్‌లు, MSP ధరలు, పత్రాలు, చెల్లింపుల గురించి నేను సహాయం "
+"చేస్తాను."
+
+msgid "Type your question..."
+msgstr "మీ ప్రశ్నను టైప్ చేయండి..."
+
+msgid "Get AI Advice"
+msgstr "AI సలహా పొందండి"
+
+msgid "AI Price Advisory — Krishi Mitra"
+msgstr "AI ధర సలహా — కృషి మిత్ర"
+
+msgid "AI Rejection Explainer"
+msgstr "తిరస్కరణ కారణాన్ని వివరించే AI"
+
+msgid "Why rejected?"
+msgstr "ఎందుకు తిరస్కరించారు?"
+
+msgid "Documents?"
+msgstr "ఏ పత్రాలు కావాలి?"
+
+msgid "Payment timeline?"
+msgstr "చెల్లింపు ఎప్పుడు వస్తుంది?"
+
+msgid "Book slot?"
+msgstr "స్లాట్ ఎలా బుక్ చేయాలి?"
+
+msgid "MSP & Payment?"
+msgstr "MSP మరియు చెల్లింపు?"
+
+msgid "Rejected: quantity?"
+msgstr "పరిమాణం కారణంగా తిరస్కరణ?"
+
+msgid "Rejected: documents?"
+msgstr "పత్రాల కారణంగా తిరస్కరణ?"
+
+msgid "No rejection reason?"
+msgstr "తిరస్కరణకు కారణం లేదా?"
+
+msgid "Home"
+msgstr "హోమ్"
+
+msgid "Welcome"
+msgstr "స్వాగతం"
+
+msgid "Welcome,"
+msgstr "స్వాగతం,"
+
+msgid "Contact:"
+msgstr "సంప్రదించండి:"
+
+msgid "Phone: 6304629308"
+msgstr "ఫోన్: 6304629308"
+
+msgid "Email: support@cropconnect.gov.in"
+msgstr "ఇమెయిల్: support@cropconnect.gov.in"
+
+msgid "Already registered? Login"
+msgstr "ఇప్పటికే నమోదు చేసుకున్నారా? లాగిన్ చేయండి"
+
+msgid "Admin reviewing. 1–3 days."
+msgstr "నిర్వాహకుడు పరిశీలిస్తున్నారు. 1–3 రోజులు పడుతుంది."
+
+msgid "Officer verifies your land"
+msgstr "అధికారి మీ భూమిని ధృవీకరిస్తారు"
+
+msgid "Officer checks land"
+msgstr "అధికారి భూమిని తనిఖీ చేస్తారు"
+
+msgid "Officer weighs → bill generated → money in bank"
+msgstr ""
+"అధికారి తూకం వేస్తారు → బిల్లు తయారవుతుంది → డబ్బు బ్యాంక్ ఖాతాలో జమ "
+"అవుతుంది"
+
+msgid "Bring your crop on the booked date"
+msgstr "బుక్ చేసిన తేదీన మీ పంటను తీసుకురండి"
+
+msgid "Choose a different date"
+msgstr "వేరే తేదీని ఎంచుకోండి"
+
+msgid "Check back soon"
+msgstr "త్వరలో మళ్లీ చూడండి"
+
+msgid "No crops found. Please add crops first."
+msgstr "పంటలు కనబడలేదు. ముందుగా పంటలను జోడించండి."
+
+msgid "MSP rates will be updated soon."
+msgstr "MSP ధరలు త్వరలో నవీకరించబడతాయి."
+
+msgid "Login — CropConnect"
+msgstr "లాగిన్ — CropConnect"
+
+msgid ""
+"CropConnect — Direct crop procurement platform. No middlemen. Fair prices."
+msgstr ""
+"CropConnect — పంటలను నేరుగా కొనుగోలు చేసే వేదిక. మధ్యవర్తులు లేరు. న్యాయమైన "
+"ధరలు."
+
+msgid "© Government of India. All rights reserved."
+msgstr "© భారత ప్రభుత్వం. అన్ని హక్కులు ప్రత్యేకించబడ్డాయి."
+
+msgid "© Government of India. CropConnect. All rights reserved."
+msgstr "© భారత ప్రభుత్వం. CropConnect. అన్ని హక్కులు ప్రత్యేకించబడ్డాయి."
+
+msgid "PENDING"
+msgstr "పెండింగ్‌లో ఉంది"
+
+msgid "APPROVED"
+msgstr "ఆమోదించబడింది"
+
+msgid "REJECTED"
+msgstr "తిరస్కరించబడింది"
+
+msgid "COMPLETED"
+msgstr "పూర్తయింది"
+
+msgid "CANCELLED"
+msgstr "రద్దు చేయబడింది"
+
+msgid "TRANSFERRED"
+msgstr "బదిలీ చేయబడింది"
+
+msgid "Weight Validated"
+msgstr "బరువు ధృవీకరించబడింది"
+
+msgid "Procurement Approved"
+msgstr "పంట కొనుగోలు ఆమోదించబడింది"
+
+msgid "Transferred to Bank"
+msgstr "బ్యాంకుకు బదిలీ చేయబడింది"
+
+msgid "Confirmed by Buyer"
+msgstr "కొనుగోలుదారు నిర్ధారించారు"
+
+msgid "Crop Delivered"
+msgstr "పంట అందించబడింది"
+
+msgid "Payment Done"
+msgstr "చెల్లింపు పూర్తయింది"
+
+msgid "Pending Confirmation"
+msgstr "నిర్ధారణ కోసం వేచి ఉంది"
+
+msgid "Blocked"
+msgstr "నిలిపివేయబడింది"
+
+msgid "Closed"
+msgstr "మూసివేయబడింది"
+
+msgid "Expired"
+msgstr "గడువు ముగిసింది"
+
+msgid "Paused"
+msgstr "తాత్కాలికంగా నిలిపివేయబడింది"
+
+msgid "FARMER"
+msgstr "రైతు"
+
+msgid "OFFICER"
+msgstr "అధికారి"
+
+msgid "ADMIN"
+msgstr "నిర్వాహకుడు"
+
+msgid "BUYER"
+msgstr "కొనుగోలుదారు"
+
+msgid "Administrator"
+msgstr "నిర్వాహకుడు"
+
+msgid "Procurement Officer"
+msgstr "కొనుగోలు అధికారి"
+
+msgid "Private Buyer"
+msgstr "ప్రైవేట్ కొనుగోలుదారు"
+
+msgid "Rice Mill"
+msgstr "బియ్యం మిల్లు"
+
+msgid "Wholesaler"
+msgstr "టోకు వ్యాపారి"
+
+msgid "Exporter"
+msgstr "ఎగుమతిదారు"
+
+msgid ""
+"A private buyer must be approved by the admin before they can login or post "
+"an offer."
+msgstr ""
+"ప్రైవేట్ కొనుగోలుదారులు లాగిన్ కావడానికి లేదా ఆఫర్ ఇవ్వడానికి ముందు "
+"నిర్వాహకుడి ఆమోదం పొందాలి."
+
+msgid ""
+"A procurement officer verifies your land records. Booking opens after this."
+msgstr ""
+"కొనుగోలు అధికారి మీ భూమి రికార్డులను ధృవీకరిస్తారు. ఆ తర్వాత బుకింగ్ "
+"ప్రారంభమవుతుంది."
+
+msgid "AI is analysing your rejection..."
+msgstr "మీ తిరస్కరణ కారణాన్ని AI విశ్లేషిస్తోంది..."
+
+msgid "Admin Review"
+msgstr "నిర్వాహకుడి సమీక్ష"
+
+msgid "Admin Username"
+msgstr "నిర్వాహకుడి వినియోగదారు పేరు"
+
+msgid "Advance"
+msgstr "ముందస్తు చెల్లింపు"
+
+msgid "Advance: %"
+msgstr "ముందస్తు చెల్లింపు: %"
+
+msgid "Aflatoxin Test"
+msgstr "అఫ్లాటాక్సిన్ పరీక్ష"
+
+msgid "All Offers for"
+msgstr "అన్ని ఆఫర్‌లు:"
+
+msgid "All registered users — farmers, officers, admins, and buyers."
+msgstr ""
+"నమోదైన వినియోగదారులందరూ — రైతులు, అధికారులు, నిర్వాహకులు, కొనుగోలుదారులు."
+
+msgid "Alluvial"
+msgstr "ఒండ్రు నేల"
+
+msgid "Amount:"
+msgstr "మొత్తం:"
+
+msgid "Any observations about the crop condition, storage, or quality."
+msgstr "పంట స్థితి, నిల్వ లేదా నాణ్యత గురించి గమనికలు."
+
+msgid "Approve Slot Bookings"
+msgstr "స్లాట్ బుకింగ్‌లను ఆమోదించండి"
+
+msgid "Approved (FAQ Grade)"
+msgstr "ఆమోదించబడింది (FAQ నాణ్యత)"
+
+msgid "Approved Bookings"
+msgstr "ఆమోదించిన బుకింగ్‌లు"
+
+msgid "Approved Buyers"
+msgstr "ఆమోదించిన కొనుగోలుదారులు"
+
+msgid "Approved!"
+msgstr "ఆమోదించబడింది!"
+
+msgid "Are you a rice mill, wholesaler or exporter?"
+msgstr "మీరు బియ్యం మిల్లా, టోకు వ్యాపారా లేదా ఎగుమతిదారా?"
+
+msgid "Avg Moisture %"
+msgstr "సగటు తేమ %"
+
+msgid "Bill Details"
+msgstr "బిల్లు వివరాలు"
+
+msgid "Bill Generated ✅"
+msgstr "బిల్లు రూపొందించబడింది ✅"
+
+msgid "Bill No"
+msgstr "బిల్లు నంబర్"
+
+msgid "Bill No:"
+msgstr "బిల్లు నంబర్:"
+
+msgid "Black"
+msgstr "నల్ల నేల"
+
+msgid "Block"
+msgstr "నిరోధించండి"
+
+msgid "Book a procurement slot"
+msgstr "పంట కొనుగోలు స్లాట్ బుక్ చేయండి"
+
+msgid "Book your first slot!"
+msgstr "మీ మొదటి స్లాట్‌ను బుక్ చేసుకోండి!"
+
+msgid "Booked: qtl"
+msgstr "బుక్ చేసినది: క్వింటాళ్లు"
+
+msgid "Booking a slot and making a deal"
+msgstr "స్లాట్ బుకింగ్ మరియు ఒప్పందం"
+
+msgid "Bookings"
+msgstr "బుకింగ్‌లు"
+
+msgid "Bring crop → get weighed"
+msgstr "పంటను తీసుకురండి → తూకం వేయించుకోండి"
+
+msgid "Browse the marketplace →"
+msgstr "మార్కెట్‌ప్లేస్‌లో చూడండి →"
+
+msgid "Buyer Rating"
+msgstr "కొనుగోలుదారు రేటింగ్"
+
+msgid "Buyer Reports"
+msgstr "కొనుగోలుదారుల నివేదికలు"
+
+msgid "Buyer Username"
+msgstr "కొనుగోలుదారు వినియోగదారు పేరు"
+
+msgid "Buyers by Type"
+msgstr "రకం ప్రకారం కొనుగోలుదారులు"
+
+msgid ""
+"By submitting, you are requesting this deal. The buyer will confirm within "
+"24 hours. You can still book a government slot separately."
+msgstr ""
+"సమర్పించడం ద్వారా మీరు ఈ ఒప్పందాన్ని అభ్యర్థిస్తున్నారు. కొనుగోలుదారు 24 "
+"గంటల్లో నిర్ధారిస్తారు. ప్రభుత్వ స్లాట్‌ను విడిగా కూడా బుక్ చేసుకోవచ్చు."
+
+msgid "Check after login"
+msgstr "లాగిన్ అయిన తర్వాత చూడండి"
+
+msgid ""
+"Click \"Get AI Advice\" for personalised selling advice based on MSP rates "
+"and season."
+msgstr ""
+"MSP ధరలు, సీజన్ ఆధారంగా అమ్మకపు సలహా కోసం “AI సలహా పొందండి”పై నొక్కండి."
+
+msgid ""
+"Click to get instant ML prediction of quality grade based on your entered "
+"measurements."
+msgstr ""
+"మీరు నమోదు చేసిన కొలతల ఆధారంగా నాణ్యత గ్రేడ్ అంచనా పొందడానికి నొక్కండి."
+
+msgid "Common Quality Parameters"
+msgstr "సాధారణ నాణ్యత కొలతలు"
+
+msgid "Company"
+msgstr "సంస్థ"
+
+msgid "Compare Prices Now →"
+msgstr "ఇప్పుడే ధరలను పోల్చండి →"
+
+msgid "Compare two prices"
+msgstr "రెండు ధరలను పోల్చండి"
+
+msgid "Completed Value"
+msgstr "పూర్తయిన విక్రయాల విలువ"
+
+msgid "Confirm Quality Rejection"
+msgstr "నాణ్యత కారణంగా తిరస్కరణను నిర్ధారించండి"
+
+msgid "Credited"
+msgstr "జమ చేయబడింది"
+
+msgid "Credited ✅"
+msgstr "జమ చేయబడింది ✅"
+
+msgid "CropConnect shows you the"
+msgstr "CropConnect మీకు చూపిస్తుంది"
+
+msgid "Deal Requests — @ ₹/qtl"
+msgstr "ఒప్పంద అభ్యర్థనలు — ₹/క్వింటాల్"
+
+msgid "Deal confirmed. Waiting for farmer to deliver crop."
+msgstr "ఒప్పందం నిర్ధారించబడింది. రైతు పంటను అందించే వరకు వేచి ఉంది."
+
+msgid "Deal was cancelled."
+msgstr "ఒప్పందం రద్దు చేయబడింది."
+
+msgid "Deals"
+msgstr "ఒప్పందాలు"
+
+msgid "Deals for Offer"
+msgstr "ఈ ఆఫర్‌కు వచ్చిన ఒప్పందాలు"
+
+msgid "Delivery Date:"
+msgstr "డెలివరీ తేదీ:"
+
+msgid "Detected ❌"
+msgstr "గుర్తించబడింది ❌"
+
+msgid "Difference"
+msgstr "తేడా"
+
+msgid "Digital invoice generation"
+msgstr "డిజిటల్ ఇన్‌వాయిస్ రూపొందింపు"
+
+msgid "Dual Channel"
+msgstr "రెండు మార్గాల విక్రయం"
+
+msgid ""
+"Each payment is approved by the admin and gets a bank reference (UTR) "
+"number. You can see it on your Payments page."
+msgstr ""
+"ప్రతి చెల్లింపును నిర్వాహకుడు ఆమోదిస్తారు; బ్యాంక్ రిఫరెన్స్ (UTR) నంబర్ "
+"వస్తుంది. దాన్ని చెల్లింపుల పేజీలో చూడవచ్చు."
+
+msgid "Email:governmentofindia@gmail.com"
+msgstr "ఇమెయిల్: governmentofindia@gmail.com"
+
+msgid "Enter measurements to see quality assessment"
+msgstr "నాణ్యత అంచనా కోసం కొలతలను నమోదు చేయండి"
+
+msgid "Excess:"
+msgstr "అదనపు పరిమాణం:"
+
+msgid "Expected Payment:"
+msgstr "అంచనా చెల్లింపు:"
+
+msgid "Farmer Details"
+msgstr "రైతు వివరాలు"
+
+msgid ""
+"Farmer has brought their crop. Weigh it, check quality parameters, then "
+"approve or reject."
+msgstr ""
+"రైతు పంటను తీసుకొచ్చారు. తూకం వేయండి, నాణ్యతను తనిఖీ చేసి ఆమోదించండి లేదా "
+"తిరస్కరించండి."
+
+msgid "Farmer will be notified with this reason on their dashboard."
+msgstr "ఈ కారణాన్ని రైతు డాష్‌బోర్డ్‌లో తెలియజేస్తారు."
+
+msgid "Farmer's Note:"
+msgstr "రైతు గమనిక:"
+
+msgid "Farmers who requested to sell to you for this offer"
+msgstr "ఈ ఆఫర్‌కు మీకు పంట అమ్మేందుకు అభ్యర్థించిన రైతులు"
+
+msgid "Foreign Matter %"
+msgstr "విదేశీ పదార్థాలు %"
+
+msgid "Foreign Matter (%)"
+msgstr "విదేశీ పదార్థాలు (%)"
+
+msgid "From your Adangal / Patta document"
+msgstr "మీ అడంగల్ / పట్టా పత్రంలో ఉంటుంది"
+
+msgid "GST"
+msgstr "GST"
+
+msgid "Government MSP prices"
+msgstr "ప్రభుత్వ MSP ధరలు"
+
+msgid "Govt MSP"
+msgstr "ప్రభుత్వ MSP"
+
+msgid "Govt MSP: ₹/qtl"
+msgstr "ప్రభుత్వ MSP: ₹/క్వింటాల్"
+
+msgid "Govt Rule: Max qtl/acre"
+msgstr "ప్రభుత్వ నియమం: ఎకరాకు గరిష్ఠ క్వింటాళ్లు"
+
+msgid "Guaranteed • Safe • No middleman"
+msgstr "హామీ ధర • భద్రత • మధ్యవర్తులు లేరు"
+
+msgid "Land area:"
+msgstr "భూమి విస్తీర్ణం:"
+
+msgid "Loaded & ReadyNot found — run train_models.py"
+msgstr "లోడ్ చేయబడింది మరియు సిద్ధంగా ఉంది. కనబడలేదు — train_models.py నడపండి"
+
+msgid "Loam"
+msgstr "లోమీ నేల"
+
+msgid "Low"
+msgstr "తక్కువ"
+
+msgid "Medium"
+msgstr "మధ్యస్థం"
+
+msgid "High"
+msgstr "ఎక్కువ"
+
+msgid "Max Quantity"
+msgstr "గరిష్ఠ పరిమాణం"
+
+msgid "Min Quantity"
+msgstr "కనిష్ఠ పరిమాణం"
+
+msgid "Moisture Content (%)"
+msgstr "తేమ శాతం (%)"
+
+msgid "Monday - Saturday: 9:00 AM - 5:00 PM"
+msgstr "సోమవారం - శనివారం: ఉదయం 9 - సాయంత్రం 5"
+
+msgid "Money in Bank"
+msgstr "బ్యాంక్‌లో జమ అయిన డబ్బు"
+
+msgid "Mon–Sat, 9 AM to 6 PM"
+msgstr "సోమ–శని, ఉదయం 9 నుంచి సాయంత్రం 6 వరకు"
+
+msgid "Must be NIL"
+msgstr "తప్పనిసరిగా సున్నా ఉండాలి"
+
+msgid "My Land"
+msgstr "నా భూమి"
+
+msgid "My Offers"
+msgstr "నా ఆఫర్‌లు"
+
+msgid ""
+"Never share your password with anyone, even someone who says they are from "
+"CropConnect."
+msgstr ""
+"CropConnect నుంచి వచ్చామని చెప్పినా, మీ పాస్‌వర్డ్‌ను ఎవరికీ చెప్పవద్దు."
+
+msgid "No data yet"
+msgstr "ఇంకా సమాచారం లేదు"
+
+msgid "No private offers for"
+msgstr "ప్రైవేట్ ఆఫర్‌లు లేవు:"
+
+msgid "Not Credited"
+msgstr "జమ కాలేదు"
+
+msgid "Offer from"
+msgstr "ఆఫర్ ఇచ్చినవారు:"
+
+msgid "Office Hours"
+msgstr "పని వేళలు"
+
+msgid "Officer Remarks"
+msgstr "అధికారిగారి వ్యాఖ్యలు"
+
+msgid "Officer reviews and approves (1–2 days)"
+msgstr "అధికారి పరిశీలించి ఆమోదిస్తారు (1–2 రోజులు)"
+
+msgid ""
+"Once you verify the land, the farmer will be able to book procurement slots."
+msgstr "భూమిని ధృవీకరించిన తర్వాత రైతు కొనుగోలు స్లాట్‌లను బుక్ చేసుకోవచ్చు."
+
+msgid "Online farmer registration with Aadhaar verification"
+msgstr "ఆధార్ ధృవీకరణతో రైతుల ఆన్‌లైన్ నమోదు"
+
+msgid "Open Payments"
+msgstr "చెల్లింపులను తెరవండి"
+
+msgid "Paddy-Specific Parameters"
+msgstr "వరి పంటకు సంబంధించిన కొలతలు"
+
+msgid "Groundnut-Specific Parameters"
+msgstr "వేరుశనగ పంటకు సంబంధించిన కొలతలు"
+
+msgid "Payment Rejected"
+msgstr "చెల్లింపు తిరస్కరించబడింది"
+
+msgid "Payment Reports"
+msgstr "చెల్లింపుల నివేదికలు"
+
+msgid "Pending Approvals"
+msgstr "ఆమోదం కోసం వేచి ఉన్నవి"
+
+msgid "Pending Land Verifications"
+msgstr "భూమి ధృవీకరణ కోసం వేచి ఉన్నవి"
+
+msgid "Pending Payments"
+msgstr "పెండింగ్ చెల్లింపులు"
+
+msgid "Pending Procurement"
+msgstr "పెండింగ్ కొనుగోళ్లు"
+
+msgid "Pending Slot Approvals"
+msgstr "స్లాట్ ఆమోదం కోసం వేచి ఉన్నవి"
+
+msgid "Private buyer deals, completed transactions, marketplace overview."
+msgstr ""
+"ప్రైవేట్ కొనుగోలుదారుల ఒప్పందాలు, పూర్తయిన లావాదేవీలు, మార్కెట్‌ప్లేస్ "
+"వివరాలు."
+
+msgid "Private buyer names and prices"
+msgstr "ప్రైవేట్ కొనుగోలుదారుల పేర్లు, ధరలు"
+
+msgid "Procurement Officer Login"
+msgstr "కొనుగోలు అధికారి లాగిన్"
+
+msgid "Procurements"
+msgstr "పంట కొనుగోళ్లు"
+
+msgid "Quantity vs Government Limit Analysis"
+msgstr "పరిమాణం మరియు ప్రభుత్వ పరిమితి విశ్లేషణ"
+
+msgid "Reason / Action"
+msgstr "కారణం / చర్య"
+
+msgid "Recently Processed Payments"
+msgstr "ఇటీవల ప్రాసెస్ చేసిన చెల్లింపులు"
+
+msgid "Register with Aadhaar & bank details"
+msgstr "ఆధార్ మరియు బ్యాంక్ వివరాలతో నమోదు చేసుకోండి"
+
+msgid ""
+"Rice mills, wholesalers & exporters — post offers and buy directly from "
+"farmers"
+msgstr ""
+"బియ్యం మిల్లులు, టోకు వ్యాపారులు, ఎగుమతిదారులు — ఆఫర్‌లు ఇచ్చి రైతుల నుంచి "
+"నేరుగా కొనండి"
+
+msgid ""
+"Rice mills, wholesalers, exporters can register here to post offers and buy "
+"directly from farmers."
+msgstr ""
+"బియ్యం మిల్లులు, టోకు వ్యాపారులు, ఎగుమతిదారులు ఇక్కడ నమోదు చేసి రైతుల నుంచి "
+"నేరుగా కొనుగోలు చేయవచ్చు."
+
+msgid "Same as MSP"
+msgstr "MSP ధరతో సమానం"
+
+msgid "Sandy"
+msgstr "ఇసుక నేల"
+
+msgid "See private buyer offers"
+msgstr "ప్రైవేట్ కొనుగోలుదారుల ఆఫర్‌లను చూడండి"
+
+msgid "Select your crop and date"
+msgstr "మీ పంటను, తేదీని ఎంచుకోండి"
+
+msgid "Slot Booking Form"
+msgstr "స్లాట్ బుకింగ్ ఫారం"
+
+msgid "Soil Type"
+msgstr "నేల రకం"
+
+msgid "Start farmer registration →"
+msgstr "రైతు నమోదును ప్రారంభించండి →"
+
+msgid "Summary Dashboard"
+msgstr "సారాంశ డాష్‌బోర్డ్"
+
+msgid "Total farmers, bookings, procurements and revenue overview."
+msgstr "మొత్తం రైతులు, బుకింగ్‌లు, కొనుగోళ్లు, ఆదాయం వివరాలు."
+
+msgid "Track in one place"
+msgstr "ఒకే చోట వివరాలను చూడండి"
+
+msgid "Transfer in progress. Will be credited in 2–5 working days."
+msgstr "డబ్బు బదిలీ అవుతోంది. 2–5 పని దినాల్లో మీ ఖాతాలో జమ అవుతుంది."
+
+msgid "Transparent MSP-based payment calculation"
+msgstr "MSP ఆధారంగా పారదర్శక చెల్లింపు లెక్కింపు"
+
+msgid "Update Minimum Support Price for paddy and groundnut crops."
+msgstr "వరి మరియు వేరుశనగకు కనీస మద్దతు ధరను నవీకరించండి."
+
+msgid ""
+"Update the government guaranteed price for each crop. All new bills will use"
+" the updated rate."
+msgstr ""
+"ప్రతి పంటకు ప్రభుత్వ హామీ ధరను నవీకరించండి. కొత్త బిల్లుల్లో ఈ ధర "
+"వర్తిస్తుంది."
+
+msgid "Usually approved within 1–3 working days."
+msgstr "సాధారణంగా 1–3 పని దినాల్లో ఆమోదిస్తారు."
+
+msgid "Valid Until"
+msgstr "చెల్లుబాటు ముగింపు"
+
+msgid "View all registered farmers, their verification status and bookings."
+msgstr "నమోదైన రైతులు, వారి ధృవీకరణ స్థితి, బుకింగ్‌లను చూడండి."
+
+msgid "You already have a deal request for this offer. Status:"
+msgstr "ఈ ఆఫర్‌కు మీరు ఇప్పటికే ఒప్పంద అభ్యర్థన పంపారు. స్థితి:"
+
+msgid "You deal directly with the Government or the buyer you choose."
+msgstr ""
+"మీరు ప్రభుత్వం లేదా మీరు ఎంచుకున్న కొనుగోలుదారుతో నేరుగా వ్యవహరించవచ్చు."
+
+msgid "You have 2 ways to sell your crop!"
+msgstr "మీ పంటను అమ్మడానికి రెండు మార్గాలు ఉన్నాయి!"
+
+msgid "You have no private deals yet."
+msgstr "మీకు ఇంకా ప్రైవేట్ ఒప్పందాలు లేవు."
+
+msgid ""
+"Your invoice shows the final rate per quintal. If grain is below FAQ (Fair "
+"Average Quality) standard, a 5% deduction applies."
+msgstr ""
+"మీ ఇన్‌వాయిస్‌లో తుది క్వింటాల్ ధర ఉంటుంది. ధాన్యం FAQ నాణ్యత కంటే తక్కువగా "
+"ఉంటే 5% తగ్గింపు ఉంటుంది."
+
+msgid "Active Offers"
+msgstr "క్రియాశీల ఆఫర్‌లు"
+
+msgid "Farmer Reports"
+msgstr "రైతుల నివేదికలు"
+
+msgid "Marketplace Reports"
+msgstr "మార్కెట్‌ప్లేస్ నివేదికలు"
+
+msgid "View Farmers"
+msgstr "రైతులను చూడండి"
+
+msgid "View Payment"
+msgstr "చెల్లింపును చూడండి"
+
+msgid "1 quintal = 100 kg. Enter how many quintals you plan to bring."
+msgstr ""
+"1 క్వింటాల్ = 100 కిలోలు. మీరు తీసుకురావాలనుకునే పరిమాణాన్ని క్వింటాళ్లలో "
+"నమోదు చేయండి."
+
+msgid "Max 1%"
+msgstr "గరిష్ఠం 1%"
+
+msgid "Max 3%"
+msgstr "గరిష్ఠం 3%"
+
+msgid "Max 5%"
+msgstr "గరిష్ఠం 5%"
+
+msgid "Max 8%"
+msgstr "గరిష్ఠం 8%"
+
+msgid "Max 17%"
+msgstr "గరిష్ఠం 17%"
+
+msgid "Min 45%"
+msgstr "కనిష్ఠం 45%"
+
+msgid "Min 70%"
+msgstr "కనిష్ఠం 70%"
+
+msgid "≤ 25 qtl/acre — Safe to approve"
+msgstr "≤ ఎకరాకు 25 క్వింటాళ్లు — ఆమోదించడానికి సురక్షితం"
+
+msgid "25–35 qtl/acre — Verify documents"
+msgstr "ఎకరాకు 25–35 క్వింటాళ్లు — పత్రాలను తనిఖీ చేయండి"
+
+msgid "> 35 qtl/acre — Do NOT approve without field visit"
+msgstr "> ఎకరాకు 35 క్వింటాళ్లు — క్షేత్రస్థాయి తనిఖీ లేకుండా ఆమోదించవద్దు"
+
+msgid "✅ Accept This Offer"
+msgstr "✅ ఈ ఆఫర్‌ను అంగీకరించండి"
+
+msgid "✅ Approve & Transfer"
+msgstr "✅ ఆమోదించి బదిలీ చేయండి"
+
+msgid "✅ Approve Procurement & Generate Bill"
+msgstr "✅ కొనుగోలును ఆమోదించి బిల్లు రూపొందించండి"
+
+msgid "✅ Confirm Deal"
+msgstr "✅ ఒప్పందాన్ని నిర్ధారించండి"
+
+msgid "❌ Reject Payment"
+msgstr "❌ చెల్లింపును తిరస్కరించండి"
+
+msgid "📋 All My Bookings"
+msgstr "📋 నా బుకింగ్‌లన్నీ"
+
+msgid "📋 Keep these ready before you register"
+msgstr "📋 నమోదు చేసుకునే ముందు వీటిని సిద్ధం చేసుకోండి"
+
+msgid "📋 Login as Officer"
+msgstr "📋 అధికారిగా లాగిన్ చేయండి"
+
+msgid "📋 Officer Dashboard"
+msgstr "📋 అధికారి డాష్‌బోర్డ్"
+
+msgid "📞 Call 6304629308"
+msgstr "📞 6304629308కు కాల్ చేయండి"
+
+msgid "🔐 Keep your password private"
+msgstr "🔐 మీ పాస్‌వర్డ్‌ను రహస్యంగా ఉంచండి"
+
+msgid "🔑 Login"
+msgstr "🔑 లాగిన్"
+
+msgid "🏛️ Government"
+msgstr "🏛️ ప్రభుత్వం"
+
+msgid "🏛️ Book Government Slot Instead"
+msgstr "🏛️ బదులుగా ప్రభుత్వ స్లాట్‌ను బుక్ చేయండి"
+
+msgid "🏪 Browse Private Buyers"
+msgstr "🏪 ప్రైవేట్ కొనుగోలుదారులను చూడండి"
+
+msgid "🏪 Dual Channel Marketplace"
+msgstr "🏪 రెండు మార్గాల మార్కెట్‌ప్లేస్"
+
+msgid "💰 Current MSP Rates"
+msgstr "💰 ప్రస్తుత MSP ధరలు"
+
+msgid "💰 Payment Status"
+msgstr "💰 చెల్లింపు స్థితి"
+
+msgid "📅 Book New Slot"
+msgstr "📅 కొత్త స్లాట్ బుక్ చేయండి"
+
+msgid "📅 Book Procurement Slot"
+msgstr "📅 పంట విక్రయ స్లాట్ బుక్ చేయండి"
+
+msgid "🌾 Farmer Registration"
+msgstr "🌾 రైతు నమోదు"
+
+msgid "🌾 Register as Farmer"
+msgstr "🌾 రైతుగా నమోదు చేయండి"
+
+msgid "🌾 Login as Farmer"
+msgstr "🌾 రైతుగా లాగిన్ చేయండి"
+
+msgid "📋 Approve Bookings"
+msgstr "📋 బుకింగ్‌లను ఆమోదించండి"
+
+msgid "🏭 Manage Buyers"
+msgstr "🏭 కొనుగోలుదారులను నిర్వహించండి"
+
+msgid "This field is required."
+msgstr "ఈ వివరాన్ని తప్పనిసరిగా నమోదు చేయాలి."
+
+msgid "Enter a valid email address."
+msgstr "చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామా నమోదు చేయండి."
+
+msgid "Aadhaar must be exactly 12 digits."
+msgstr "ఆధార్ నంబర్ ఖచ్చితంగా 12 అంకెలతో ఉండాలి."
+
+msgid "Land area must be between 0.01 and 1000 acres."
+msgstr "భూమి విస్తీర్ణం 0.01 నుంచి 1000 ఎకరాల మధ్య ఉండాలి."
+
+msgid "Please select a crop."
+msgstr "దయచేసి పంటను ఎంచుకోండి."
+
+msgid "Please select a date."
+msgstr "దయచేసి తేదీని ఎంచుకోండి."
+
+msgid "Enter your username"
+msgstr "మీ వినియోగదారు పేరును నమోదు చేయండి"
+
+msgid "Enter your password"
+msgstr "మీ పాస్‌వర్డ్‌ను నమోదు చేయండి"
+
+msgid "Enter officer username"
+msgstr "అధికారి వినియోగదారు పేరును నమోదు చేయండి"
+
+msgid "Enter admin username"
+msgstr "నిర్వాహకుడి వినియోగదారు పేరును నమోదు చేయండి"
+
+msgid "Enter buyer username"
+msgstr "కొనుగోలుదారు వినియోగదారు పేరును నమోదు చేయండి"
+
+msgid "Reason for rejection (required)"
+msgstr "తిరస్కరణకు కారణం (తప్పనిసరి)"
+
+msgid "Any note for farmer..."
+msgstr "రైతు కోసం గమనిక..."
+
+msgid "Message to farmer (optional)"
+msgstr "రైతుకు సందేశం (ఐచ్ఛికం)"
+
+msgid "Delivery date"
+msgstr "డెలివరీ తేదీ"
+
+msgid "Delivery address"
+msgstr "డెలివరీ చిరునామా"
+
+msgid "Any questions for the buyer?"
+msgstr "కొనుగోలుదారుని కోసం ఏవైనా ప్రశ్నలు ఉన్నాయా?"
+
+msgid "Quality requirements, transport arrangements, etc."
+msgstr "నాణ్యత అవసరాలు, రవాణా ఏర్పాట్లు మొదలైనవి"
+
+msgid "e.g. Near NH-16, Guntur"
+msgstr "ఉదా: NH-16 సమీపంలో, గుంటూరు"
+
+msgid "e.g. 2300"
+msgstr "ఉదా: 2300"
+
+msgid "e.g. 500"
+msgstr "ఉదా: 500"
+
+msgid "e.g. UTR123456789"
+msgstr "ఉదా: UTR123456789"
+
+msgid ""
+"e.g. Bank account number does not match Aadhaar records. Please update your "
+"bank details and reapply."
+msgstr ""
+"ఉదా: బ్యాంక్ ఖాతా నంబర్ ఆధార్ వివరాలతో సరిపోలడం లేదు. బ్యాంక్ వివరాలను "
+"నవీకరించి మళ్లీ దరఖాస్తు చేయండి."
+
+msgid "Predicted Yield"
+msgstr "అంచనా దిగుబడి"
+
+msgid "Predicted Yield:"
+msgstr "అంచనా దిగుబడి:"
+
+msgid "🌾 Predicted Yield:"
+msgstr "🌾 అంచనా దిగుబడి:"
+
+msgid "Recommended booking quantity"
+msgstr "సిఫార్సు చేసిన బుకింగ్ పరిమాణం"
+
+msgid "Recommended booking quantity:"
+msgstr "సిఫార్సు చేసిన బుకింగ్ పరిమాణం:"
+
+msgid "Confidence"
+msgstr "నమ్మక స్థాయి"
+
+msgid "Confidence:"
+msgstr "నమ్మక స్థాయి:"
+
+msgid "Grade"
+msgstr "గ్రేడ్"
+
+msgid "Grade:"
+msgstr "గ్రేడ్:"
+
+msgid "FAQ"
+msgstr "ఉత్తమ నాణ్యత (FAQ)"
+
+msgid "Below_FAQ"
+msgstr "ప్రమాణం కంటే తక్కువ"
+
+msgid "Range"
+msgstr "పరిధి"
+
+msgid "Range:"
+msgstr "అంచనా పరిధి:"
+
+msgid "qtl"
+msgstr "క్వింటాళ్లు"
+
+msgid "Predicting..."
+msgstr "అంచనా వేస్తోంది..."
+
+msgid "Running ML model..."
+msgstr "ML నమూనాను నడుపుతోంది..."
+
+msgid "Prediction failed. Enter quantity manually."
+msgstr "అంచనా విఫలమైంది. పరిమాణాన్ని చేతితో నమోదు చేయండి."
+
+msgid "Excellent quality. Full MSP will be paid."
+msgstr "నాణ్యత బాగుంది. పూర్తి MSP చెల్లించబడుతుంది."
+
+msgid "Below standard. 5% price deduction will apply."
+msgstr "ప్రమాణం కంటే తక్కువ నాణ్యత. 5% ధర తగ్గింపు వర్తిస్తుంది."
+
+msgid "Does not meet minimum standards. Cannot be procured."
+msgstr "కనీస ప్రమాణాలను అందుకోలేదు. కొనుగోలు చేయలేము."
+
+msgid "FAQ Grade — All parameters pass"
+msgstr "FAQ గ్రేడ్ — అన్ని ప్రమాణాలు సరిపోయాయి"
+
+msgid "qtl/acre"
+msgstr "క్వింటాళ్లు/ఎకరా"
+
+msgid "Error. Call helpdesk: 6304629308"
+msgstr "లోపం. సహాయ కేంద్రానికి 6304629308కు కాల్ చేయండి."
+
+msgid "What is MSP and how is my payment calculated?"
+msgstr "MSP అంటే ఏమిటి? నా చెల్లింపు ఎలా లెక్కిస్తారు?"
+
+msgid "Select any date (day / month / year)"
+msgstr "తేదీని ఎంచుకోండి (రోజు / నెల / సంవత్సరం)"
+
+msgid "NIL / Not Detected ✅"
+msgstr "లేదు / గుర్తించబడలేదు ✅"
+
+msgid "Below MSP"
+msgstr "MSP కంటే తక్కువ"
+
+msgid "Above MSP"
+msgstr "MSP కంటే ఎక్కువ"
+
+msgid "Valid till:"
+msgstr "చెల్లుబాటు తేదీ:"
+
+msgid "days after delivery"
+msgstr "డెలివరీ తర్వాత రోజులు"
+
+msgid "per quintal (Government MSP)"
+msgstr "ప్రతి క్వింటాల్‌కు (ప్రభుత్వ MSP)"
+
+msgid "private buyers"
+msgstr "ప్రైవేట్ కొనుగోలుదారులు"
+
+msgid "minimum price"
+msgstr "కనిష్ఠ ధర"
+
+msgid "✅ LOW"
+msgstr "✅ తక్కువ ప్రమాదం"
+
+msgid "⚠️ MEDIUM"
+msgstr "⚠️ మధ్యస్థ ప్రమాదం"
+
+msgid "🚨 HIGH"
+msgstr "🚨 అధిక ప్రమాదం"
+
+msgid "✅ Verify"
+msgstr "✅ ధృవీకరించండి"
+
+msgid "🌾 Welcome,"
+msgstr "🌾 స్వాగతం,"
+
+msgid ""
+"Manage MSP rates, approve buyers, oversee payments and portal operations"
+msgstr ""
+"MSP ధరలను నిర్వహించండి, కొనుగోలుదారులను ఆమోదించండి, చెల్లింపులు మరియు "
+"పోర్టల్ కార్యకలాపాలను పర్యవేక్షించండి"
+
+msgid "Manage rice mills, wholesalers, exporters. Approve or block buyers."
+msgstr ""
+"బియ్యం మిల్లులు, టోకు వ్యాపారులు, ఎగుమతిదారులను నిర్వహించండి. "
+"కొనుగోలుదారులను ఆమోదించండి లేదా నిలిపివేయండి."
+
+msgid "Marketplace — Choose Your Buyer"
+msgstr "మార్కెట్‌ప్లేస్ — మీ కొనుగోలుదారుని ఎంచుకోండి"
+
+msgid "Max Allowed"
+msgstr "అనుమతించిన గరిష్ఠ పరిమాణం"
+
+msgid "Max Qty"
+msgstr "గరిష్ఠ పరిమాణం"
+
+msgid "Officer Username"
+msgstr "అధికారి వినియోగదారు పేరు"
+
+msgid "Payment In"
+msgstr "చెల్లింపు గడువు"
+
+msgid "Register here →"
+msgstr "ఇక్కడ నమోదు చేసుకోండి →"
+
+msgid "Rejected (Quality fail)"
+msgstr "తిరస్కరించబడింది (నాణ్యత ప్రమాణాలు అందలేదు)"
+
+msgid "The officer records the weight. Money goes to your bank account."
+msgstr "అధికారి పంట బరువును నమోదు చేస్తారు. డబ్బు మీ బ్యాంక్ ఖాతాకు వస్తుంది."
+
+msgid "View all my deals →"
+msgstr "నా ఒప్పందాలన్నీ చూడండి →"
+
+msgid "View all payments — approved, pending, rejected. Track UTR numbers."
+msgstr ""
+"ఆమోదించిన, పెండింగ్, తిరస్కరించిన చెల్లింపులను చూడండి. UTR నంబర్లను "
+"పరిశీలించండి."
+
+msgid "What documents do I need to register?"
+msgstr "నమోదు చేసుకోవడానికి ఏ పత్రాలు కావాలి?"
+
+msgid "When will I receive my payment in bank?"
+msgstr "నా బ్యాంక్ ఖాతాలో చెల్లింపు ఎప్పుడు వస్తుంది?"
+
+msgid "How do I book a slot to sell my crop?"
+msgstr "నా పంట అమ్మడానికి స్లాట్ ఎలా బుక్ చేయాలి?"
+
+msgid "← Back"
+msgstr "← వెనుకకు"
+
+msgid "Verified"
+msgstr "ధృవీకరించబడింది"
+
+msgid "✅ Verified"
+msgstr "✅ ధృవీకరించబడింది"
+
+msgid "⏳ Pending Verification"
+msgstr "⏳ ధృవీకరణ కోసం వేచి ఉంది"
+
+msgid "⏳ Account Pending Verification:"
+msgstr "⏳ ఖాతా ధృవీకరణ కోసం వేచి ఉంది:"
+
+msgid "📅 Book Govt Slot (MSP)"
+msgstr "📅 ప్రభుత్వ స్లాట్ బుక్ చేయండి (MSP)"
+
+msgid "guaranteed price, direct bank transfer"
+msgstr "హామీ ధర, నేరుగా బ్యాంక్ ఖాతాకు చెల్లింపు"
+
+msgid "mills & exporters who may pay MORE than MSP"
+msgstr "MSP కంటే ఎక్కువ ధర ఇచ్చే మిల్లులు, ఎగుమతిదారులు"
+
+msgid "Qty (Qtl)"
+msgstr "పరిమాణం (క్వింటాళ్లు)"
+
+msgid "Bring crop on"
+msgstr "ఈ తేదీన పంటను తీసుకురండి:"
+
+msgid "Waiting for officer"
+msgstr "అధికారి పరిశీలన కోసం వేచి ఉంది"
+
+msgid "No bookings yet"
+msgstr "ఇంకా బుకింగ్‌లు లేవు"
+
+msgid "Book your first slot"
+msgstr "మీ మొదటి స్లాట్‌ను బుక్ చేసుకోండి"
+
+msgid "🤖 AI Rejection Explainer"
+msgstr "🤖 తిరస్కరణ కారణాన్ని వివరించే AI"
+
+msgid "ML Yield Predictor — How much will you harvest?"
+msgstr "పంట దిగుబడి అంచనా — మీకు ఎంత దిగుబడి వస్తుంది?"
+
+msgid "Rainfall (mm)"
+msgstr "వర్షపాతం (మి.మీ.)"
+
+msgid "🧠 Predict Yield"
+msgstr "🧠 దిగుబడిని అంచనా వేయండి"
+
+msgid "Uses Random Forest ML model trained on Andhra Pradesh crop data"
+msgstr ""
+"ఆంధ్రప్రదేశ్ పంటల డేటాతో రూపొందించిన Random Forest నమూనాను ఉపయోగిస్తుంది"
+
+msgid "ℹ️ How Slot Booking Works"
+msgstr "ℹ️ స్లాట్ బుకింగ్ విధానం"
+
+msgid "Govt MSP: ₹ /qtl"
+msgstr "ప్రభుత్వ MSP: ₹ /క్వింటాల్"
+
+msgid "7–10 days payment"
+msgstr "7–10 రోజుల్లో చెల్లింపు"
+
+msgid "No negotiation needed"
+msgstr "ధరపై బేరం అవసరం లేదు"
+
+msgid "Payment in days"
+msgstr "చెల్లింపు గడువు (రోజులు)"
+
+msgid ""
+"The CropConnect is an official Government of India initiative to facilitate "
+"transparent and efficient procurement of paddy and groundnut from farmers at"
+" Minimum Support Price (MSP)."
+msgstr ""
+"CropConnect భారత ప్రభుత్వ అధికారిక వేదిక. వరి, వేరుశనగను కనీస మద్దతు ధర "
+"(MSP) వద్ద పారదర్శకంగా కొనుగోలు చేయడంలో రైతులకు సహాయపడుతుంది."
+
+msgid "Slot booking system for procurement"
+msgstr "పంట విక్రయానికి స్లాట్ బుకింగ్"
+
+msgid "Real-time status tracking"
+msgstr "స్థితిని ఎప్పటికప్పుడు తెలుసుకోండి"
+
+msgid "Toll Free"
+msgstr "టోల్ ఫ్రీ"
+
+msgid "Approve / Reject Payments"
+msgstr "చెల్లింపులను ఆమోదించండి / తిరస్కరించండి"
+
+msgid "Review each bill carefully. When rejecting, you"
+msgstr "ప్రతి బిల్లును జాగ్రత్తగా పరిశీలించండి. తిరస్కరించేటప్పుడు, మీరు"
+
+msgid "must"
+msgstr "తప్పనిసరిగా"
+
+msgid ""
+"write a reason — the farmer will see it directly on their payment status "
+"page"
+msgstr "కారణం రాయాలి — రైతు తన చెల్లింపు స్థితి పేజీలో ఆ కారణాన్ని చూస్తారు"
+
+msgid "All payments processed"
+msgstr "అన్ని చెల్లింపులు ప్రాసెస్ అయ్యాయి"
+
+msgid "No pending payments at the moment"
+msgstr "ప్రస్తుతం ఆమోదం కోసం చెల్లింపులు లేవు"
+
+msgid "UTR Number (optional)"
+msgstr "UTR నంబర్ (ఐచ్ఛికం)"
+
+msgid "Approve & Transfer"
+msgstr "ఆమోదించి బదిలీ చేయండి"
+
+msgid "Reject Payment"
+msgstr "చెల్లింపును తిరస్కరించండి"
+
+msgid "This reason will be shown to the farmer on their payment page"
+msgstr "ఈ కారణం రైతు చెల్లింపు పేజీలో కనిపిస్తుంది"
+
+msgid "Transferred"
+msgstr "బదిలీ చేయబడింది"
+
+msgid "Procurement Amount by Crop"
+msgstr "పంట వారీగా కొనుగోలు మొత్తం"
+
+msgid "All registered users — farmers, officers, admins, and buyers"
+msgstr "నమోదైన వినియోగదారులు — రైతులు, అధికారులు, నిర్వాహకులు, కొనుగోలుదారులు"
+
+msgid "No users found"
+msgstr "వినియోగదారులు కనబడలేదు"
+
+msgid "View all payments — approved, pending, rejected. Track UTR numbers"
+msgstr ""
+"ఆమోదించిన, పెండింగ్‌లో ఉన్న, తిరస్కరించిన చెల్లింపులను చూడండి. UTR నంబర్లను "
+"పరిశీలించండి"
+
+msgid "View all registered farmers, their verification status and bookings"
+msgstr "నమోదైన రైతులు, వారి ధృవీకరణ స్థితి, బుకింగ్‌లను చూడండి"
+
+msgid "Private buyer deals, completed transactions, marketplace overview"
+msgstr ""
+"ప్రైవేట్ కొనుగోలుదారుల ఒప్పందాలు, పూర్తయిన లావాదేవీలు, మార్కెట్‌ప్లేస్ "
+"వివరాలు"
+
+msgid "Manage rice mills, wholesalers, exporters. Approve or block buyers"
+msgstr ""
+"బియ్యం మిల్లులు, టోకు వ్యాపారులు, ఎగుమతిదారులను నిర్వహించండి. "
+"కొనుగోలుదారులను ఆమోదించండి లేదా నిలిపివేయండి"
+
+msgid "Set Minimum Support Price (MSP)"
+msgstr "కనీస మద్దతు ధర (MSP) నిర్ణయించండి"
+
+msgid ""
+"Update the government guaranteed price for each crop. All new bills will use"
+" the updated rate"
+msgstr ""
+"ప్రతి పంటకు ప్రభుత్వ మద్దతు ధరను నవీకరించండి. కొత్త బిల్లులకు ఈ ధర "
+"వర్తిస్తుంది"
+
+msgid "Update MSP"
+msgstr "MSP ధరను నవీకరించండి"
+
+msgid "No crops found. Please add crops first"
+msgstr "పంటలు కనబడలేదు. ముందుగా పంటలను జోడించండి"
+
+msgid "Manage Private Buyers"
+msgstr "ప్రైవేట్ కొనుగోలుదారులను నిర్వహించండి"
+
+msgid "Registered"
+msgstr "నమోదయ్యారు"
+
+msgid "Unblock"
+msgstr "నిలిపివేతను తొలగించండి"
+
+msgid "No buyers registered yet"
+msgstr "ఇంకా కొనుగోలుదారులు నమోదు కాలేదు"
+
+msgid "Marketplace Overview — Dual Channel Stats"
+msgstr "మార్కెట్‌ప్లేస్ సమీక్ష — రెండు మార్గాల వివరాలు"
+
+msgid "No deals yet"
+msgstr "ఇంకా ఒప్పందాలు లేవు"
+
+msgid "Post a New Buying Offer"
+msgstr "కొత్త కొనుగోలు ఆఫర్‌ను పోస్ట్ చేయండి"
+
+msgid "Your Offer Price (₹/quintal)"
+msgstr "మీ ఆఫర్ ధర (₹/క్వింటాల్)"
+
+msgid ""
+"MSP is the government baseline price. Offer above MSP to attract farmers"
+msgstr ""
+"MSP అనేది ప్రభుత్వ కనీస మద్దతు ధర. రైతులను ఆకర్షించడానికి MSP కంటే ఎక్కువ "
+"ఆఫర్ ఇవ్వండి"
+
+msgid "Maximum Quantity (qtl)"
+msgstr "గరిష్ఠ పరిమాణం (క్వింటాళ్లు)"
+
+msgid "Valid From"
+msgstr "అమలులోకి వచ్చే తేదీ"
+
+msgid "Advance Payment"
+msgstr "ముందస్తు చెల్లింపు"
+
+msgid "Payment Within (days)"
+msgstr "చెల్లింపు గడువు (రోజులు)"
+
+msgid "vs MSP"
+msgstr "MSPతో పోల్చితే"
+
+msgid "Post your first offer"
+msgstr "మీ మొదటి ఆఫర్‌ను పోస్ట్ చేయండి"
+
+msgid "Manage"
+msgstr "నిర్వహించండి"
+
+msgid "Deals for"
+msgstr "ఒప్పందాలు:"
+
+msgid "Offer"
+msgstr "ఆఫర్"
+
+msgid "No deal requests yet. Farmers will see your offer on the marketplace"
+msgstr ""
+"ఇంకా ఒప్పంద అభ్యర్థనలు లేవు. రైతులు మీ ఆఫర్‌ను మార్కెట్‌ప్లేస్‌లో చూస్తారు"
+
+msgid "Quantity"
+msgstr "పరిమాణం"
+
+msgid "Requested"
+msgstr "అభ్యర్థించారు"
+
+msgid "Delivery Date"
+msgstr "డెలివరీ తేదీ"
+
+msgid "Confirm Deal"
+msgstr "ఒప్పందాన్ని నిర్ధారించండి"
+
+msgid "Deal confirmed. Waiting for farmer to deliver crop"
+msgstr "ఒప్పందం నిర్ధారించబడింది. రైతు పంటను అందించే వరకు వేచి ఉంది"
+
+msgid "Mark as Paid"
+msgstr "చెల్లించినట్లు గుర్తించండి"
+
+msgid "Deal completed and paid"
+msgstr "ఒప్పందం పూర్తయింది, చెల్లింపు జరిగింది"
+
+msgid "Deal was cancelled"
+msgstr "ఒప్పందం రద్దు చేయబడింది"
+
+msgid "Register as Private Buyer"
+msgstr "ప్రైవేట్ కొనుగోలుదారుగా నమోదు చేసుకోండి"
+
+msgid ""
+"Rice mills, wholesalers, exporters can register here to post offers and buy "
+"directly from farmers"
+msgstr ""
+"బియ్యం మిల్లులు, టోకు వ్యాపారులు, ఎగుమతిదారులు ఇక్కడ నమోదు చేసుకుని ఆఫర్లు "
+"ఇవ్వవచ్చు, రైతుల నుంచి నేరుగా కొనుగోలు చేయవచ్చు"
+
+msgid "Company Name"
+msgstr "సంస్థ పేరు"
+
+msgid "Contact Person"
+msgstr "సంప్రదించాల్సిన వ్యక్తి"
+
+msgid "License No"
+msgstr "లైసెన్స్ నంబర్"
+
+msgid "Address"
+msgstr "చిరునామా"
+
+msgid "Deal Offer Details"
+msgstr "ఒప్పంద ఆఫర్ వివరాలు"
+
+msgid "Review this offer carefully before accepting"
+msgstr "అంగీకరించే ముందు ఈ ఆఫర్‌ను జాగ్రత్తగా పరిశీలించండి"
+
+msgid "at time of deal"
+msgstr "ఒప్పందం సమయంలో"
+
+msgid "deals"
+msgstr "ఒప్పందాలు"
+
+msgid "Krishi Mitra AI Recommendation"
+msgstr "కృషి మిత్ర AI సలహా"
+
+msgid "Your Options"
+msgstr "మీ ఎంపికలు"
+
+msgid "Government"
+msgstr "ప్రభుత్వం"
+
+msgid "This Offer"
+msgstr "ఈ ఆఫర్"
+
+msgid "7-10 days"
+msgstr "7–10 రోజులు"
+
+msgid "Zero"
+msgstr "సున్నా"
+
+msgid "You already have a deal request for this offer. Status"
+msgstr "ఈ ఆఫర్‌కు మీరు ఇప్పటికే ఒప్పంద అభ్యర్థన పంపారు. స్థితి"
+
+msgid "View my deals"
+msgstr "నా ఒప్పందాలను చూడండి"
+
+msgid "Accept This Offer"
+msgstr "ఈ ఆఫర్‌ను అంగీకరించండి"
+
+msgid "Send Deal Request"
+msgstr "ఒప్పంద అభ్యర్థన పంపండి"
+
+msgid ""
+"By submitting, you are requesting this deal. The buyer will confirm within "
+"24 hours. You can still book a government slot separately"
+msgstr ""
+"ఈ అభ్యర్థన పంపిన తర్వాత కొనుగోలుదారు 24 గంటల్లో నిర్ధారిస్తారు. ప్రభుత్వ "
+"కొనుగోలు స్లాట్‌ను కూడా విడిగా బుక్ చేసుకోవచ్చు"
+
+msgid "Book Government Slot Instead"
+msgstr "బదులుగా ప్రభుత్వ స్లాట్ బుక్ చేయండి"
+
+msgid "Trained ML Models Status"
+msgstr "శిక్షణ పొందిన ML నమూనాల స్థితి"
+
+msgid "Loaded & Ready"
+msgstr "లోడ్ అయి సిద్ధంగా ఉంది"
+
+msgid "Not found — run train_models.py"
+msgstr "కనబడలేదు — train_models.py ను నడపండి"
+
+msgid "Procurement Quality"
+msgstr "పంట కొనుగోలు నాణ్యత"
+
+msgid "Avg Moisture"
+msgstr "సగటు తేమ"
+
+msgid "Test ML Models Live"
+msgstr "ML నమూనాలను ఇప్పుడే పరీక్షించండి"
+
+msgid "Test Yield Predictor"
+msgstr "దిగుబడి అంచనాను పరీక్షించండి"
+
+msgid "Test Quality Predictor"
+msgstr "నాణ్యత అంచనాను పరీక్షించండి"
+
+msgid "Crop Yield Predictor — Live Test"
+msgstr "పంట దిగుబడి అంచనా — ప్రత్యక్ష పరీక్ష"
+
+msgid "Land (Acres)"
+msgstr "భూమి (ఎకరాలు)"
+
+msgid "Guntur"
+msgstr "గుంటూరు"
+
+msgid "Krishna"
+msgstr "కృష్ణా"
+
+msgid "Prakasam"
+msgstr "ప్రకాశం"
+
+msgid "Nellore"
+msgstr "నెల్లూరు"
+
+msgid "Kurnool"
+msgstr "కర్నూలు"
+
+msgid "Anantapur"
+msgstr "అనంతపురం"
+
+msgid "Quality Grade Predictor — Live Test"
+msgstr "నాణ్యత గ్రేడ్ అంచనా — ప్రత్యక్ష పరీక్ష"
+
+msgid "Validate Crop Weight"
+msgstr "పంట బరువును తనిఖీ చేయండి"
+
+msgid "Process"
+msgstr "ప్రాసెస్ చేయండి"
+
+msgid "No pending bookings"
+msgstr "ప్రస్తుతం పెండింగ్ బుకింగ్‌లు లేవు"
+
+msgid "Validate Crop Procurement"
+msgstr "పంట కొనుగోలును తనిఖీ చేయండి"
+
+msgid ""
+"Farmer has brought their crop. Weigh it, check quality parameters, then "
+"approve or reject"
+msgstr ""
+"రైతు పంటను తీసుకొచ్చారు. తూకం వేసి, నాణ్యతను తనిఖీ చేసి, ఆమోదించండి లేదా "
+"తిరస్కరించండి"
+
+msgid "Validate Weight & Quality"
+msgstr "బరువు, నాణ్యతను తనిఖీ చేయండి"
+
+msgid "No procurements pending validation"
+msgstr "తనిఖీ కోసం పంట కొనుగోళ్లు ఏవీ లేవు"
+
+msgid "Procurement Validation"
+msgstr "పంట కొనుగోలు తనిఖీ"
+
+msgid "Government Quality Standards"
+msgstr "ప్రభుత్వ నాణ్యత ప్రమాణాలు"
+
+msgid "FAQ Grade"
+msgstr "FAQ నాణ్యత"
+
+msgid "Weight & Quality Measurements"
+msgstr "బరువు, నాణ్యత కొలతలు"
+
+msgid "Moisture Content"
+msgstr "తేమ శాతం"
+
+msgid "NIL / Not Detected"
+msgstr "లేదు / గుర్తించబడలేదు"
+
+msgid "Detected"
+msgstr "గుర్తించబడింది"
+
+msgid "Aflatoxin detected — automatic rejection required"
+msgstr "అఫ్లాటాక్సిన్ గుర్తించబడింది — తప్పనిసరిగా తిరస్కరించాలి"
+
+msgid "Any observations about the crop condition, storage, or quality"
+msgstr "పంట స్థితి, నిల్వ లేదా నాణ్యతకు సంబంధించిన గమనికలు"
+
+msgid "Live Quality Check"
+msgstr "తక్షణ నాణ్యత తనిఖీ"
+
+msgid "5% deduction may apply for below-FAQ quality"
+msgstr "FAQ ప్రమాణం కంటే తక్కువ నాణ్యతకు 5% తగ్గింపు వర్తించవచ్చు"
+
+msgid "ML Quality Grade Prediction"
+msgstr "ML నాణ్యత గ్రేడ్ అంచనా"
+
+msgid ""
+"Click to get instant ML prediction of quality grade based on your entered "
+"measurements"
+msgstr ""
+"మీరు నమోదు చేసిన కొలతల ఆధారంగా నాణ్యత గ్రేడ్‌ను అంచనా వేయడానికి నొక్కండి"
+
+msgid "Predict Grade (ML)"
+msgstr "గ్రేడ్ అంచనా వేయండి (ML)"
+
+msgid "Approve Procurement & Generate Bill"
+msgstr "పంట కొనుగోలును ఆమోదించి బిల్లు తయారు చేయండి"
+
+msgid "Reject for Quality Failure"
+msgstr "నాణ్యత లోపం కారణంగా తిరస్కరించండి"
+
+msgid "Farmer will be notified with this reason on their dashboard"
+msgstr "ఈ కారణాన్ని రైతు డాష్‌బోర్డ్‌లో తెలియజేస్తారు"
+
+msgid "Verify Farmer Land Details"
+msgstr "రైతు భూమి వివరాలను ధృవీకరించండి"
+
+msgid ""
+"Once you verify the land, the farmer will be able to book procurement slots"
+msgstr "భూమిని ధృవీకరించిన తర్వాత రైతు పంట విక్రయ స్లాట్‌ను బుక్ చేసుకోగలరు"
+
+msgid "No pending land verifications. All farmers are verified"
+msgstr "ధృవీకరణ కోసం భూమి వివరాలు లేవు. రైతులందరి వివరాలు ధృవీకరించబడ్డాయి"
+
+msgid "Advance:"
+msgstr "ముందస్తు చెల్లింపు:"
+
+msgid "Pickup"
+msgstr "పంట తీసుకునే స్థలం"
+
+msgid "Valid till"
+msgstr "చెల్లుబాటు తేదీ"
+
+msgid "View + AI Advice"
+msgstr "చూడండి + AI సలహా"
+
+msgid "No private offers for yet"
+msgstr "ప్రస్తుతం ప్రైవేట్ ఆఫర్లు లేవు"
+
+msgid "No offers yet"
+msgstr "ఇంకా ఆఫర్లు లేవు"
+
+msgid "📋 My Recent Private Deals"
+msgstr "📋 నా ఇటీవలి ప్రైవేట్ ఒప్పందాలు"
+
+msgid "Details"
+msgstr "వివరాలు"
+
+msgid "My Private Buyer Deals"
+msgstr "నా ప్రైవేట్ కొనుగోలుదారుల ఒప్పందాలు"
+
+msgid "Payment done"
+msgstr "చెల్లింపు పూర్తయింది"
+
+msgid "AI Advice when you accepted:"
+msgstr "మీరు అంగీకరించినప్పుడు ఇచ్చిన AI సలహా:"
+
+msgid "Money Credited to Bank"
+msgstr "బ్యాంక్ ఖాతాలో డబ్బు జమ అయింది"
+
+msgid "Bill Generated"
+msgstr "బిల్లు తయారైంది"
+
+msgid "Money Credited"
+msgstr "డబ్బు జమ అయింది"
+
+msgid "sent to your bank"
+msgstr "మీ బ్యాంక్ ఖాతాకు పంపబడింది"
+
+msgid "REASON FROM ADMIN:"
+msgstr "నిర్వాహకుడు తెలిపిన కారణం:"
+
+msgid "Quote your Bill No:"
+msgstr "మీ బిల్లు నంబర్‌ను తెలియజేయండి:"
+
+msgid "9 AM – 6 PM (Mon–Sat)"
+msgstr "ఉదయం 9 – సాయంత్రం 6 (సోమవారం–శనివారం)"
+
+msgid "Login as Farmer"
+msgstr "రైతుగా లాగిన్ అవ్వండి"
+
+msgid "Login as Officer"
+msgstr "అధికారిగా లాగిన్ అవ్వండి"
+
+msgid "Login as Admin"
+msgstr "నిర్వాహకుడిగా లాగిన్ అవ్వండి"
+
+msgid "Login as Buyer"
+msgstr "కొనుగోలుదారుగా లాగిన్ అవ్వండి"
+
+msgid "Verify farmers, approve bookings, validate crop weight and quality"
+msgstr ""
+"రైతుల వివరాలను ధృవీకరించండి, బుకింగ్‌లను ఆమోదించండి, పంట బరువు మరియు "
+"నాణ్యతను తనిఖీ చేయండి"
+
+msgid "Dual Channel Marketplace"
+msgstr "రెండు మార్గాల పంటల మార్కెట్‌ప్లేస్"
+
+msgid "Before you start, keep these ready"
+msgstr "ప్రారంభించే ముందు ఈ వివరాలను సిద్ధంగా ఉంచండి"
+
+msgid "Account Details"
+msgstr "ఖాతా వివరాలు"
+
+msgid "Aadhaar & Bank Details"
+msgstr "ఆధార్ మరియు బ్యాంక్ వివరాలు"
+
+msgid "Already registered"
+msgstr "ఇప్పటికే నమోదు చేసుకున్నారా?"
+
+msgid "🌾 Expected Yield:"
+msgstr "🌾 అంచనా దిగుబడి:"
+
+msgid "Expected Yield:"
+msgstr "అంచనా దిగుబడి:"
+
+msgid "Per acre:"
+msgstr "ఎకరాకు:"
+
+msgid "⏳ Predicting..."
+msgstr "⏳ దిగుబడిని అంచనా వేస్తోంది..."
+
+msgid "🤖 ML Yield Predictor — How much will you harvest?"
+msgstr "🤖 పంట దిగుబడి అంచనా — మీకు ఎంత దిగుబడి వస్తుంది?"
+
+msgid "— guaranteed price, direct bank transfer"
+msgstr "— హామీ ధర, నేరుగా బ్యాంక్ ఖాతాకు చెల్లింపు"
+
+msgid "— mills & exporters who may pay MORE than MSP"
+msgstr "— MSP కంటే ఎక్కువ ధర ఇచ్చే మిల్లులు, ఎగుమతిదారులు"
+
+msgid ""
+"Register to sell your paddy & groundnut directly to the government at MSP "
+"price — no middleman"
+msgstr ""
+"వరి, వేరుశనగను MSP ధరకు నేరుగా అమ్మేందుకు రైతుగా నమోదు చేసుకోండి. "
+"మధ్యవర్తులు అవసరం లేదు."
+
+msgid ""
+"your Aadhaar number, bank account number and IFSC code, and your land survey"
+" number with total area"
+msgstr ""
+"మీ ఆధార్ నంబర్, బ్యాంక్ ఖాతా నంబర్, IFSC కోడ్, భూమి సర్వే నంబర్ మరియు మొత్తం"
+" విస్తీర్ణం"
+
+msgid "Red"
+msgstr "ఎర్ర నేల"
+
+msgid "above MSP"
+msgstr "MSP కంటే ఎక్కువ"
+
+msgid "below MSP"
+msgstr "MSP కంటే తక్కువ"
+
+msgid "Show password"
+msgstr "పాస్‌వర్డ్ చూపించు"
+
+msgid "Hide password"
+msgstr "పాస్‌వర్డ్ దాచు"
+
+msgid "Show"
+msgstr "చూపించు"
+
+msgid "Hide"
+msgstr "దాచు"
+
+msgid "A procurement officer reviews your land details."
+msgstr "ఒక కొనుగోలు అధికారి మీ భూమి వివరాలను సమీక్షిస్తారు."
+
+msgid "AADHAAR & BANK"
+msgstr "ఆధార్ & బ్యాంక్"
+
+msgid "ACCOUNT DETAILS"
+msgstr "ఖాతా వివరాలు"
+
+msgid "AI FARM ASSISTANT"
+msgstr "AI వ్యవసాయ సహాయకుడు"
+
+msgid "AI PRICE ADVISORY"
+msgstr "AI ధర సలహా"
+
+msgid "ALL OFFERS for this crop"
+msgstr "ఈ పంటకు అన్ని ఆఫర్లు"
+
+msgid "Aadhaar number"
+msgstr "ఆధార్ నంబర్"
+
+msgid "Account number and IFSC, so payment reaches you"
+msgstr "ఖాతా నంబర్ మరియు IFSC, చెల్లింపు మీకు చేరేలా"
+
+msgid "Advance: 10%"
+msgstr "అడ్వాన్స్: 10%"
+
+msgid "Advance: 20%"
+msgstr "అడ్వాన్స్: 20%"
+
+msgid ""
+"After your land details are verified, book a slot to sell your crop. Check "
+"the applicable MSP first."
+msgstr ""
+"మీ భూమి వివరాలు ధృవీకరించిన తర్వాత, పంటను అమ్మడానికి స్లాట్ బుక్ చేయండి. "
+"ముందుగా వర్తించే MSP ని చూడండి."
+
+msgid "All Offers for Groundnut"
+msgstr "వేరుశెనగ అన్ని ఆఫర్లు"
+
+msgid "All Offers for Paddy"
+msgstr "వరి అన్ని ఆఫర్లు"
+
+msgid "Already have an account? Log in"
+msgstr "ఇప్పటికే ఖాతా ఉందా? లాగిన్ అవ్వండి"
+
+msgid "Bank account"
+msgstr "బ్యాంక్ ఖాతా"
+
+msgid "Book Procurement Slot | CropConnect"
+msgstr "కొనుగోలు స్లాట్ బుక్ చేయండి | CropConnect"
+
+msgid "Bookings, sales and payments"
+msgstr "బుకింగ్‌లు, అమ్మకాలు మరియు చెల్లింపులు"
+
+msgid "Buyer Login | CropConnect"
+msgstr "కొనుగోలుదారు లాగిన్ | CropConnect"
+
+msgid "Buyer Registration | CropConnect"
+msgstr "కొనుగోలుదారు నమోదు | CropConnect"
+
+msgid ""
+"Buyer names and prices are shown after you log in. Review the details before"
+" you decide."
+msgstr ""
+"కొనుగోలుదారుల పేర్లు, ధరలు లాగిన్ అయిన తర్వాత కనిపిస్తాయి. నిర్ణయించే ముందు "
+"వివరాలు చూడండి."
+
+msgid "Check the current MSP for your crop before you decide where to sell."
+msgstr "ఎక్కడ అమ్మాలో నిర్ణయించే ముందు మీ పంటకు ప్రస్తుత MSP ని చూడండి."
+
+msgid "Choose between the MSP and private buyer offers."
+msgstr "MSP మరియు ప్రైవేట్ కొనుగోలుదారుల ఆఫర్లలో ఎంచుకోండి."
+
+msgid "Choose how you sell"
+msgstr "అమ్మే విధానాన్ని ఎంచుకోండి"
+
+msgid "Choose the buyer that works for you"
+msgstr "మీకు సరిపోయే కొనుగోలుదారుని ఎంచుకోండి"
+
+msgid "Clear payment records"
+msgstr "స్పష్టమైన చెల్లింపు వివరాలు"
+
+msgid "Compare and choose"
+msgstr "పోల్చి ఎంచుకోండి"
+
+msgid "Compare both options and choose the one that suits you."
+msgstr "రెండు ఎంపికలను పోల్చి మీకు సరిపోయేది ఎంచుకోండి."
+
+msgid "Compare offers →"
+msgstr "ఆఫర్లను పోల్చండి →"
+
+msgid "Compare prices"
+msgstr "ధరలను పోల్చండి"
+
+msgid "Compare this with private buyer offers before you sell."
+msgstr "అమ్మే ముందు దీన్ని ప్రైవేట్ కొనుగోలుదారుల ఆఫర్లతో పోల్చండి."
+
+msgid "Create your account"
+msgstr "మీ ఖాతాను సృష్టించండి"
+
+msgid ""
+"Create your farmer account and see the selling options available to you."
+msgstr ""
+"మీ రైతు ఖాతాను సృష్టించి మీకు అందుబాటులో ఉన్న అమ్మకపు ఎంపికలను చూడండి."
+
+msgid "CropConnect benefits"
+msgstr "CropConnect ప్రయోజనాలు"
+
+msgid ""
+"CropConnect — a direct crop selling platform. No middlemen. Fair prices."
+msgstr ""
+"CropConnect — నేరుగా పంట అమ్మే వేదిక. మధ్యవర్తులు లేరు. న్యాయమైన ధరలు."
+
+msgid "District *"
+msgstr "జిల్లా *"
+
+msgid "English"
+msgstr "ఇంగ్లీష్"
+
+msgid "Everything in one place"
+msgstr "అన్నీ ఒకేచోట"
+
+msgid "Farmer Dashboard | CropConnect"
+msgstr "రైతు డాష్‌బోర్డ్ | CropConnect"
+
+msgid "Farmer Registration | CropConnect"
+msgstr "రైతు నమోదు | CropConnect"
+
+msgid ""
+"Farmers can now compare Government MSP offers with private rice mills, "
+"wholesalers, and exporters. Visit the Marketplace tab after login to see all"
+" offers."
+msgstr ""
+"ఇప్పుడు రైతులు ప్రభుత్వ MSP ఆఫర్లను ప్రైవేట్ రైస్ మిల్లులు, హోల్‌సేలర్లు "
+"మరియు ఎగుమతిదారుల ఆఫర్లతో పోల్చవచ్చు. అన్ని ఆఫర్లు చూడటానికి లాగిన్ అయ్యాక "
+"మార్కెట్‌ప్లేస్ ట్యాబ్ చూడండి."
+
+msgid "Food Processor"
+msgstr "ఆహార ప్రాసెసర్"
+
+msgid "From creating your account to selling your crop, each step is clear."
+msgstr "ఖాతా సృష్టి నుండి పంట అమ్మకం వరకు ప్రతి అడుగు స్పష్టంగా ఉంటుంది."
+
+msgid "Getting started is simple"
+msgstr "ప్రారంభించడం సులభం"
+
+msgid "Government MSP and buyer offers"
+msgstr "ప్రభుత్వ MSP మరియు కొనుగోలుదారుల ఆఫర్లు"
+
+msgid "Government procurement"
+msgstr "ప్రభుత్వ కొనుగోలు"
+
+msgid "Government support price (MSP)"
+msgstr "ప్రభుత్వ మద్దతు ధర (MSP)"
+
+msgid "Government support prices"
+msgstr "ప్రభుత్వ మద్దతు ధరలు"
+
+msgid "Keep these ready to register"
+msgstr "నమోదు కోసం ఇవి సిద్ధంగా ఉంచండి"
+
+msgid "Keep track of your sale and payment in your account."
+msgstr "మీ అమ్మకం మరియు చెల్లింపు వివరాలను మీ ఖాతాలో చూడండి."
+
+msgid "Keep your Aadhaar, bank and land details ready."
+msgstr "మీ ఆధార్, బ్యాంక్ మరియు భూమి వివరాలు సిద్ధంగా ఉంచండి."
+
+msgid "Know the price first"
+msgstr "ముందుగా ధర తెలుసుకోండి"
+
+msgid "Land details"
+msgstr "భూమి వివరాలు"
+
+msgid "Land details are checked"
+msgstr "భూమి వివరాలు తనిఖీ చేయబడతాయి"
+
+msgid "ML YIELD PREDICTOR"
+msgstr "ML దిగుబడి అంచనా"
+
+msgid "MSP for Kharif 2025-26 Announced"
+msgstr "ఖరీఫ్ 2025-26 కు MSP ప్రకటించబడింది"
+
+msgid "MY ACTIVE DEALS"
+msgstr "నా క్రియాశీల ఒప్పందాలు"
+
+msgid "Made for farmers, by people who understand farming"
+msgstr "రైతుల కోసం, వ్యవసాయాన్ని అర్థం చేసుకున్న వారిచే రూపొందించబడింది"
+
+msgid "Marketplace — Choose Your Buyer | CropConnect"
+msgstr "మార్కెట్‌ప్లేస్ — మీ కొనుగోలుదారుని ఎంచుకోండి | CropConnect"
+
+msgid "Messages"
+msgstr "సందేశాలు"
+
+msgid "Mon–Sat: 9 AM – 6 PM"
+msgstr "సోమ–శని: ఉదయం 9 – సాయంత్రం 6"
+
+msgid "My Booking Status | CropConnect"
+msgstr "నా బుకింగ్ స్థితి | CropConnect"
+
+msgid "My Private Deals | CropConnect"
+msgstr "నా ప్రైవేట్ ఒప్పందాలు | CropConnect"
+
+msgid "Needed to verify you"
+msgstr "మిమ్మల్ని ధృవీకరించడానికి అవసరం"
+
+msgid "No middlemen"
+msgstr "మధ్యవర్తులు లేరు"
+
+msgid "Payment Status | CropConnect"
+msgstr "చెల్లింపు స్థితి | CropConnect"
+
+msgid "Payment in 5 days"
+msgstr "5 రోజుల్లో చెల్లింపు"
+
+msgid "Payment in 7 days"
+msgstr "7 రోజుల్లో చెల్లింపు"
+
+msgid "Per quintal"
+msgstr "క్వింటాల్‌కు"
+
+msgid "Phone *"
+msgstr "ఫోన్ *"
+
+msgid "Plus district and pincode"
+msgstr "జిల్లా మరియు పిన్‌కోడ్‌తో కలిపి"
+
+msgid "Private buyer offers"
+msgstr "ప్రైవేట్ కొనుగోలుదారుల ఆఫర్లు"
+
+msgid "RECENT BOOKINGS"
+msgstr "ఇటీవలి బుకింగ్‌లు"
+
+msgid "Ready to sell your crop?"
+msgstr "మీ పంటను అమ్మడానికి సిద్ధంగా ఉన్నారా?"
+
+msgid "Register as Buyer →"
+msgstr "కొనుగోలుదారుగా నమోదు చేయండి →"
+
+msgid "Register as a farmer →"
+msgstr "రైతుగా నమోదు చేయండి →"
+
+msgid ""
+"Registration takes a few minutes. Our officer verifies your land before you "
+"can book a slot."
+msgstr ""
+"నమోదుకు కొన్ని నిమిషాలు పడుతుంది. స్లాట్ బుక్ చేయడానికి ముందు మా అధికారి మీ "
+"భూమిని ధృవీకరిస్తారు."
+
+msgid "STATUS GUIDE"
+msgstr "స్థితి మార్గదర్శిని"
+
+msgid ""
+"See offers from rice mills and traders, then compare them with the "
+"Government MSP."
+msgstr ""
+"రైస్ మిల్లులు మరియు వ్యాపారుల ఆఫర్లు చూసి, వాటిని ప్రభుత్వ MSP తో పోల్చండి."
+
+msgid ""
+"See the government price (MSP) and private buyer offers side by side. Sell "
+"paddy or groundnut to whoever pays you best, with no middleman."
+msgstr ""
+"ప్రభుత్వ ధర (MSP) మరియు ప్రైవేట్ కొనుగోలుదారుల ఆఫర్లను పక్కపక్కనే చూడండి. "
+"ఎవరు ఉత్తమ ధర ఇస్తే వారికి వరి లేదా వేరుశెనగ అమ్మండి, మధ్యవర్తి లేకుండా."
+
+msgid "Sell and get paid"
+msgstr "అమ్మండి మరియు చెల్లింపు పొందండి"
+
+msgid "Survey number and area of your land"
+msgstr "మీ భూమి సర్వే నంబర్ మరియు విస్తీర్ణం"
+
+msgid "Tel: 6304629308"
+msgstr "ఫోన్: 6304629308"
+
+msgid "View →"
+msgstr "చూడండి →"
+
+msgid "Village and mandal"
+msgstr "గ్రామం మరియు మండలం"
+
+msgid "You choose"
+msgstr "మీరు ఎంచుకోండి"
+
+msgid "You grow it."
+msgstr "మీరు పండిస్తారు."
+
+msgid "You set the price."
+msgstr "ధర మీరు నిర్ణయించండి."
+
+msgid "e.g. SBIN0001234"
+msgstr "ఉదా: SBIN0001234"
+
+msgid ""
+"your Aadhaar number, bank account number and IFSC code, and your land survey"
+" number with total area."
+msgstr ""
+"మీ ఆధార్ నంబర్, బ్యాంక్ ఖాతా నంబర్ మరియు IFSC కోడ్, మొత్తం విస్తీర్ణంతో మీ "
+"భూమి సర్వే నంబర్."
+
+msgid "— guaranteed price, direct bank transfer | 🏪"
+msgstr "— హామీ ధర, నేరుగా బ్యాంక్ బదిలీ | 🏪"
+
+msgid "← Back to Login"
+msgstr "← లాగిన్‌కు తిరిగి"
+
+msgid "← Back to Marketplace"
+msgstr "← మార్కెట్‌ప్లేస్‌కు తిరిగి"
+
+msgid "← Back to home"
+msgstr "← హోమ్‌కు తిరిగి"
+
+msgid "← Dashboard"
+msgstr "← డాష్‌బోర్డ్"
+
+msgid "← My Bookings"
+msgstr "← నా బుకింగ్‌లు"
+
+msgid "⚖️ Quintal calculation?"
+msgstr "⚖️ క్వింటాల్ లెక్క?"
+
+msgid "⚙️ Login as Admin"
+msgstr "⚙️ అడ్మిన్‌గా లాగిన్"
+
+msgid "❌ Rejected: quantity?"
+msgstr "❌ తిరస్కరణ: పరిమాణం?"
+
+msgid "❓ No rejection reason?"
+msgstr "❓ తిరస్కరణ కారణం లేదా?"
+
+msgid "🌾 Groundnut"
+msgstr "🌾 వేరుశెనగ"
+
+msgid "🌾 How It Works"
+msgstr "🌾 ఇది ఎలా పని చేస్తుంది"
+
+msgid "🌾 New farmer? Register"
+msgstr "🌾 కొత్త రైతా? నమోదు చేయండి"
+
+msgid "🌾 Paddy"
+msgstr "🌾 వరి"
+
+msgid "🏞️ Land Details"
+msgstr "🏞️ భూమి వివరాలు"
+
+msgid "🏦 Payment timeline?"
+msgstr "🏦 చెల్లింపు ఎప్పుడు?"
+
+msgid "🏪 Crop Marketplace"
+msgstr "🏪 పంట మార్కెట్‌ప్లేస్"
+
+msgid "🏭 Login as Buyer"
+msgstr "🏭 కొనుగోలుదారుగా లాగిన్"
+
+msgid "🏭 Private Buyer Login"
+msgstr "🏭 ప్రైవేట్ కొనుగోలుదారు లాగిన్"
+
+msgid "🏭 Register as Private Buyer"
+msgstr "🏭 ప్రైవేట్ కొనుగోలుదారుగా నమోదు చేయండి"
+
+msgid "👋 Namaste! I am your AI assistant for CropConnect."
+msgstr "👋 నమస్కారం! నేను CropConnect కోసం మీ AI సహాయకుడిని."
+
+msgid "👤 Account Details"
+msgstr "👤 ఖాతా వివరాలు"
+
+msgid "💰 MSP & Payment?"
+msgstr "💰 MSP & చెల్లింపు?"
+
+msgid "💰 My Payment Status"
+msgstr "💰 నా చెల్లింపు స్థితి"
+
+msgid "💳 Aadhaar & Bank Details"
+msgstr "💳 ఆధార్ & బ్యాంక్ వివరాలు"
+
+msgid "📄 Rejected: documents?"
+msgstr "📄 తిరస్కరణ: పత్రాలు?"
+
+msgid "📅 Book Govt Slot"
+msgstr "📅 ప్రభుత్వ స్లాట్ బుక్ చేయండి"
+
+msgid "📅 Book New Slot →"
+msgstr "📅 కొత్త స్లాట్ బుక్ చేయండి →"
+
+msgid "+ Book New Slot"
+msgstr "+ కొత్త స్లాట్ బుక్ చేయండి"
+
+msgid "📅 Book Slot"
+msgstr "📅 స్లాట్ బుక్ చేయండి"
+
+msgid "📅 Book a Slot"
+msgstr "📅 స్లాట్ బుక్ చేయండి"
+
+msgid "📅 Book slot?"
+msgstr "📅 స్లాట్ బుక్ చేయాలా?"
+
+msgid "📋 Documents?"
+msgstr "📋 పత్రాలు?"
+
+msgid "📋 My Booking Status"
+msgstr "📋 నా బుకింగ్ స్థితి"
+
+msgid "📋 My Private Buyer Deals"
+msgstr "📋 నా ప్రైవేట్ కొనుగోలుదారు ఒప్పందాలు"
+
+msgid "📖 Payment Status Guide"
+msgstr "📖 చెల్లింపు స్థితి గైడ్"
+
+msgid "📞 Helpdesk"
+msgstr "📞 హెల్ప్‌డెస్క్"
+
+msgid "📞 Helpdesk:"
+msgstr "📞 హెల్ప్‌డెస్క్:"
+
+msgid "🤖 AI Price Advisory — Krishi Mitra"
+msgstr "🤖 AI ధర సలహా — కృషి మిత్ర"
+
+msgid "🤖 AI Rejection Explanation — Krishi Mitra"
+msgstr "🤖 AI తిరస్కరణ వివరణ — కృషి మిత్ర"
+
+msgid "🤖 View + AI Advice"
+msgstr "🤖 చూడండి + AI సలహా"
+
+msgid "🤝 My Private Deals"
+msgstr "🤝 నా ప్రైవేట్ ఒప్పందాలు"
+
+msgid "Welcome back,"
+msgstr "తిరిగి స్వాగతం,"
+
+msgid "Choose your language"
+msgstr "మీ భాషను ఎంచుకోండి"
+
+msgid "Choose language"
+msgstr "భాషను ఎంచుకోండి"
+
+msgid ""
+"Pick your language. The whole website will open in it, including login, "
+"registration and the farmer pages."
+msgstr ""
+"మీ భాషను ఎంచుకోండి. లాగిన్, నమోదు మరియు రైతు పేజీలతో సహా మొత్తం వెబ్‌సైట్ ఆ "
+"భాషలో తెరవబడుతుంది."
+
+msgid "(FARMER)"
+msgstr "(రైతు)"
+
+msgid "NEW: Private Buyer Marketplace Launched"
+msgstr "కొత్తది: ప్రైవేట్ కొనుగోలుదారుల మార్కెట్‌ప్లేస్ ప్రారంభమైంది"
+
+msgid "A fairer way to sell your crop | CropConnect"
+msgstr "మీ పంటను అమ్మడానికి న్యాయమైన మార్గం | CropConnect"
+
+msgid "CropConnect"
+msgstr "CropConnect"

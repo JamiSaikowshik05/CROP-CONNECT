@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Users{% endblock %}
+{% block extra_css %}{% include 'admin/_style.html' %}{% endblock %}
+
+{% block content %}
+<div class="admin-head mb-3">
+    <a href="{% url 'admin_dashboard' %}" class="admin-back">← Back to dashboard</a>
+    <h2>Users</h2>
+    <p>Every account on CropConnect. An <span class="pill stop">Inactive</span> account cannot log in. A <span class="pill">No role set</span> account needs its role set before its owner can log in.</p>
+</div>
+
+<div class="row g-3">
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ role_counts.FARMER }}</div><div class="name">Farmers</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ role_counts.OFFICER }}</div><div class="name">Officers</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ role_counts.ADMIN }}</div><div class="name">Admins</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ role_counts.BUYER }}</div><div class="name">Private buyers</div></div></div>
+</div>
+
+<div class="table-card mt-4">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr><th>Username</th><th>Name</th><th>Role</th><th>Phone</th><th>Email</th><th>Joined</th><th>Account</th></tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                <tr>
+                    <td><strong>{{ u.username }}</strong></td>
+                    <td>{{ u.get_full_name|default:"—" }}</td>
+                    <td>
+                        {% if u.role == 'FARMER' %}<span class="pill ok">Farmer</span>
+                        {% elif u.role == 'OFFICER' %}<span class="pill info">Officer</span>
+                        {% elif u.role == 'ADMIN' %}<span class="pill stop">Admin</span>
+                        {% elif u.role == 'BUYER' %}<span class="pill wait">Private buyer</span>
+                        {% else %}<span class="pill">No role set</span>{% endif %}
+                    </td>
+                    <td>{{ u.phone|default:"—" }}</td>
+                    <td>{{ u.email|default:"—" }}</td>
+                    <td style="font-size:0.85rem;">{{ u.date_joined|date:"d M Y" }}</td>
+                    <td>{% if u.is_active %}<span class="pill ok">Active</span>{% else %}<span class="pill stop">Inactive</span>{% endif %}</td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="7" class="text-center text-muted py-4">No users yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

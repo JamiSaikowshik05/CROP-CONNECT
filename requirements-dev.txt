@@ -1,0 +1,3 @@
+# Only needed by developers who edit translations (python tools/i18n.py build)
+-r requirements.txt
+polib>=1.2

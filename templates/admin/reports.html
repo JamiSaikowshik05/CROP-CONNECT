@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Reports{% endblock %}
+{% block extra_css %}{% include 'admin/_style.html' %}{% endblock %}
+
+{% block content %}
+<div class="admin-head mb-4">
+    <a href="{% url 'admin_dashboard' %}" class="admin-back">← Back to dashboard</a>
+    <h2>Reports</h2>
+    <p>Pick a report to open it. Each card says what you will see.</p>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_dashboard' %}"><strong>Summary</strong><span>Totals for farmers, bookings, procurements and money billed.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_approve_payments' %}"><strong>Payments</strong><span>Payments waiting for approval and recently processed ones, with bank reference numbers.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_manage_users' %}"><strong>Farmers and users</strong><span>Every account, its role and whether it is active.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_marketplace_overview' %}"><strong>Marketplace</strong><span>Private buyer offers and the deals made with farmers.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_manage_buyers' %}"><strong>Private buyers</strong><span>Approve, block or unblock rice mills, wholesalers and exporters.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_set_msp' %}"><strong>MSP rates</strong><span>The government price for each crop.</span></a></div>
+</div>
+{% endblock %}

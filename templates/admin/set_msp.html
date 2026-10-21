@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Set MSP rates{% endblock %}
+{% block extra_css %}{% include 'admin/_style.html' %}{% endblock %}
+
+{% block content %}
+<div class="admin-head mb-4">
+    <a href="{% url 'admin_dashboard' %}" class="admin-back">← Back to dashboard</a>
+    <h2>Set MSP rates</h2>
+    <p>MSP is the minimum price the government pays per quintal (100 kg). New bills use the rate you set here.
+       Bills that already exist keep the rate they were made with.</p>
+</div>
+
+<div class="row g-4">
+    {% for crop in crops %}
+    <div class="col-md-6 col-lg-4">
+        <div class="admin-card">
+            <div class="label">{% if crop.name == 'Paddy' %}🌾{% else %}🥜{% endif %} {{ crop.name }}</div>
+            {% if crop.season %}<div class="hint mb-2">Season: {{ crop.season }}</div>{% endif %}
+            <div class="mb-3 p-3 rounded" style="background:#e8f5e9;text-align:center;">
+                <div class="small text-muted">Current MSP</div>
+                <div style="font-size:2rem;font-weight:800;color:#1b5e20;">₹{{ crop.msp_per_quintal|floatformat:2 }}</div>
+                <div class="small text-muted">per quintal (100 kg)</div>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="crop_id" value="{{ crop.id }}">
+                <label class="form-label fw-semibold" for="msp-{{ crop.id }}">New MSP (₹ per quintal)</label>
+                <input id="msp-{{ crop.id }}" type="number" name="msp_per_quintal"
+                       value="{{ crop.msp_per_quintal }}" step="0.01" min="0" class="form-control mb-3" required>
+                <button type="submit" class="btn btn-success w-100"
+                        onclick="return confirm('Change the MSP for {{ crop.name }} to ₹' + this.form.msp_per_quintal.value + ' per quintal?')">
+                    Save new MSP
+                </button>
+            </form>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12"><div class="alert alert-warning mb-0">No crops are set up yet.</div></div>
+    {% endfor %}
+</div>
+{% endblock %}

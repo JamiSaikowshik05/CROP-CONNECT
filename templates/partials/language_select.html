@@ -1,0 +1,12 @@
+{% comment %}Language picker shared by the navigation bar and the login header.
+   Expects: form_class, select_id, select_style (optional).{% endcomment %}
+<form class="{{ form_class }}" action="{% url 'set_language' %}" method="post"{% if select_style %} style="{{ select_style }}"{% endif %}>
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+    <label class="visually-hidden" for="{{ select_id }}">Language</label>
+    <select class="form-select form-select-sm" id="{{ select_id }}" name="language"
+            onchange="this.form.submit()" aria-label="Select language" data-no-translate>
+        {% for code, name in NAV_LANGUAGES %}<option value="{{ code }}"{% if request.LANGUAGE_CODE == code %} selected{% endif %}>{{ name }}</option>
+        {% endfor %}
+    </select>
+</form>

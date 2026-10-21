@@ -1,0 +1,3022 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CropConnect\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Language"
+msgstr "भाषा"
+
+msgid "Select language"
+msgstr "भाषा चुनें"
+
+msgid "Dashboard"
+msgstr "डैशबोर्ड"
+
+msgid "Buyers"
+msgstr ""
+
+msgid "🏭 Buyers"
+msgstr ""
+
+msgid "🏪 Marketplace"
+msgstr "🏪 मार्केटप्लेस"
+
+msgid "🚪 Logout"
+msgstr "🚪 लॉगआउट"
+
+msgid "My Dashboard"
+msgstr "मेरा डैशबोर्ड"
+
+msgid "Book Slot"
+msgstr "स्लॉट बुक करें"
+
+msgid "Book a Slot"
+msgstr ""
+
+msgid "Book a slot"
+msgstr ""
+
+msgid "Book Procurement Slot"
+msgstr ""
+
+msgid "Book New Slot"
+msgstr ""
+
+msgid "Book Govt Slot"
+msgstr ""
+
+msgid "Book Govt Slot (MSP)"
+msgstr ""
+
+msgid "My Bookings"
+msgstr "मेरी बुकिंग"
+
+msgid "All My Bookings"
+msgstr ""
+
+msgid "My Booking Status"
+msgstr ""
+
+msgid "Payments"
+msgstr "भुगतान"
+
+msgid "Payment Status"
+msgstr ""
+
+msgid "My Payment Status"
+msgstr ""
+
+msgid "Marketplace"
+msgstr "मार्केटप्लेस"
+
+msgid "Crop Marketplace"
+msgstr ""
+
+msgid "Marketplace Overview"
+msgstr ""
+
+msgid "Manage Buyers"
+msgstr ""
+
+msgid "Private Buyers"
+msgstr "निजी खरीदार"
+
+msgid "Browse Private Buyers"
+msgstr ""
+
+msgid "My Private Deals"
+msgstr ""
+
+msgid "Post Offer"
+msgstr ""
+
+msgid "Post New Offer"
+msgstr ""
+
+msgid "Contact"
+msgstr "संपर्क"
+
+msgid "Login"
+msgstr "लॉगिन"
+
+msgid "Login here"
+msgstr "यहाँ लॉगिन करें"
+
+msgid "Login to compare →"
+msgstr ""
+
+msgid "Register as Farmer"
+msgstr "किसान के रूप में पंजीकरण करें"
+
+msgid "Register as Buyer"
+msgstr "खरीदार के रूप में पंजीकरण करें"
+
+msgid "Register as a buyer"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Manage Users"
+msgstr ""
+
+msgid "Set MSP"
+msgstr ""
+
+msgid "Set MSP Rates"
+msgstr ""
+
+msgid "Approve Payments"
+msgstr ""
+
+msgid "Approve Bookings"
+msgstr ""
+
+msgid "Verify Land"
+msgstr ""
+
+msgid "Verify Land Details"
+msgstr ""
+
+msgid "Validate Crop"
+msgstr ""
+
+msgid "Validate Procurement"
+msgstr ""
+
+msgid "Reports"
+msgstr ""
+
+msgid "Reports & Analytics"
+msgstr ""
+
+msgid "Helpdesk"
+msgstr "सहायता केंद्र"
+
+msgid "Back"
+msgstr "वापस"
+
+msgid "Back to Dashboard"
+msgstr ""
+
+msgid "Back to Login"
+msgstr "लॉगिन पर वापस जाएँ"
+
+msgid "Back to Marketplace"
+msgstr ""
+
+msgid "Back to home"
+msgstr "होम पर वापस जाएँ"
+
+msgid "Close"
+msgstr "बंद करें"
+
+msgid "Cancel"
+msgstr "रद्द करें"
+
+msgid "Save"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "Update"
+msgstr "अपडेट करें"
+
+msgid "Delete"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Getting AI advice..."
+msgstr ""
+
+msgid "Could not load advice. Please try again."
+msgstr ""
+
+msgid "Analysing rejection..."
+msgstr ""
+
+msgid "Thinking..."
+msgstr ""
+
+msgid "Sorry, something went wrong."
+msgstr ""
+
+msgid "Network error. Please try again."
+msgstr ""
+
+msgid "Select Crop"
+msgstr "फसल चुनें"
+
+msgid "Paddy"
+msgstr "धान"
+
+msgid "Groundnut"
+msgstr "मूँगफली"
+
+msgid "Farmer"
+msgstr "किसान"
+
+msgid "Farmers"
+msgstr "किसान"
+
+msgid "Officer"
+msgstr "अधिकारी"
+
+msgid "Admin"
+msgstr "एडमिन"
+
+msgid "Buyer"
+msgstr "खरीदार"
+
+msgid "Username"
+msgstr "यूज़रनेम"
+
+msgid "Username *"
+msgstr "यूज़रनेम *"
+
+msgid "Password"
+msgstr "पासवर्ड"
+
+msgid "Password *"
+msgstr "पासवर्ड *"
+
+msgid "Confirm Password"
+msgstr "पासवर्ड की पुष्टि करें"
+
+msgid "Confirm Password *"
+msgstr "पासवर्ड की पुष्टि करें *"
+
+msgid "Email"
+msgstr "ईमेल"
+
+msgid "Phone"
+msgstr "फ़ोन"
+
+msgid "Phone Number"
+msgstr "फ़ोन नंबर"
+
+msgid "First Name"
+msgstr "पहला नाम"
+
+msgid "Last Name"
+msgstr "अंतिम नाम"
+
+msgid "Full Name"
+msgstr ""
+
+msgid "Farmer Registration"
+msgstr "किसान पंजीकरण"
+
+msgid "Buyer Registration"
+msgstr "खरीदार पंजीकरण"
+
+msgid "Farmer Login"
+msgstr "किसान लॉगिन"
+
+msgid "Officer Login"
+msgstr "अधिकारी लॉगिन"
+
+msgid "Administrator Login"
+msgstr "एडमिन लॉगिन"
+
+msgid "Buyer Login"
+msgstr "खरीदार लॉगिन"
+
+msgid "Private Buyer Login"
+msgstr "निजी खरीदार लॉगिन"
+
+msgid "New farmer?"
+msgstr "नए किसान हैं?"
+
+msgid "New buyer?"
+msgstr "नए खरीदार हैं?"
+
+msgid "Already registered?"
+msgstr "पहले से पंजीकृत हैं?"
+
+msgid "Register here"
+msgstr "यहाँ पंजीकरण करें"
+
+msgid "Aadhaar"
+msgstr "आधार"
+
+msgid "Aadhaar Number"
+msgstr "आधार नंबर"
+
+msgid "Bank"
+msgstr "बैंक"
+
+msgid "Bank Name"
+msgstr "बैंक का नाम"
+
+msgid "Bank Account Number"
+msgstr "बैंक खाता नंबर"
+
+msgid "Account No"
+msgstr ""
+
+msgid "IFSC"
+msgstr "IFSC"
+
+msgid "IFSC Code"
+msgstr "IFSC कोड"
+
+msgid "12-digit number on your Aadhaar card"
+msgstr "आपके आधार कार्ड पर 12 अंकों का नंबर"
+
+msgid "Found on your bank passbook. e.g. SBIN0001234"
+msgstr "यह आपकी बैंक पासबुक पर होता है। जैसे: SBIN0001234"
+
+msgid "Survey No"
+msgstr ""
+
+msgid "Survey Number"
+msgstr "सर्वे नंबर"
+
+msgid "Land Details"
+msgstr "भूमि का विवरण"
+
+msgid "Total Land Area (Acres)"
+msgstr "कुल भूमि क्षेत्र (एकड़)"
+
+msgid "Area (Acres)"
+msgstr "क्षेत्र (एकड़)"
+
+msgid "Village"
+msgstr "गाँव"
+
+msgid "Mandal"
+msgstr "मंडल"
+
+msgid "District"
+msgstr "ज़िला"
+
+msgid "State"
+msgstr "राज्य"
+
+msgid "Pincode"
+msgstr "पिनकोड"
+
+msgid "Crop"
+msgstr "फसल"
+
+msgid "Crop *"
+msgstr ""
+
+msgid "Date"
+msgstr "तारीख"
+
+msgid "Slot Date"
+msgstr "स्लॉट की तारीख"
+
+msgid "Estimated Quantity (Quintals)"
+msgstr "अनुमानित मात्रा (क्विंटल)"
+
+msgid "Quantity (quintals)"
+msgstr ""
+
+msgid "Quantity booked:"
+msgstr ""
+
+msgid "Booked Qty"
+msgstr ""
+
+msgid "Booked On"
+msgstr "बुकिंग तिथि"
+
+msgid "Actual Weight (Quintals)"
+msgstr ""
+
+msgid "Weight"
+msgstr ""
+
+msgid "Status"
+msgstr "स्थिति"
+
+msgid "Action"
+msgstr "कार्रवाई"
+
+msgid "Actions"
+msgstr ""
+
+msgid "Pending"
+msgstr "लंबित"
+
+msgid "Approved"
+msgstr "मंज़ूर"
+
+msgid "Rejected"
+msgstr "अस्वीकृत"
+
+msgid "Completed"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Inactive"
+msgstr ""
+
+msgid "Pending Approval"
+msgstr ""
+
+msgid "Pending Admin Approval"
+msgstr ""
+
+msgid "Approved ✅"
+msgstr ""
+
+msgid "Rejected ❌"
+msgstr ""
+
+msgid "Approve"
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Confirm Reject"
+msgstr ""
+
+msgid "Reason for Rejection"
+msgstr ""
+
+msgid "Remarks"
+msgstr ""
+
+msgid "Remarks (optional)"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "Total"
+msgstr "कुल"
+
+msgid "Total Amount (₹)"
+msgstr ""
+
+msgid "Expected Payment"
+msgstr ""
+
+msgid "Payment Calculation"
+msgstr ""
+
+msgid "Payment Status Guide"
+msgstr ""
+
+msgid "MSP Rate"
+msgstr "MSP दर"
+
+msgid "MSP Configuration"
+msgstr ""
+
+msgid "Current MSP"
+msgstr "वर्तमान MSP"
+
+msgid "Current MSP Rates"
+msgstr "वर्तमान MSP दरें"
+
+msgid "New MSP Rate (₹/quintal)"
+msgstr ""
+
+msgid "Government MSP"
+msgstr "सरकारी MSP"
+
+msgid "Government price (MSP)"
+msgstr ""
+
+msgid "Price/qtl"
+msgstr ""
+
+msgid "Offer Price"
+msgstr ""
+
+msgid "Your Offer Price (₹/quintal) *"
+msgstr ""
+
+msgid "per quintal"
+msgstr "प्रति क्विंटल"
+
+msgid "quintal"
+msgstr "क्विंटल"
+
+msgid "quintals"
+msgstr ""
+
+msgid "Season"
+msgstr "मौसम"
+
+msgid "Season:"
+msgstr ""
+
+msgid "Kharif"
+msgstr "खरीफ़"
+
+msgid "Rabi"
+msgstr "रबी"
+
+msgid "All seasons"
+msgstr ""
+
+msgid "Moisture"
+msgstr ""
+
+msgid "Moisture %"
+msgstr ""
+
+msgid "Foreign Matter"
+msgstr ""
+
+msgid "Damaged Grains"
+msgstr ""
+
+msgid "Immature Grains"
+msgstr ""
+
+msgid "Chalky Grains"
+msgstr ""
+
+msgid "Oil Content"
+msgstr ""
+
+msgid "Shelling Outturn"
+msgstr ""
+
+msgid "Aflatoxin"
+msgstr ""
+
+msgid "Quality & Weight Validation"
+msgstr ""
+
+msgid "Select the date you want to bring your crop to the procurement centre."
+msgstr "वह तारीख चुनें जिस दिन आप अपनी फसल खरीद केंद्र पर लाना चाहते हैं।"
+
+msgid "Choose a date from the available slots to bring your crop in."
+msgstr ""
+
+msgid ""
+"Select your crop, date, and estimated quantity. An officer will approve your"
+" booking."
+msgstr ""
+"अपनी फसल, तारीख और अनुमानित मात्रा चुनें। अधिकारी आपकी बुकिंग मंज़ूर करेंगे।"
+
+msgid ""
+"You cannot book a slot until a procurement officer has verified your land "
+"records."
+msgstr ""
+
+msgid ""
+"An officer will verify your land details within 1–3 working days. After "
+"verification you can book procurement slots."
+msgstr ""
+
+msgid "Before you start, keep these ready:"
+msgstr "शुरू करने से पहले ये चीज़ें तैयार रखें:"
+
+msgid "See the full checklist"
+msgstr "पूरी सूची देखें"
+
+msgid "Enter your Aadhaar, bank account and land details once."
+msgstr ""
+
+msgid ""
+"Compare Government MSP vs Private Buyer offers. Choose the best price for "
+"your crop."
+msgstr ""
+"सरकारी MSP बनाम निजी खरीदार के ऑफ़र की तुलना करें। अपनी फसल के लिए सबसे "
+"अच्छा दाम चुनें।"
+
+msgid "Compare Government MSP price"
+msgstr "सरकारी MSP मूल्य की तुलना करें"
+
+msgid ""
+"See the Government price and private buyer offers together. Pick the one "
+"that suits you."
+msgstr ""
+
+msgid "Choose whoever pays more"
+msgstr "जो ज़्यादा दाम दे, उसे चुनें"
+
+msgid ""
+"Rice mills, wholesalers and exporters also make offers. An offer may be "
+"above MSP or below it. Login to see each buyer's price and compare it with "
+"the Government price before you decide."
+msgstr ""
+
+msgid ""
+"Sell your paddy & groundnut directly to government at MSP price — no "
+"middleman"
+msgstr ""
+"अपना धान और मूँगफली सीधे सरकार को MSP दर पर बेचें — बीच में कोई बिचौलिया "
+"नहीं"
+
+msgid "Sell your paddy & groundnut at a fair price"
+msgstr ""
+
+msgid ""
+"Register to sell your paddy & groundnut directly to the government at MSP "
+"price — no middleman."
+msgstr ""
+"अपना धान और मूँगफली सीधे सरकार को MSP दर पर बेचने के लिए पंजीकरण करें — बीच "
+"में कोई बिचौलिया नहीं।"
+
+msgid "How It Works"
+msgstr "यह कैसे काम करता है"
+
+msgid "How the process works"
+msgstr ""
+
+msgid "How it works: 4 simple steps"
+msgstr ""
+
+msgid "Key Features"
+msgstr ""
+
+msgid "Announcements and safety information"
+msgstr ""
+
+msgid "Latest announcements"
+msgstr "ताज़ा सूचनाएँ"
+
+msgid "Your bookings, payments and invoices"
+msgstr ""
+
+msgid ""
+"Your slot bookings and payment status, all on one screen after you login."
+msgstr ""
+
+msgid ""
+"Track every bill — approved, rejected, or transferred to your bank account."
+msgstr "हर बिल पर नज़र रखें — मंज़ूर, अस्वीकृत या बैंक खाते में भेजा गया।"
+
+msgid "No bookings yet."
+msgstr "अभी कोई बुकिंग नहीं है।"
+
+msgid "No pending bookings."
+msgstr ""
+
+msgid "No pending bookings at the moment."
+msgstr ""
+
+msgid "No payment records yet. Complete a procurement to see bills here."
+msgstr ""
+"अभी कोई भुगतान रिकॉर्ड नहीं है। बिल यहाँ देखने के लिए खरीद पूरी होने दें।"
+
+msgid "No offers yet."
+msgstr ""
+
+msgid "No offers listed right now"
+msgstr ""
+
+msgid "No deal requests yet. Farmers will see your offer on the marketplace."
+msgstr ""
+
+msgid "No deals yet."
+msgstr ""
+
+msgid "No users found."
+msgstr ""
+
+msgid "No buyers registered yet."
+msgstr ""
+
+msgid "No pending payments at the moment."
+msgstr ""
+
+msgid "All payments processed!"
+msgstr ""
+
+msgid "No pending land verifications. All farmers are verified."
+msgstr ""
+
+msgid "All offers for"
+msgstr ""
+
+msgid "Offer Details"
+msgstr ""
+
+msgid "Deal Requests"
+msgstr ""
+
+msgid "Confirmed Deals"
+msgstr ""
+
+msgid "Recent Bookings"
+msgstr "हाल की बुकिंग"
+
+msgid "Recent Deals"
+msgstr ""
+
+msgid "Recent Pending Bookings"
+msgstr ""
+
+msgid "Recent Deal Requests from Farmers"
+msgstr ""
+
+msgid "Quick Actions"
+msgstr "त्वरित कार्य"
+
+msgid "Total Farmers"
+msgstr ""
+
+msgid "Total Bookings"
+msgstr ""
+
+msgid "Total Deals"
+msgstr ""
+
+msgid "Total Value"
+msgstr ""
+
+msgid "Approval Rate"
+msgstr ""
+
+msgid "Rejection Rate"
+msgstr ""
+
+msgid "Village / District"
+msgstr ""
+
+msgid "Village / Mandal"
+msgstr ""
+
+msgid "Buyer Type"
+msgstr "खरीदार का प्रकार"
+
+msgid "Buyer Type *"
+msgstr "खरीदार का प्रकार *"
+
+msgid "Company Name *"
+msgstr "कंपनी का नाम *"
+
+msgid "Contact Person *"
+msgstr "संपर्क व्यक्ति *"
+
+msgid "Address *"
+msgstr "पता *"
+
+msgid "License No."
+msgstr "लाइसेंस नंबर"
+
+msgid "GST Number"
+msgstr "GST नंबर"
+
+msgid "Pickup Location"
+msgstr ""
+
+msgid "Pickup Location *"
+msgstr ""
+
+msgid "Pickup:"
+msgstr ""
+
+msgid "Requested:"
+msgstr ""
+
+msgid "Booked:"
+msgstr ""
+
+msgid "Govt limit:"
+msgstr ""
+
+msgid "Minimum Quantity (qtl)"
+msgstr ""
+
+msgid "Maximum Quantity (qtl) *"
+msgstr ""
+
+msgid "Valid From *"
+msgstr ""
+
+msgid "Valid Until *"
+msgstr ""
+
+msgid "Advance Payment %"
+msgstr ""
+
+msgid "Payment Within (days) *"
+msgstr ""
+
+msgid "Description / Terms"
+msgstr ""
+
+msgid "Your Notes (optional)"
+msgstr ""
+
+msgid "No middleman"
+msgstr "कोई बिचौलिया नहीं"
+
+msgid "No middleman, ever"
+msgstr "कभी भी बिचौलिया नहीं"
+
+msgid "100% guaranteed payment"
+msgstr ""
+
+msgid "Money sent directly to your bank"
+msgstr "पैसा सीधे आपके बैंक खाते में"
+
+msgid "Direct bank transfer"
+msgstr "सीधा बैंक ट्रांसफ़र"
+
+msgid "Money in your bank account."
+msgstr "पैसा आपके बैंक खाते में।"
+
+msgid "Money Credited!"
+msgstr ""
+
+msgid "Transfer in Progress"
+msgstr ""
+
+msgid "Transfer in 2–5 working days."
+msgstr "2–5 कार्यदिवसों में ट्रांसफ़र।"
+
+msgid "Helpdesk phone number"
+msgstr ""
+
+msgid "Hours: 9:00 AM - 6:00 PM (Mon-Sat)"
+msgstr "समय: सुबह 9:00 - शाम 6:00 (सोम-शनि)"
+
+msgid "Government of India • Ministry of Agriculture & Farmers Welfare"
+msgstr "भारत सरकार • कृषि एवं किसान कल्याण मंत्रालय"
+
+msgid "Government of India — Ministry of Agriculture & Farmers Welfare"
+msgstr "भारत सरकार — कृषि एवं किसान कल्याण मंत्रालय"
+
+msgid "Role"
+msgstr "भूमिका"
+
+msgid "Type"
+msgstr "प्रकार"
+
+msgid "Crop Summary"
+msgstr ""
+
+msgid "Payment Journey"
+msgstr ""
+
+msgid "Submitted On"
+msgstr ""
+
+msgid "Joined"
+msgstr ""
+
+msgid "Admin Dashboard"
+msgstr ""
+
+msgid "Farmer Dashboard"
+msgstr ""
+
+msgid "Officer Dashboard"
+msgstr ""
+
+msgid "Buyer Dashboard"
+msgstr ""
+
+msgid "ML Dashboard"
+msgstr ""
+
+msgid "ML Analytics Dashboard"
+msgstr ""
+
+msgid "Machine Learning models performance and portal analytics"
+msgstr ""
+
+msgid "Use ML predictor to estimate quantity"
+msgstr "मात्रा का अनुमान लगाने के लिए ML पूर्वानुमान उपयोग करें"
+
+msgid "Predict"
+msgstr ""
+
+msgid "Predict Grade"
+msgstr ""
+
+msgid "Predict Yield"
+msgstr ""
+
+msgid "RISK"
+msgstr ""
+
+msgid "Risk"
+msgstr ""
+
+msgid "Risk Level"
+msgstr ""
+
+msgid "Approve Now"
+msgstr ""
+
+msgid "Verify Land Now"
+msgstr ""
+
+msgid "View Dashboard"
+msgstr ""
+
+msgid "View All →"
+msgstr "सभी देखें →"
+
+msgid "View Marketplace"
+msgstr ""
+
+msgid "View Deals"
+msgstr ""
+
+msgid "Download Invoice"
+msgstr ""
+
+msgid "Contact Us"
+msgstr ""
+
+msgid "About CropConnect"
+msgstr ""
+
+msgid "Helpdesk:"
+msgstr ""
+
+msgid "Toll Free:"
+msgstr ""
+
+msgid "See reason above. Call helpdesk."
+msgstr "ऊपर कारण देखें। सहायता केंद्र को कॉल करें।"
+
+msgid "This booking has not been rejected."
+msgstr ""
+
+msgid "Booking not found"
+msgstr ""
+
+msgid "No reason given. Please call helpdesk."
+msgstr ""
+
+msgid "AI Farm Assistant"
+msgstr "AI कृषि सहायक"
+
+msgid "Ask anything about procurement"
+msgstr "खरीद के बारे में कुछ भी पूछें"
+
+msgid "I can help with slot bookings, MSP rates, documents, and payments."
+msgstr ""
+"मैं स्लॉट बुकिंग, MSP दरों, दस्तावेज़ों और भुगतान में मदद कर सकता हूँ।"
+
+msgid "Type your question..."
+msgstr "अपना सवाल लिखें..."
+
+msgid "Get AI Advice"
+msgstr "AI सलाह लें"
+
+msgid "AI Price Advisory — Krishi Mitra"
+msgstr ""
+
+msgid "AI Rejection Explainer"
+msgstr ""
+
+msgid "Why rejected?"
+msgstr ""
+
+msgid "Documents?"
+msgstr ""
+
+msgid "Payment timeline?"
+msgstr ""
+
+msgid "Book slot?"
+msgstr ""
+
+msgid "MSP & Payment?"
+msgstr ""
+
+msgid "Rejected: quantity?"
+msgstr ""
+
+msgid "Rejected: documents?"
+msgstr ""
+
+msgid "No rejection reason?"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Welcome"
+msgstr ""
+
+msgid "Welcome,"
+msgstr ""
+
+msgid "Contact:"
+msgstr ""
+
+msgid "Phone: 6304629308"
+msgstr "फ़ोन: 6304629308"
+
+msgid "Email: support@cropconnect.gov.in"
+msgstr "ईमेल: support@cropconnect.gov.in"
+
+msgid "Already registered? Login"
+msgstr "पहले से पंजीकृत हैं? लॉगिन करें"
+
+msgid "Admin reviewing. 1–3 days."
+msgstr "एडमिन जाँच रहे हैं। 1–3 दिन।"
+
+msgid "Officer verifies your land"
+msgstr "अधिकारी आपकी ज़मीन की जाँच करते हैं"
+
+msgid "Officer checks land"
+msgstr ""
+
+msgid "Officer weighs → bill generated → money in bank"
+msgstr "अधिकारी तौलते हैं → बिल बनता है → पैसा बैंक में"
+
+msgid "Bring your crop on the booked date"
+msgstr "बुक की गई तिथि पर अपनी फसल लाएँ"
+
+msgid "Choose a different date"
+msgstr ""
+
+msgid "Check back soon"
+msgstr ""
+
+msgid "No crops found. Please add crops first."
+msgstr ""
+
+msgid "MSP rates will be updated soon."
+msgstr ""
+
+msgid "Login — CropConnect"
+msgstr "लॉगिन — CropConnect"
+
+msgid ""
+"CropConnect — Direct crop procurement platform. No middlemen. Fair prices."
+msgstr ""
+
+msgid "© Government of India. All rights reserved."
+msgstr "© भारत सरकार। सर्वाधिकार सुरक्षित।"
+
+msgid "© Government of India. CropConnect. All rights reserved."
+msgstr "© भारत सरकार। CropConnect। सर्वाधिकार सुरक्षित।"
+
+msgid "PENDING"
+msgstr ""
+
+msgid "APPROVED"
+msgstr ""
+
+msgid "REJECTED"
+msgstr ""
+
+msgid "COMPLETED"
+msgstr ""
+
+msgid "CANCELLED"
+msgstr ""
+
+msgid "TRANSFERRED"
+msgstr ""
+
+msgid "Weight Validated"
+msgstr ""
+
+msgid "Procurement Approved"
+msgstr ""
+
+msgid "Transferred to Bank"
+msgstr ""
+
+msgid "Confirmed by Buyer"
+msgstr ""
+
+msgid "Crop Delivered"
+msgstr ""
+
+msgid "Payment Done"
+msgstr ""
+
+msgid "Pending Confirmation"
+msgstr ""
+
+msgid "Blocked"
+msgstr ""
+
+msgid "Closed"
+msgstr ""
+
+msgid "Expired"
+msgstr ""
+
+msgid "Paused"
+msgstr ""
+
+msgid "FARMER"
+msgstr ""
+
+msgid "OFFICER"
+msgstr ""
+
+msgid "ADMIN"
+msgstr ""
+
+msgid "BUYER"
+msgstr ""
+
+msgid "Administrator"
+msgstr "प्रशासक"
+
+msgid "Procurement Officer"
+msgstr "खरीद अधिकारी"
+
+msgid "Private Buyer"
+msgstr "निजी खरीदार"
+
+msgid "Rice Mill"
+msgstr "राइस मिल"
+
+msgid "Wholesaler"
+msgstr "थोक व्यापारी"
+
+msgid "Exporter"
+msgstr "निर्यातक"
+
+msgid ""
+"A private buyer must be approved by the admin before they can login or post "
+"an offer."
+msgstr ""
+
+msgid ""
+"A procurement officer verifies your land records. Booking opens after this."
+msgstr ""
+
+msgid "AI is analysing your rejection..."
+msgstr "AI आपकी अस्वीकृति का विश्लेषण कर रहा है..."
+
+msgid "Admin Review"
+msgstr ""
+
+msgid "Admin Username"
+msgstr "एडमिन यूज़रनेम"
+
+msgid "Advance"
+msgstr ""
+
+msgid "Advance: %"
+msgstr ""
+
+msgid "Aflatoxin Test"
+msgstr ""
+
+msgid "All Offers for"
+msgstr ""
+
+msgid "All registered users — farmers, officers, admins, and buyers."
+msgstr ""
+
+msgid "Alluvial"
+msgstr "जलोढ़"
+
+msgid "Amount:"
+msgstr ""
+
+msgid "Any observations about the crop condition, storage, or quality."
+msgstr ""
+
+msgid "Approve Slot Bookings"
+msgstr ""
+
+msgid "Approved (FAQ Grade)"
+msgstr ""
+
+msgid "Approved Bookings"
+msgstr "मंज़ूर बुकिंग"
+
+msgid "Approved Buyers"
+msgstr ""
+
+msgid "Approved!"
+msgstr ""
+
+msgid "Are you a rice mill, wholesaler or exporter?"
+msgstr ""
+
+msgid "Avg Moisture %"
+msgstr ""
+
+msgid "Bill Details"
+msgstr ""
+
+msgid "Bill Generated ✅"
+msgstr ""
+
+msgid "Bill No"
+msgstr ""
+
+msgid "Bill No:"
+msgstr ""
+
+msgid "Black"
+msgstr "काली"
+
+msgid "Block"
+msgstr ""
+
+msgid "Book a procurement slot"
+msgstr "खरीद के लिए स्लॉट बुक करें"
+
+msgid "Book your first slot!"
+msgstr "अपना पहला स्लॉट बुक करें!"
+
+msgid "Booked: qtl"
+msgstr ""
+
+msgid "Booking a slot and making a deal"
+msgstr ""
+
+msgid "Bookings"
+msgstr "बुकिंग"
+
+msgid "Bring crop → get weighed"
+msgstr "फसल लाएँ → तौल कराएँ"
+
+msgid "Browse the marketplace →"
+msgstr "मार्केटप्लेस देखें →"
+
+msgid "Buyer Rating"
+msgstr ""
+
+msgid "Buyer Reports"
+msgstr ""
+
+msgid "Buyer Username"
+msgstr "खरीदार यूज़रनेम"
+
+msgid "Buyers by Type"
+msgstr ""
+
+msgid ""
+"By submitting, you are requesting this deal. The buyer will confirm within "
+"24 hours. You can still book a government slot separately."
+msgstr ""
+
+msgid "Check after login"
+msgstr ""
+
+msgid ""
+"Click \"Get AI Advice\" for personalised selling advice based on MSP rates "
+"and season."
+msgstr ""
+"MSP दरों और मौसम के आधार पर बिक्री की सलाह के लिए \"AI सलाह लें\" पर क्लिक "
+"करें।"
+
+msgid ""
+"Click to get instant ML prediction of quality grade based on your entered "
+"measurements."
+msgstr ""
+
+msgid "Common Quality Parameters"
+msgstr ""
+
+msgid "Company"
+msgstr "कंपनी"
+
+msgid "Compare Prices Now →"
+msgstr "अभी कीमतों की तुलना करें →"
+
+msgid "Compare two prices"
+msgstr ""
+
+msgid "Completed Value"
+msgstr ""
+
+msgid "Confirm Quality Rejection"
+msgstr ""
+
+msgid "Credited"
+msgstr "जमा हो गया"
+
+msgid "Credited ✅"
+msgstr ""
+
+msgid "CropConnect shows you the"
+msgstr ""
+
+msgid "Deal Requests — @ ₹/qtl"
+msgstr ""
+
+msgid "Deal confirmed. Waiting for farmer to deliver crop."
+msgstr ""
+
+msgid "Deal was cancelled."
+msgstr ""
+
+msgid "Deals"
+msgstr ""
+
+msgid "Deals for Offer"
+msgstr ""
+
+msgid "Delivery Date:"
+msgstr ""
+
+msgid "Detected ❌"
+msgstr ""
+
+msgid "Difference"
+msgstr ""
+
+msgid "Digital invoice generation"
+msgstr ""
+
+msgid "Dual Channel"
+msgstr "दोहरा चैनल"
+
+msgid ""
+"Each payment is approved by the admin and gets a bank reference (UTR) "
+"number. You can see it on your Payments page."
+msgstr ""
+
+msgid "Email:governmentofindia@gmail.com"
+msgstr ""
+
+msgid "Enter measurements to see quality assessment"
+msgstr ""
+
+msgid "Excess:"
+msgstr ""
+
+msgid "Expected Payment:"
+msgstr ""
+
+msgid "Farmer Details"
+msgstr ""
+
+msgid ""
+"Farmer has brought their crop. Weigh it, check quality parameters, then "
+"approve or reject."
+msgstr ""
+
+msgid "Farmer will be notified with this reason on their dashboard."
+msgstr ""
+
+msgid "Farmer's Note:"
+msgstr ""
+
+msgid "Farmers who requested to sell to you for this offer"
+msgstr ""
+
+msgid "Foreign Matter %"
+msgstr ""
+
+msgid "Foreign Matter (%)"
+msgstr ""
+
+msgid "From your Adangal / Patta document"
+msgstr "आपके अडंगल / पट्टा दस्तावेज़ से"
+
+msgid "GST"
+msgstr "GST"
+
+msgid "Government MSP prices"
+msgstr ""
+
+msgid "Govt MSP"
+msgstr ""
+
+msgid "Govt MSP: ₹/qtl"
+msgstr ""
+
+msgid "Govt Rule: Max qtl/acre"
+msgstr ""
+
+msgid "Guaranteed • Safe • No middleman"
+msgstr "गारंटीड • सुरक्षित • कोई बिचौलिया नहीं"
+
+msgid "Land area:"
+msgstr ""
+
+msgid "Loaded & ReadyNot found — run train_models.py"
+msgstr ""
+
+msgid "Loam"
+msgstr "दोमट"
+
+msgid "Low"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "High"
+msgstr ""
+
+msgid "Max Quantity"
+msgstr ""
+
+msgid "Min Quantity"
+msgstr ""
+
+msgid "Moisture Content (%)"
+msgstr ""
+
+msgid "Monday - Saturday: 9:00 AM - 5:00 PM"
+msgstr ""
+
+msgid "Money in Bank"
+msgstr ""
+
+msgid "Mon–Sat, 9 AM to 6 PM"
+msgstr ""
+
+msgid "Must be NIL"
+msgstr ""
+
+msgid "My Land"
+msgstr "मेरी भूमि"
+
+msgid "My Offers"
+msgstr ""
+
+msgid ""
+"Never share your password with anyone, even someone who says they are from "
+"CropConnect."
+msgstr ""
+
+msgid "No data yet"
+msgstr ""
+
+msgid "No private offers for"
+msgstr ""
+
+msgid "Not Credited"
+msgstr ""
+
+msgid "Offer from"
+msgstr ""
+
+msgid "Office Hours"
+msgstr ""
+
+msgid "Officer Remarks"
+msgstr ""
+
+msgid "Officer reviews and approves (1–2 days)"
+msgstr "अधिकारी जाँचकर मंज़ूरी देते हैं (1–2 दिन)"
+
+msgid ""
+"Once you verify the land, the farmer will be able to book procurement slots."
+msgstr ""
+
+msgid "Online farmer registration with Aadhaar verification"
+msgstr ""
+
+msgid "Open Payments"
+msgstr ""
+
+msgid "Paddy-Specific Parameters"
+msgstr ""
+
+msgid "Groundnut-Specific Parameters"
+msgstr ""
+
+msgid "Payment Rejected"
+msgstr ""
+
+msgid "Payment Reports"
+msgstr ""
+
+msgid "Pending Approvals"
+msgstr "मंज़ूरी बाकी"
+
+msgid "Pending Land Verifications"
+msgstr ""
+
+msgid "Pending Payments"
+msgstr ""
+
+msgid "Pending Procurement"
+msgstr ""
+
+msgid "Pending Slot Approvals"
+msgstr ""
+
+msgid "Private buyer deals, completed transactions, marketplace overview."
+msgstr ""
+
+msgid "Private buyer names and prices"
+msgstr ""
+
+msgid "Procurement Officer Login"
+msgstr "खरीद अधिकारी लॉगिन"
+
+msgid "Procurements"
+msgstr ""
+
+msgid "Quantity vs Government Limit Analysis"
+msgstr ""
+
+msgid "Reason / Action"
+msgstr "कारण / कार्रवाई"
+
+msgid "Recently Processed Payments"
+msgstr ""
+
+msgid "Register with Aadhaar & bank details"
+msgstr "आधार और बैंक विवरण से पंजीकरण करें"
+
+msgid ""
+"Rice mills, wholesalers & exporters — post offers and buy directly from "
+"farmers"
+msgstr ""
+"राइस मिल, थोक व्यापारी और निर्यातक — ऑफ़र डालें और किसानों से सीधे खरीदें"
+
+msgid ""
+"Rice mills, wholesalers, exporters can register here to post offers and buy "
+"directly from farmers."
+msgstr ""
+"राइस मिल, थोक व्यापारी और निर्यातक यहाँ पंजीकरण करके ऑफ़र डाल सकते हैं और "
+"किसानों से सीधे खरीद सकते हैं।"
+
+msgid "Same as MSP"
+msgstr ""
+
+msgid "Sandy"
+msgstr "रेतीली"
+
+msgid "See private buyer offers"
+msgstr "निजी खरीदारों के ऑफ़र देखें"
+
+msgid "Select your crop and date"
+msgstr "अपनी फसल और तारीख चुनें"
+
+msgid "Slot Booking Form"
+msgstr "स्लॉट बुकिंग फ़ॉर्म"
+
+msgid "Soil Type"
+msgstr "मिट्टी का प्रकार"
+
+msgid "Start farmer registration →"
+msgstr ""
+
+msgid "Summary Dashboard"
+msgstr ""
+
+msgid "Total farmers, bookings, procurements and revenue overview."
+msgstr ""
+
+msgid "Track in one place"
+msgstr ""
+
+msgid "Transfer in progress. Will be credited in 2–5 working days."
+msgstr ""
+
+msgid "Transparent MSP-based payment calculation"
+msgstr ""
+
+msgid "Update Minimum Support Price for paddy and groundnut crops."
+msgstr ""
+
+msgid ""
+"Update the government guaranteed price for each crop. All new bills will use"
+" the updated rate."
+msgstr ""
+
+msgid "Usually approved within 1–3 working days."
+msgstr ""
+
+msgid "Valid Until"
+msgstr ""
+
+msgid "View all registered farmers, their verification status and bookings."
+msgstr ""
+
+msgid "You already have a deal request for this offer. Status:"
+msgstr ""
+
+msgid "You deal directly with the Government or the buyer you choose."
+msgstr ""
+
+msgid "You have 2 ways to sell your crop!"
+msgstr "अपनी फसल बेचने के आपके पास 2 तरीके हैं!"
+
+msgid "You have no private deals yet."
+msgstr "अभी आपका कोई निजी सौदा नहीं है।"
+
+msgid ""
+"Your invoice shows the final rate per quintal. If grain is below FAQ (Fair "
+"Average Quality) standard, a 5% deduction applies."
+msgstr ""
+
+msgid "Active Offers"
+msgstr ""
+
+msgid "Farmer Reports"
+msgstr ""
+
+msgid "Marketplace Reports"
+msgstr ""
+
+msgid "View Farmers"
+msgstr ""
+
+msgid "View Payment"
+msgstr ""
+
+msgid "1 quintal = 100 kg. Enter how many quintals you plan to bring."
+msgstr ""
+
+msgid "Max 1%"
+msgstr ""
+
+msgid "Max 3%"
+msgstr ""
+
+msgid "Max 5%"
+msgstr ""
+
+msgid "Max 8%"
+msgstr ""
+
+msgid "Max 17%"
+msgstr ""
+
+msgid "Min 45%"
+msgstr ""
+
+msgid "Min 70%"
+msgstr ""
+
+msgid "≤ 25 qtl/acre — Safe to approve"
+msgstr ""
+
+msgid "25–35 qtl/acre — Verify documents"
+msgstr ""
+
+msgid "> 35 qtl/acre — Do NOT approve without field visit"
+msgstr ""
+
+msgid "✅ Accept This Offer"
+msgstr ""
+
+msgid "✅ Approve & Transfer"
+msgstr ""
+
+msgid "✅ Approve Procurement & Generate Bill"
+msgstr ""
+
+msgid "✅ Confirm Deal"
+msgstr ""
+
+msgid "❌ Reject Payment"
+msgstr ""
+
+msgid "📋 All My Bookings"
+msgstr "📋 मेरी सभी बुकिंग"
+
+msgid "📋 Keep these ready before you register"
+msgstr ""
+
+msgid "📋 Login as Officer"
+msgstr "📋 अधिकारी के रूप में लॉगिन करें"
+
+msgid "📋 Officer Dashboard"
+msgstr ""
+
+msgid "📞 Call 6304629308"
+msgstr ""
+
+msgid "🔐 Keep your password private"
+msgstr ""
+
+msgid "🔑 Login"
+msgstr ""
+
+msgid "🏛️ Government"
+msgstr "🏛️ सरकार"
+
+msgid "🏛️ Book Government Slot Instead"
+msgstr ""
+
+msgid "🏪 Browse Private Buyers"
+msgstr "🏪 निजी खरीदार देखें"
+
+msgid "🏪 Dual Channel Marketplace"
+msgstr "🏪 दोहरा चैनल मार्केटप्लेस"
+
+msgid "💰 Current MSP Rates"
+msgstr "💰 वर्तमान MSP दरें"
+
+msgid "💰 Payment Status"
+msgstr "💰 भुगतान स्थिति"
+
+msgid "📅 Book New Slot"
+msgstr "📅 नया स्लॉट बुक करें"
+
+msgid "📅 Book Procurement Slot"
+msgstr "📅 खरीद स्लॉट बुक करें"
+
+msgid "🌾 Farmer Registration"
+msgstr "🌾 किसान पंजीकरण"
+
+msgid "🌾 Register as Farmer"
+msgstr "🌾 किसान के रूप में पंजीकरण करें"
+
+msgid "🌾 Login as Farmer"
+msgstr "🌾 किसान के रूप में लॉगिन करें"
+
+msgid "📋 Approve Bookings"
+msgstr ""
+
+msgid "🏭 Manage Buyers"
+msgstr ""
+
+msgid "This field is required."
+msgstr ""
+
+msgid "Enter a valid email address."
+msgstr ""
+
+msgid "Aadhaar must be exactly 12 digits."
+msgstr ""
+
+msgid "Land area must be between 0.01 and 1000 acres."
+msgstr ""
+
+msgid "Please select a crop."
+msgstr ""
+
+msgid "Please select a date."
+msgstr ""
+
+msgid "Enter your username"
+msgstr "अपना यूज़रनेम लिखें"
+
+msgid "Enter your password"
+msgstr "अपना पासवर्ड लिखें"
+
+msgid "Enter officer username"
+msgstr "अधिकारी यूज़रनेम लिखें"
+
+msgid "Enter admin username"
+msgstr "एडमिन यूज़रनेम लिखें"
+
+msgid "Enter buyer username"
+msgstr "खरीदार यूज़रनेम लिखें"
+
+msgid "Reason for rejection (required)"
+msgstr ""
+
+msgid "Any note for farmer..."
+msgstr ""
+
+msgid "Message to farmer (optional)"
+msgstr ""
+
+msgid "Delivery date"
+msgstr ""
+
+msgid "Delivery address"
+msgstr ""
+
+msgid "Any questions for the buyer?"
+msgstr ""
+
+msgid "Quality requirements, transport arrangements, etc."
+msgstr ""
+
+msgid "e.g. Near NH-16, Guntur"
+msgstr ""
+
+msgid "e.g. 2300"
+msgstr ""
+
+msgid "e.g. 500"
+msgstr ""
+
+msgid "e.g. UTR123456789"
+msgstr ""
+
+msgid ""
+"e.g. Bank account number does not match Aadhaar records. Please update your "
+"bank details and reapply."
+msgstr ""
+
+msgid "Predicted Yield"
+msgstr ""
+
+msgid "Predicted Yield:"
+msgstr ""
+
+msgid "🌾 Predicted Yield:"
+msgstr ""
+
+msgid "Recommended booking quantity"
+msgstr ""
+
+msgid "Recommended booking quantity:"
+msgstr ""
+
+msgid "Confidence"
+msgstr ""
+
+msgid "Confidence:"
+msgstr ""
+
+msgid "Grade"
+msgstr ""
+
+msgid "Grade:"
+msgstr ""
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Below_FAQ"
+msgstr ""
+
+msgid "Range"
+msgstr ""
+
+msgid "Range:"
+msgstr ""
+
+msgid "qtl"
+msgstr "क्विं."
+
+msgid "Predicting..."
+msgstr ""
+
+msgid "Running ML model..."
+msgstr ""
+
+msgid "Prediction failed. Enter quantity manually."
+msgstr ""
+
+msgid "Excellent quality. Full MSP will be paid."
+msgstr ""
+
+msgid "Below standard. 5% price deduction will apply."
+msgstr ""
+
+msgid "Does not meet minimum standards. Cannot be procured."
+msgstr ""
+
+msgid "FAQ Grade — All parameters pass"
+msgstr ""
+
+msgid "qtl/acre"
+msgstr ""
+
+msgid "Error. Call helpdesk: 6304629308"
+msgstr ""
+
+msgid "What is MSP and how is my payment calculated?"
+msgstr ""
+
+msgid "Select any date (day / month / year)"
+msgstr ""
+
+msgid "NIL / Not Detected ✅"
+msgstr ""
+
+msgid "Below MSP"
+msgstr ""
+
+msgid "Above MSP"
+msgstr ""
+
+msgid "Valid till:"
+msgstr ""
+
+msgid "days after delivery"
+msgstr ""
+
+msgid "per quintal (Government MSP)"
+msgstr ""
+
+msgid "private buyers"
+msgstr ""
+
+msgid "minimum price"
+msgstr ""
+
+msgid "✅ LOW"
+msgstr ""
+
+msgid "⚠️ MEDIUM"
+msgstr ""
+
+msgid "🚨 HIGH"
+msgstr ""
+
+msgid "✅ Verify"
+msgstr ""
+
+msgid "🌾 Welcome,"
+msgstr ""
+
+msgid ""
+"Manage MSP rates, approve buyers, oversee payments and portal operations"
+msgstr ""
+"MSP दरें प्रबंधित करें, खरीदारों को मंज़ूरी दें, भुगतान और पोर्टल का संचालन "
+"देखें"
+
+msgid "Manage rice mills, wholesalers, exporters. Approve or block buyers."
+msgstr ""
+
+msgid "Marketplace — Choose Your Buyer"
+msgstr ""
+
+msgid "Max Allowed"
+msgstr ""
+
+msgid "Max Qty"
+msgstr ""
+
+msgid "Officer Username"
+msgstr "अधिकारी यूज़रनेम"
+
+msgid "Payment In"
+msgstr ""
+
+msgid "Register here →"
+msgstr "यहाँ पंजीकरण करें →"
+
+msgid "Rejected (Quality fail)"
+msgstr ""
+
+msgid "The officer records the weight. Money goes to your bank account."
+msgstr ""
+
+msgid "View all my deals →"
+msgstr ""
+
+msgid "View all payments — approved, pending, rejected. Track UTR numbers."
+msgstr ""
+
+msgid "What documents do I need to register?"
+msgstr ""
+
+msgid "When will I receive my payment in bank?"
+msgstr ""
+
+msgid "How do I book a slot to sell my crop?"
+msgstr ""
+
+msgid "← Back"
+msgstr "← वापस"
+
+msgid "Verified"
+msgstr ""
+
+msgid "✅ Verified"
+msgstr "✅ सत्यापित"
+
+msgid "⏳ Pending Verification"
+msgstr ""
+
+msgid "⏳ Account Pending Verification:"
+msgstr ""
+
+msgid "📅 Book Govt Slot (MSP)"
+msgstr "📅 सरकारी स्लॉट बुक करें (MSP)"
+
+msgid "guaranteed price, direct bank transfer"
+msgstr ""
+
+msgid "mills & exporters who may pay MORE than MSP"
+msgstr ""
+
+msgid "Qty (Qtl)"
+msgstr "मात्रा (क्विं.)"
+
+msgid "Bring crop on"
+msgstr ""
+
+msgid "Waiting for officer"
+msgstr ""
+
+msgid "No bookings yet"
+msgstr ""
+
+msgid "Book your first slot"
+msgstr ""
+
+msgid "🤖 AI Rejection Explainer"
+msgstr "🤖 AI अस्वीकृति व्याख्याकार"
+
+msgid "ML Yield Predictor — How much will you harvest?"
+msgstr ""
+
+msgid "Rainfall (mm)"
+msgstr "वर्षा (मिमी)"
+
+msgid "🧠 Predict Yield"
+msgstr "🧠 उपज का अनुमान लगाएँ"
+
+msgid "Uses Random Forest ML model trained on Andhra Pradesh crop data"
+msgstr ""
+"आंध्र प्रदेश की फसल के डेटा पर प्रशिक्षित Random Forest ML मॉडल का उपयोग "
+"करता है"
+
+msgid "ℹ️ How Slot Booking Works"
+msgstr "ℹ️ स्लॉट बुकिंग कैसे काम करती है"
+
+msgid "Govt MSP: ₹ /qtl"
+msgstr ""
+
+msgid "7–10 days payment"
+msgstr "7–10 दिन में भुगतान"
+
+msgid "No negotiation needed"
+msgstr "मोल-भाव की ज़रूरत नहीं"
+
+msgid "Payment in days"
+msgstr ""
+
+msgid ""
+"The CropConnect is an official Government of India initiative to facilitate "
+"transparent and efficient procurement of paddy and groundnut from farmers at"
+" Minimum Support Price (MSP)."
+msgstr ""
+
+msgid "Slot booking system for procurement"
+msgstr ""
+
+msgid "Real-time status tracking"
+msgstr ""
+
+msgid "Toll Free"
+msgstr ""
+
+msgid "Approve / Reject Payments"
+msgstr ""
+
+msgid "Review each bill carefully. When rejecting, you"
+msgstr ""
+
+msgid "must"
+msgstr ""
+
+msgid ""
+"write a reason — the farmer will see it directly on their payment status "
+"page"
+msgstr ""
+
+msgid "All payments processed"
+msgstr ""
+
+msgid "No pending payments at the moment"
+msgstr ""
+
+msgid "UTR Number (optional)"
+msgstr ""
+
+msgid "Approve & Transfer"
+msgstr ""
+
+msgid "Reject Payment"
+msgstr ""
+
+msgid "This reason will be shown to the farmer on their payment page"
+msgstr ""
+
+msgid "Transferred"
+msgstr ""
+
+msgid "Procurement Amount by Crop"
+msgstr ""
+
+msgid "All registered users — farmers, officers, admins, and buyers"
+msgstr ""
+
+msgid "No users found"
+msgstr ""
+
+msgid "View all payments — approved, pending, rejected. Track UTR numbers"
+msgstr ""
+
+msgid "View all registered farmers, their verification status and bookings"
+msgstr ""
+
+msgid "Private buyer deals, completed transactions, marketplace overview"
+msgstr ""
+
+msgid "Manage rice mills, wholesalers, exporters. Approve or block buyers"
+msgstr ""
+
+msgid "Set Minimum Support Price (MSP)"
+msgstr ""
+
+msgid ""
+"Update the government guaranteed price for each crop. All new bills will use"
+" the updated rate"
+msgstr ""
+
+msgid "Update MSP"
+msgstr ""
+
+msgid "No crops found. Please add crops first"
+msgstr ""
+
+msgid "Manage Private Buyers"
+msgstr ""
+
+msgid "Registered"
+msgstr ""
+
+msgid "Unblock"
+msgstr ""
+
+msgid "No buyers registered yet"
+msgstr ""
+
+msgid "Marketplace Overview — Dual Channel Stats"
+msgstr ""
+
+msgid "No deals yet"
+msgstr ""
+
+msgid "Post a New Buying Offer"
+msgstr ""
+
+msgid "Your Offer Price (₹/quintal)"
+msgstr ""
+
+msgid ""
+"MSP is the government baseline price. Offer above MSP to attract farmers"
+msgstr ""
+
+msgid "Maximum Quantity (qtl)"
+msgstr ""
+
+msgid "Valid From"
+msgstr ""
+
+msgid "Advance Payment"
+msgstr ""
+
+msgid "Payment Within (days)"
+msgstr ""
+
+msgid "vs MSP"
+msgstr ""
+
+msgid "Post your first offer"
+msgstr ""
+
+msgid "Manage"
+msgstr "प्रबंधन"
+
+msgid "Deals for"
+msgstr ""
+
+msgid "Offer"
+msgstr ""
+
+msgid "No deal requests yet. Farmers will see your offer on the marketplace"
+msgstr ""
+
+msgid "Quantity"
+msgstr ""
+
+msgid "Requested"
+msgstr ""
+
+msgid "Delivery Date"
+msgstr ""
+
+msgid "Confirm Deal"
+msgstr ""
+
+msgid "Deal confirmed. Waiting for farmer to deliver crop"
+msgstr ""
+
+msgid "Mark as Paid"
+msgstr ""
+
+msgid "Deal completed and paid"
+msgstr ""
+
+msgid "Deal was cancelled"
+msgstr ""
+
+msgid "Register as Private Buyer"
+msgstr "निजी खरीदार के रूप में पंजीकरण करें"
+
+msgid ""
+"Rice mills, wholesalers, exporters can register here to post offers and buy "
+"directly from farmers"
+msgstr ""
+"राइस मिल, थोक व्यापारी और निर्यातक यहाँ पंजीकरण करके ऑफ़र डाल सकते हैं और "
+"किसानों से सीधे खरीद सकते हैं"
+
+msgid "Company Name"
+msgstr "कंपनी का नाम"
+
+msgid "Contact Person"
+msgstr "संपर्क व्यक्ति"
+
+msgid "License No"
+msgstr "लाइसेंस नंबर"
+
+msgid "Address"
+msgstr "पता"
+
+msgid "Deal Offer Details"
+msgstr ""
+
+msgid "Review this offer carefully before accepting"
+msgstr ""
+
+msgid "at time of deal"
+msgstr ""
+
+msgid "deals"
+msgstr ""
+
+msgid "Krishi Mitra AI Recommendation"
+msgstr ""
+
+msgid "Your Options"
+msgstr ""
+
+msgid "Government"
+msgstr "सरकार"
+
+msgid "This Offer"
+msgstr ""
+
+msgid "7-10 days"
+msgstr ""
+
+msgid "Zero"
+msgstr ""
+
+msgid "You already have a deal request for this offer. Status"
+msgstr ""
+
+msgid "View my deals"
+msgstr ""
+
+msgid "Accept This Offer"
+msgstr ""
+
+msgid "Send Deal Request"
+msgstr ""
+
+msgid ""
+"By submitting, you are requesting this deal. The buyer will confirm within "
+"24 hours. You can still book a government slot separately"
+msgstr ""
+
+msgid "Book Government Slot Instead"
+msgstr ""
+
+msgid "Trained ML Models Status"
+msgstr ""
+
+msgid "Loaded & Ready"
+msgstr ""
+
+msgid "Not found — run train_models.py"
+msgstr ""
+
+msgid "Procurement Quality"
+msgstr ""
+
+msgid "Avg Moisture"
+msgstr ""
+
+msgid "Test ML Models Live"
+msgstr ""
+
+msgid "Test Yield Predictor"
+msgstr ""
+
+msgid "Test Quality Predictor"
+msgstr ""
+
+msgid "Crop Yield Predictor — Live Test"
+msgstr ""
+
+msgid "Land (Acres)"
+msgstr ""
+
+msgid "Guntur"
+msgstr ""
+
+msgid "Krishna"
+msgstr ""
+
+msgid "Prakasam"
+msgstr ""
+
+msgid "Nellore"
+msgstr ""
+
+msgid "Kurnool"
+msgstr ""
+
+msgid "Anantapur"
+msgstr ""
+
+msgid "Quality Grade Predictor — Live Test"
+msgstr ""
+
+msgid "Validate Crop Weight"
+msgstr ""
+
+msgid "Process"
+msgstr "प्रक्रिया"
+
+msgid "No pending bookings"
+msgstr ""
+
+msgid "Validate Crop Procurement"
+msgstr ""
+
+msgid ""
+"Farmer has brought their crop. Weigh it, check quality parameters, then "
+"approve or reject"
+msgstr ""
+
+msgid "Validate Weight & Quality"
+msgstr ""
+
+msgid "No procurements pending validation"
+msgstr ""
+
+msgid "Procurement Validation"
+msgstr ""
+
+msgid "Government Quality Standards"
+msgstr ""
+
+msgid "FAQ Grade"
+msgstr ""
+
+msgid "Weight & Quality Measurements"
+msgstr ""
+
+msgid "Moisture Content"
+msgstr ""
+
+msgid "NIL / Not Detected"
+msgstr ""
+
+msgid "Detected"
+msgstr ""
+
+msgid "Aflatoxin detected — automatic rejection required"
+msgstr ""
+
+msgid "Any observations about the crop condition, storage, or quality"
+msgstr ""
+
+msgid "Live Quality Check"
+msgstr ""
+
+msgid "5% deduction may apply for below-FAQ quality"
+msgstr ""
+
+msgid "ML Quality Grade Prediction"
+msgstr ""
+
+msgid ""
+"Click to get instant ML prediction of quality grade based on your entered "
+"measurements"
+msgstr ""
+
+msgid "Predict Grade (ML)"
+msgstr ""
+
+msgid "Approve Procurement & Generate Bill"
+msgstr ""
+
+msgid "Reject for Quality Failure"
+msgstr ""
+
+msgid "Farmer will be notified with this reason on their dashboard"
+msgstr ""
+
+msgid "Verify Farmer Land Details"
+msgstr ""
+
+msgid ""
+"Once you verify the land, the farmer will be able to book procurement slots"
+msgstr ""
+
+msgid "No pending land verifications. All farmers are verified"
+msgstr ""
+
+msgid "Advance:"
+msgstr ""
+
+msgid "Pickup"
+msgstr ""
+
+msgid "Valid till"
+msgstr ""
+
+msgid "View + AI Advice"
+msgstr ""
+
+msgid "No private offers for yet"
+msgstr ""
+
+msgid "No offers yet"
+msgstr ""
+
+msgid "📋 My Recent Private Deals"
+msgstr ""
+
+msgid "Details"
+msgstr "विवरण"
+
+msgid "My Private Buyer Deals"
+msgstr ""
+
+msgid "Payment done"
+msgstr ""
+
+msgid "AI Advice when you accepted:"
+msgstr ""
+
+msgid "Money Credited to Bank"
+msgstr ""
+
+msgid "Bill Generated"
+msgstr ""
+
+msgid "Money Credited"
+msgstr ""
+
+msgid "sent to your bank"
+msgstr ""
+
+msgid "REASON FROM ADMIN:"
+msgstr ""
+
+msgid "Quote your Bill No:"
+msgstr ""
+
+msgid "9 AM – 6 PM (Mon–Sat)"
+msgstr "सुबह 9 – शाम 6 (सोम–शनि)"
+
+msgid "Login as Farmer"
+msgstr "किसान के रूप में लॉगिन करें"
+
+msgid "Login as Officer"
+msgstr "अधिकारी के रूप में लॉगिन करें"
+
+msgid "Login as Admin"
+msgstr "एडमिन के रूप में लॉगिन करें"
+
+msgid "Login as Buyer"
+msgstr "खरीदार के रूप में लॉगिन करें"
+
+msgid "Verify farmers, approve bookings, validate crop weight and quality"
+msgstr ""
+"किसानों की जाँच करें, बुकिंग मंज़ूर करें, फसल के वज़न और गुणवत्ता की पुष्टि "
+"करें"
+
+msgid "Dual Channel Marketplace"
+msgstr "दोहरा चैनल मार्केटप्लेस"
+
+msgid "Before you start, keep these ready"
+msgstr "शुरू करने से पहले ये चीज़ें तैयार रखें"
+
+msgid "Account Details"
+msgstr "खाते का विवरण"
+
+msgid "Aadhaar & Bank Details"
+msgstr "आधार और बैंक विवरण"
+
+msgid "Already registered"
+msgstr "पहले से पंजीकृत"
+
+msgid "🌾 Expected Yield:"
+msgstr ""
+
+msgid "Expected Yield:"
+msgstr ""
+
+msgid "Per acre:"
+msgstr ""
+
+msgid "⏳ Predicting..."
+msgstr ""
+
+msgid "🤖 ML Yield Predictor — How much will you harvest?"
+msgstr "🤖 ML उपज अनुमान — आप कितनी फसल काटेंगे?"
+
+msgid "— guaranteed price, direct bank transfer"
+msgstr ""
+
+msgid "— mills & exporters who may pay MORE than MSP"
+msgstr "— मिल और निर्यातक जो MSP से ज़्यादा दे सकते हैं"
+
+msgid ""
+"Register to sell your paddy & groundnut directly to the government at MSP "
+"price — no middleman"
+msgstr ""
+"अपना धान और मूँगफली सीधे सरकार को MSP दर पर बेचने के लिए पंजीकरण करें — बीच "
+"में कोई बिचौलिया नहीं"
+
+msgid ""
+"your Aadhaar number, bank account number and IFSC code, and your land survey"
+" number with total area"
+msgstr ""
+"आपका आधार नंबर, बैंक खाता नंबर और IFSC कोड, तथा कुल क्षेत्र के साथ आपका भूमि"
+" सर्वे नंबर"
+
+msgid "Red"
+msgstr "लाल"
+
+msgid "above MSP"
+msgstr ""
+
+msgid "below MSP"
+msgstr ""
+
+msgid "Show password"
+msgstr "पासवर्ड दिखाएँ"
+
+msgid "Hide password"
+msgstr "पासवर्ड छिपाएँ"
+
+msgid "Show"
+msgstr "दिखाएँ"
+
+msgid "Hide"
+msgstr "छिपाएँ"
+
+msgid "A procurement officer reviews your land details."
+msgstr "एक खरीद अधिकारी आपके भूमि विवरण की जाँच करता है।"
+
+msgid "AADHAAR & BANK"
+msgstr "आधार और बैंक"
+
+msgid "ACCOUNT DETAILS"
+msgstr "खाते का विवरण"
+
+msgid "AI FARM ASSISTANT"
+msgstr "AI कृषि सहायक"
+
+msgid "AI PRICE ADVISORY"
+msgstr "AI मूल्य सलाह"
+
+msgid "ALL OFFERS for this crop"
+msgstr "इस फसल के सभी ऑफ़र"
+
+msgid "Aadhaar number"
+msgstr "आधार नंबर"
+
+msgid "Account number and IFSC, so payment reaches you"
+msgstr "खाता नंबर और IFSC, ताकि भुगतान आप तक पहुँचे"
+
+msgid "Advance: 10%"
+msgstr "अग्रिम: 10%"
+
+msgid "Advance: 20%"
+msgstr "अग्रिम: 20%"
+
+msgid ""
+"After your land details are verified, book a slot to sell your crop. Check "
+"the applicable MSP first."
+msgstr ""
+"आपके भूमि विवरण की जाँच होने के बाद, फसल बेचने के लिए स्लॉट बुक करें। पहले "
+"लागू MSP देख लें।"
+
+msgid "All Offers for Groundnut"
+msgstr "मूँगफली के सभी ऑफ़र"
+
+msgid "All Offers for Paddy"
+msgstr "धान के सभी ऑफ़र"
+
+msgid "Already have an account? Log in"
+msgstr "पहले से खाता है? लॉगिन करें"
+
+msgid "Bank account"
+msgstr "बैंक खाता"
+
+msgid "Book Procurement Slot | CropConnect"
+msgstr "खरीद स्लॉट बुक करें | CropConnect"
+
+msgid "Bookings, sales and payments"
+msgstr "बुकिंग, बिक्री और भुगतान"
+
+msgid "Buyer Login | CropConnect"
+msgstr "खरीदार लॉगिन | CropConnect"
+
+msgid "Buyer Registration | CropConnect"
+msgstr "खरीदार पंजीकरण | CropConnect"
+
+msgid ""
+"Buyer names and prices are shown after you log in. Review the details before"
+" you decide."
+msgstr ""
+"खरीदारों के नाम और कीमतें लॉगिन के बाद दिखती हैं। निर्णय से पहले विवरण "
+"देखें।"
+
+msgid "Check the current MSP for your crop before you decide where to sell."
+msgstr "कहाँ बेचना है, यह तय करने से पहले अपनी फसल का वर्तमान MSP देखें।"
+
+msgid "Choose between the MSP and private buyer offers."
+msgstr "MSP और निजी खरीदार के ऑफ़र में से चुनें।"
+
+msgid "Choose how you sell"
+msgstr "बेचने का तरीका चुनें"
+
+msgid "Choose the buyer that works for you"
+msgstr "अपने लिए सही खरीदार चुनें"
+
+msgid "Clear payment records"
+msgstr "साफ़ भुगतान रिकॉर्ड"
+
+msgid "Compare and choose"
+msgstr "तुलना करें और चुनें"
+
+msgid "Compare both options and choose the one that suits you."
+msgstr "दोनों विकल्पों की तुलना करें और अपने लिए सही चुनें।"
+
+msgid "Compare offers →"
+msgstr "ऑफ़र की तुलना करें →"
+
+msgid "Compare prices"
+msgstr "कीमतों की तुलना करें"
+
+msgid "Compare this with private buyer offers before you sell."
+msgstr "बेचने से पहले इसकी निजी खरीदार के ऑफ़र से तुलना करें।"
+
+msgid "Create your account"
+msgstr "अपना खाता बनाएँ"
+
+msgid ""
+"Create your farmer account and see the selling options available to you."
+msgstr "अपना किसान खाता बनाएँ और अपने लिए उपलब्ध बिक्री विकल्प देखें।"
+
+msgid "CropConnect benefits"
+msgstr "CropConnect के फ़ायदे"
+
+msgid ""
+"CropConnect — a direct crop selling platform. No middlemen. Fair prices."
+msgstr "CropConnect — फसल सीधे बेचने का मंच। कोई बिचौलिया नहीं। उचित दाम।"
+
+msgid "District *"
+msgstr "ज़िला *"
+
+msgid "English"
+msgstr "अंग्रेज़ी"
+
+msgid "Everything in one place"
+msgstr "सब कुछ एक ही जगह"
+
+msgid "Farmer Dashboard | CropConnect"
+msgstr "किसान डैशबोर्ड | CropConnect"
+
+msgid "Farmer Registration | CropConnect"
+msgstr "किसान पंजीकरण | CropConnect"
+
+msgid ""
+"Farmers can now compare Government MSP offers with private rice mills, "
+"wholesalers, and exporters. Visit the Marketplace tab after login to see all"
+" offers."
+msgstr ""
+"अब किसान सरकारी MSP की तुलना निजी राइस मिल, थोक व्यापारी और निर्यातकों के "
+"ऑफ़र से कर सकते हैं। सभी ऑफ़र देखने के लिए लॉगिन के बाद मार्केटप्लेस खोलें।"
+
+msgid "Food Processor"
+msgstr "खाद्य प्रसंस्करणकर्ता"
+
+msgid "From creating your account to selling your crop, each step is clear."
+msgstr "खाता बनाने से लेकर फसल बेचने तक, हर कदम साफ़ है।"
+
+msgid "Getting started is simple"
+msgstr "शुरू करना आसान है"
+
+msgid "Government MSP and buyer offers"
+msgstr "सरकारी MSP और खरीदार के ऑफ़र"
+
+msgid "Government procurement"
+msgstr "सरकारी खरीद"
+
+msgid "Government support price (MSP)"
+msgstr "सरकारी समर्थन मूल्य (MSP)"
+
+msgid "Government support prices"
+msgstr "सरकारी समर्थन मूल्य"
+
+msgid "Keep these ready to register"
+msgstr "पंजीकरण के लिए ये तैयार रखें"
+
+msgid "Keep track of your sale and payment in your account."
+msgstr "अपनी बिक्री और भुगतान का हाल अपने खाते में देखें।"
+
+msgid "Keep your Aadhaar, bank and land details ready."
+msgstr "अपना आधार, बैंक और भूमि विवरण तैयार रखें।"
+
+msgid "Know the price first"
+msgstr "पहले दाम जानें"
+
+msgid "Land details"
+msgstr "भूमि का विवरण"
+
+msgid "Land details are checked"
+msgstr "भूमि विवरण की जाँच होती है"
+
+msgid "ML YIELD PREDICTOR"
+msgstr "ML उपज अनुमान"
+
+msgid "MSP for Kharif 2025-26 Announced"
+msgstr "खरीफ़ 2025-26 के लिए MSP घोषित"
+
+msgid "MY ACTIVE DEALS"
+msgstr "मेरे सक्रिय सौदे"
+
+msgid "Made for farmers, by people who understand farming"
+msgstr "किसानों के लिए, खेती समझने वालों द्वारा बनाया गया"
+
+msgid "Marketplace — Choose Your Buyer | CropConnect"
+msgstr "मार्केटप्लेस — अपना खरीदार चुनें | CropConnect"
+
+msgid "Messages"
+msgstr "संदेश"
+
+msgid "Mon–Sat: 9 AM – 6 PM"
+msgstr "सोम–शनि: सुबह 9 – शाम 6"
+
+msgid "My Booking Status | CropConnect"
+msgstr "मेरी बुकिंग की स्थिति | CropConnect"
+
+msgid "My Private Deals | CropConnect"
+msgstr "मेरे निजी सौदे | CropConnect"
+
+msgid "Needed to verify you"
+msgstr "आपकी पुष्टि के लिए ज़रूरी"
+
+msgid "No middlemen"
+msgstr "कोई बिचौलिया नहीं"
+
+msgid "Payment Status | CropConnect"
+msgstr "भुगतान स्थिति | CropConnect"
+
+msgid "Payment in 5 days"
+msgstr "5 दिनों में भुगतान"
+
+msgid "Payment in 7 days"
+msgstr "7 दिनों में भुगतान"
+
+msgid "Per quintal"
+msgstr "प्रति क्विंटल"
+
+msgid "Phone *"
+msgstr "फ़ोन *"
+
+msgid "Plus district and pincode"
+msgstr "साथ में ज़िला और पिनकोड"
+
+msgid "Private buyer offers"
+msgstr "निजी खरीदार के ऑफ़र"
+
+msgid "RECENT BOOKINGS"
+msgstr "हाल की बुकिंग"
+
+msgid "Ready to sell your crop?"
+msgstr "अपनी फसल बेचने के लिए तैयार हैं?"
+
+msgid "Register as Buyer →"
+msgstr "खरीदार के रूप में पंजीकरण करें →"
+
+msgid "Register as a farmer →"
+msgstr "किसान के रूप में पंजीकरण करें →"
+
+msgid ""
+"Registration takes a few minutes. Our officer verifies your land before you "
+"can book a slot."
+msgstr ""
+"पंजीकरण में कुछ मिनट लगते हैं। स्लॉट बुक करने से पहले हमारे अधिकारी आपकी "
+"भूमि जाँचते हैं।"
+
+msgid "STATUS GUIDE"
+msgstr "स्थिति मार्गदर्शिका"
+
+msgid ""
+"See offers from rice mills and traders, then compare them with the "
+"Government MSP."
+msgstr ""
+"राइस मिलों और व्यापारियों के ऑफ़र देखें, फिर उनकी सरकारी MSP से तुलना करें।"
+
+msgid ""
+"See the government price (MSP) and private buyer offers side by side. Sell "
+"paddy or groundnut to whoever pays you best, with no middleman."
+msgstr ""
+"सरकारी मूल्य (MSP) और निजी खरीदार के ऑफ़र साथ-साथ देखें। धान या मूँगफली उसे "
+"बेचें जो सबसे अच्छा दाम दे, बिना बिचौलिए के।"
+
+msgid "Sell and get paid"
+msgstr "बेचें और भुगतान पाएँ"
+
+msgid "Survey number and area of your land"
+msgstr "आपकी भूमि का सर्वे नंबर और क्षेत्रफल"
+
+msgid "Tel: 6304629308"
+msgstr "फ़ोन: 6304629308"
+
+msgid "View →"
+msgstr "देखें →"
+
+msgid "Village and mandal"
+msgstr "गाँव और मंडल"
+
+msgid "You choose"
+msgstr "आप चुनें"
+
+msgid "You grow it."
+msgstr "आप उगाते हैं।"
+
+msgid "You set the price."
+msgstr "दाम आप तय करें।"
+
+msgid "e.g. SBIN0001234"
+msgstr "जैसे: SBIN0001234"
+
+msgid ""
+"your Aadhaar number, bank account number and IFSC code, and your land survey"
+" number with total area."
+msgstr ""
+"आपका आधार नंबर, बैंक खाता नंबर और IFSC कोड, तथा कुल क्षेत्र के साथ आपका भूमि"
+" सर्वे नंबर।"
+
+msgid "— guaranteed price, direct bank transfer | 🏪"
+msgstr "— गारंटीड मूल्य, सीधा बैंक ट्रांसफ़र | 🏪"
+
+msgid "← Back to Login"
+msgstr "← लॉगिन पर वापस"
+
+msgid "← Back to Marketplace"
+msgstr "← मार्केटप्लेस पर वापस"
+
+msgid "← Back to home"
+msgstr "← होम पर वापस"
+
+msgid "← Dashboard"
+msgstr "← डैशबोर्ड"
+
+msgid "← My Bookings"
+msgstr "← मेरी बुकिंग"
+
+msgid "⚖️ Quintal calculation?"
+msgstr "⚖️ क्विंटल का हिसाब?"
+
+msgid "⚙️ Login as Admin"
+msgstr "⚙️ एडमिन के रूप में लॉगिन"
+
+msgid "❌ Rejected: quantity?"
+msgstr "❌ अस्वीकृत: मात्रा?"
+
+msgid "❓ No rejection reason?"
+msgstr "❓ अस्वीकृति का कारण नहीं?"
+
+msgid "🌾 Groundnut"
+msgstr "🌾 मूँगफली"
+
+msgid "🌾 How It Works"
+msgstr "🌾 यह कैसे काम करता है"
+
+msgid "🌾 New farmer? Register"
+msgstr "🌾 नए किसान? पंजीकरण करें"
+
+msgid "🌾 Paddy"
+msgstr "🌾 धान"
+
+msgid "🏞️ Land Details"
+msgstr "🏞️ भूमि का विवरण"
+
+msgid "🏦 Payment timeline?"
+msgstr "🏦 भुगतान कब तक?"
+
+msgid "🏪 Crop Marketplace"
+msgstr "🏪 फसल मार्केटप्लेस"
+
+msgid "🏭 Login as Buyer"
+msgstr "🏭 खरीदार के रूप में लॉगिन"
+
+msgid "🏭 Private Buyer Login"
+msgstr "🏭 निजी खरीदार लॉगिन"
+
+msgid "🏭 Register as Private Buyer"
+msgstr "🏭 निजी खरीदार के रूप में पंजीकरण करें"
+
+msgid "👋 Namaste! I am your AI assistant for CropConnect."
+msgstr "👋 नमस्ते! मैं CropConnect के लिए आपका AI सहायक हूँ।"
+
+msgid "👤 Account Details"
+msgstr "👤 खाते का विवरण"
+
+msgid "💰 MSP & Payment?"
+msgstr "💰 MSP और भुगतान?"
+
+msgid "💰 My Payment Status"
+msgstr "💰 मेरी भुगतान स्थिति"
+
+msgid "💳 Aadhaar & Bank Details"
+msgstr "💳 आधार और बैंक विवरण"
+
+msgid "📄 Rejected: documents?"
+msgstr "📄 अस्वीकृत: दस्तावेज़?"
+
+msgid "📅 Book Govt Slot"
+msgstr "📅 सरकारी स्लॉट बुक करें"
+
+msgid "📅 Book New Slot →"
+msgstr "📅 नया स्लॉट बुक करें →"
+
+msgid "+ Book New Slot"
+msgstr "+ नया स्लॉट बुक करें"
+
+msgid "📅 Book Slot"
+msgstr "📅 स्लॉट बुक करें"
+
+msgid "📅 Book a Slot"
+msgstr "📅 स्लॉट बुक करें"
+
+msgid "📅 Book slot?"
+msgstr "📅 स्लॉट बुक करें?"
+
+msgid "📋 Documents?"
+msgstr "📋 दस्तावेज़?"
+
+msgid "📋 My Booking Status"
+msgstr "📋 मेरी बुकिंग स्थिति"
+
+msgid "📋 My Private Buyer Deals"
+msgstr "📋 मेरे निजी खरीदार सौदे"
+
+msgid "📖 Payment Status Guide"
+msgstr "📖 भुगतान स्थिति मार्गदर्शिका"
+
+msgid "📞 Helpdesk"
+msgstr "📞 सहायता केंद्र"
+
+msgid "📞 Helpdesk:"
+msgstr "📞 सहायता केंद्र:"
+
+msgid "🤖 AI Price Advisory — Krishi Mitra"
+msgstr "🤖 AI मूल्य सलाह — कृषि मित्र"
+
+msgid "🤖 AI Rejection Explanation — Krishi Mitra"
+msgstr "🤖 AI अस्वीकृति व्याख्या — कृषि मित्र"
+
+msgid "🤖 View + AI Advice"
+msgstr "🤖 देखें + AI सलाह"
+
+msgid "🤝 My Private Deals"
+msgstr "🤝 मेरे निजी सौदे"
+
+msgid "Welcome back,"
+msgstr "वापस स्वागत है,"
+
+msgid "Choose your language"
+msgstr "अपनी भाषा चुनें"
+
+msgid "Choose language"
+msgstr "भाषा चुनें"
+
+msgid ""
+"Pick your language. The whole website will open in it, including login, "
+"registration and the farmer pages."
+msgstr ""
+"अपनी भाषा चुनें। पूरी वेबसाइट इसी भाषा में खुलेगी, जिसमें लॉगिन, पंजीकरण और "
+"किसान के पेज शामिल हैं।"
+
+msgid "A fairer way to sell your crop | CropConnect"
+msgstr "अपनी फसल बेचने का बेहतर तरीका | CropConnect"
+
+msgid "CropConnect"
+msgstr "CropConnect"
+
+msgid "NEW: Private Buyer Marketplace Launched"
+msgstr "नया: निजी खरीदार मार्केटप्लेस शुरू हुआ"
+
+msgid "(FARMER)"
+msgstr "(किसान)"

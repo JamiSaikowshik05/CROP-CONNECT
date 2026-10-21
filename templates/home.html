@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% if request.LANGUAGE_CODE == 'te' %}రైతుల కోసం పంటల విక్రయ వేదిక{% else %}A fairer way to sell your crop{% endif %}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .home-page { --leaf: #174b2a; --leaf-deep: #103a21; --gold: #f5c84c; }
+    .home-hero {
+        position: relative; isolation: isolate; overflow: hidden; min-height: 430px;
+        display: flex; align-items: center; border-radius: 26px; padding: clamp(30px, 6vw, 72px);
+        color: #173d24; background: #cfe9f3 url('{% static "img/farm-hero.svg" %}') center bottom / cover no-repeat;
+        box-shadow: 0 14px 40px rgba(23, 61, 36, .14);
+    }
+    .home-hero::before {
+        content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1;
+        background: linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.76) 40%, rgba(255,255,255,0) 72%);
+    }
+    .hero-copy { max-width: 690px; }
+    .hero-kicker {
+        display: inline-flex; align-items: center; gap: 9px; margin-bottom: 18px; padding: 8px 13px;
+        border: 1px solid #b9d9ad; border-radius: 99px; background: rgba(255,255,255,.85); color: #1b5e20;
+        font-size: .91rem; font-weight: 600; letter-spacing: .01em;
+    }
+    .hero-kicker::before { content: '🌾'; }
+    .home-hero h2 { max-width: 650px; margin: 0 0 18px; font-size: clamp(2.45rem, 5vw, 4rem); line-height: 1.16; font-weight: 750; letter-spacing: -.035em; }
+    .home-hero h2 span { color: #2e7d32; }
+    .home-hero .btn-warning { font-size: 1.1rem; }
+    .hero-copy > p { max-width: 590px; margin: 0 0 26px; color: #2f4a37; font-size: clamp(1.06rem, 1.7vw, 1.22rem); line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-bottom: 25px; }
+    .hero-actions .btn { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 19px; border-radius: 12px; font-weight: 700; }
+    .hero-actions .btn-warning { background: #ffdb70; border-color: #ffdb70; color: #26331f; }
+    .hero-actions .btn-outline-light { color: #1b5e20; border-color: #1b5e20; background: rgba(255,255,255,.7); }
+    .hero-actions .btn-outline-light:hover { background: #1b5e20; color: #fff; }
+    .hero-assurances { display: flex; flex-wrap: wrap; gap: 10px 21px; color: #2f4a37; font-size: .94rem; }
+    .hero-assurances span::before { content: '✓'; margin-right: 7px; color: #2e7d32; font-weight: 800; }
+    .home-highlights { position: relative; margin: -29px 22px 0; padding: 19px 10px; border-radius: 18px; background: #ffffff; box-shadow: 0 10px 34px rgba(19, 52, 31, .12); }
+    .highlight { display: flex; align-items: center; gap: 13px; height: 100%; padding: 6px 20px; }
+    .highlight-icon { flex: 0 0 43px; width: 43px; height: 43px; display: grid; place-items: center; border-radius: 14px; background: #e6eed3; font-size: 1.3rem; }
+    .highlight strong { display: block; color: #173d24; font-size: 1rem; }
+    .highlight small { display: block; color: #69766d; line-height: 1.4; }
+    .home-section { margin-top: 56px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+    .section-heading h3 { margin: 0; color: #173d24; font-size: clamp(1.55rem, 3vw, 2rem); font-weight: 750; }
+    .section-heading p { max-width: 540px; margin: 6px 0 0; color: #66746b; font-size: 1rem; }
+    .crop-price-card { height: 100%; padding: 23px; border: 1px solid #d6e4cb; border-radius: 18px; background: #ffffff; box-shadow: 0 5px 18px rgba(18, 54, 32, .06); transition: transform .2s, box-shadow .2s; }
+    .crop-price-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(18, 54, 32, .12); }
+    .crop-card-top { display: flex; align-items: center; gap: 13px; margin-bottom: 19px; }
+    .crop-symbol { display: grid; place-items: center; width: 51px; height: 51px; border-radius: 16px; background: #f6e7b8; font-size: 1.65rem; }
+    .crop-symbol.peanut { background: #f6ead8; }
+    .crop-name { margin: 0; color: #213a29; font-size: 1.18rem; font-weight: 700; }
+    .msp-tag { display: inline-block; margin-top: 3px; color: #55715b; font-size: .84rem; }
+    .crop-price { color: #174b2a; font-size: clamp(2rem, 4vw, 2.55rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.15; }
+    .crop-unit { color: #738076; font-size: .92rem; }
+    .price-note { margin-top: 17px; padding-top: 13px; border-top: 1px solid #e1ead6; color: #5d6b61; font-size: .9rem; }
+    .choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 17px; }
+    .choice-card { display: flex; gap: 17px; padding: 23px; border: 1px solid #d6e4cb; border-radius: 18px; background: #ffffff; }
+    .choice-card > span { flex: 0 0 48px; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 15px; background: #e6eed3; font-size: 1.5rem; }
+    .choice-card h4 { margin: 1px 0 7px; color: #173d24; font-size: 1.12rem; font-weight: 700; }
+    .choice-card p { margin: 0; color: #627066; line-height: 1.65; }
+    .steps-row { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 13px; }
+    .step-card { min-height: 170px; padding: 20px; border: 1px solid #d6e4cb; border-radius: 17px; background: #ffffff; }
+    .step-count { display: grid; place-items: center; width: 36px; height: 36px; margin-bottom: 14px; border-radius: 50%; background: #174b2a; color: #fff; font-size: 1rem; font-weight: 800; }
+    .step-card h4 { margin: 0 0 7px; color: #173d24; font-size: 1.04rem; font-weight: 700; }
+    .step-card p { margin: 0; color: #66746b; line-height: 1.55; font-size: .94rem; }
+    .offer-note { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin-top: 22px; padding: 22px 25px; border-radius: 18px; background: #e6eed3; }
+    .offer-note p { margin: 0; color: #3c5742; line-height: 1.65; }
+    .offer-note .btn { flex: 0 0 auto; border-radius: 11px; font-weight: 700; }
+    .home-bottom-cta { margin-top: 52px; padding: 30px; border-radius: 20px; background: linear-gradient(120deg,#143f26,#23663a); color: #fff; text-align: center; }
+    .home-bottom-cta h3 { margin: 0 0 8px; font-size: clamp(1.5rem,3vw,2rem); font-weight: 750; }
+    .home-bottom-cta p { margin: 0 0 17px; color: rgba(255,255,255,.86); }
+    .home-bottom-cta .btn { border-radius: 11px; font-weight: 700; }
+    .lang-chooser { background: #ffffff; border: 1px solid #dfe8d7; border-radius: 18px; padding: 22px 22px 18px; box-shadow: 0 6px 22px rgba(20,60,30,0.07); }
+    .lang-title { font-size: 1.35rem; font-weight: 700; color: #173d24; margin-bottom: 4px; }
+    .lang-note { color: #5b6f5f; margin-bottom: 14px; }
+    .lang-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .lang-chip { border: 1px solid #cfe0c4; background: #f5f9f0; color: #173d24; border-radius: 999px; padding: 7px 15px; font-size: 1rem; font-weight: 600; cursor: pointer; line-height: 1.3; }
+    .lang-chip:hover { border-color: #2E7D32; background: #e8f5e9; }
+    .lang-chip:focus-visible { outline: 3px solid #FFB300; outline-offset: 2px; }
+    .lang-chip.active { background: #1B5E20; border-color: #1B5E20; color: #ffffff; }
+    @media (max-width: 767px) {
+        .home-hero { min-height: 490px; padding: 31px 24px; background-position: 78% bottom; border-radius: 21px; }
+        .home-hero::before { background: linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.92) 55%,rgba(255,255,255,.72) 100%); }
+        .home-highlights { margin: -18px 9px 0; padding: 12px 7px; }
+        .highlight { padding: 9px 12px; }
+        .choice-grid { grid-template-columns: 1fr; }
+        .steps-row { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        .home-section { margin-top: 42px; }
+        .offer-note { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 430px) {
+        .home-hero h2 { font-size: 2.25rem; }
+        .hero-actions .btn { width: 100%; font-size: 1rem; }
+        .steps-row { grid-template-columns: 1fr; }
+        .section-heading { align-items: flex-start; flex-direction: column; }
+    }
+
+    body { background: #f5f9f0 !important; }
+    .home-page h3, .home-page h4, .home-page strong { color: #173d24; }
+    .crop-price { color: #3f6b2a; }
+    .need-list { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 13px; }
+    .need-item { padding: 18px; border: 1px solid #d6e4cb; border-radius: 16px; background: #ffffff; }
+    .need-item b { display: block; margin-bottom: 4px; color: #173d24; }
+    .need-item span { color: #5b6f5f; font-size: .93rem; line-height: 1.5; }
+    @media (max-width: 767px) { .need-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="home-page">
+    <section class="home-hero" aria-labelledby="home-title">
+        <div class="hero-copy">
+            {% if request.LANGUAGE_CODE == 'te' %}
+                <div class="hero-kicker">రైతు కోసం, రైతు చేతిలో</div>
+                <h2 id="home-title">మీ కష్టానికి<br><span>న్యాయమైన ధర</span></h2>
+                <p>వరి, వేరుశనగ — ప్రభుత్వ ధర, వ్యాపారుల ధర రెండూ ఇక్కడే చూడండి. ఎవరికి అమ్మాలో మీరే నిర్ణయించండి. మధ్యవర్తి లేడు, మోసం లేదు.</p>
+                <div class="hero-actions">
+                    <a href="{% url 'farmer_register' %}" class="btn btn-warning">🌾 కొత్త రైతులా? నమోదు చేసుకోండి</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-light">ఇప్పటికే ఖాతా ఉందా? లాగిన్ అవ్వండి</a>
+                </div>
+                <div class="hero-assurances"><span>ధరలు ముందే తెలుసుకోండి</span><span>మధ్యవర్తుల అవసరం లేదు</span><span>చెల్లింపుల వివరాలు స్పష్టంగా</span></div>
+            {% else %}
+                <div class="hero-kicker">Made for farmers, by people who understand farming</div>
+                <h2 id="home-title">You grow it.<br><span>You set the price.</span></h2>
+                <p>See the government price (MSP) and private buyer offers side by side. Sell paddy or groundnut to whoever pays you best, with no middleman.</p>
+                <div class="hero-actions">
+                    <a href="{% url 'farmer_register' %}" class="btn btn-warning">🌾 New farmer? Register</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-light">Already have an account? Log in</a>
+                </div>
+                <div class="hero-assurances"><span>Know the price first</span><span>No middlemen</span><span>Clear payment records</span></div>
+            {% endif %}
+        </div>
+    </section>
+
+    <div class="home-highlights" aria-label="{% if request.LANGUAGE_CODE == 'te' %}క్రాప్‌కనెక్ట్ ప్రయోజనాలు{% else %}CropConnect benefits{% endif %}">
+        <div class="row g-2">
+            <div class="col-md-4"><div class="highlight"><div class="highlight-icon">⚖️</div><div><strong>{% if request.LANGUAGE_CODE == 'te' %}ధరలను పోల్చండి{% else %}Compare prices{% endif %}</strong><small>{% if request.LANGUAGE_CODE == 'te' %}ప్రభుత్వ ధర, కొనుగోలుదారుల ఆఫర్లు{% else %}Government MSP and buyer offers{% endif %}</small></div></div></div>
+            <div class="col-md-4"><div class="highlight"><div class="highlight-icon">🤝</div><div><strong>{% if request.LANGUAGE_CODE == 'te' %}మీ ఇష్టం మీది{% else %}You choose{% endif %}</strong><small>{% if request.LANGUAGE_CODE == 'te' %}మీకు సరిపోయే కొనుగోలుదారుని ఎంచుకోండి{% else %}Choose the buyer that works for you{% endif %}</small></div></div></div>
+            <div class="col-md-4"><div class="highlight"><div class="highlight-icon">📋</div><div><strong>{% if request.LANGUAGE_CODE == 'te' %}అన్నీ ఒకేచోట{% else %}Everything in one place{% endif %}</strong><small>{% if request.LANGUAGE_CODE == 'te' %}బుకింగ్‌లు, విక్రయాలు, చెల్లింపులు{% else %}Bookings, sales and payments{% endif %}</small></div></div></div>
+        </div>
+    </div>
+
+    <section class="home-section" aria-labelledby="lang-title">
+        <div class="lang-chooser">
+            <h2 id="lang-title" class="lang-title">Choose your language</h2>
+            <p class="lang-note">Pick your language. The whole website will open in it, including login, registration and the farmer pages.</p>
+            <form method="post" action="{% url 'set_language' %}" class="lang-grid" data-no-translate>
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{% url 'home' %}">
+                {% for code, name in LANGUAGES %}
+                <button type="submit" name="language" value="{{ code }}" class="lang-chip{% if request.LANGUAGE_CODE == code %} active{% endif %}"{% if request.LANGUAGE_CODE == code %} aria-current="true"{% endif %}>{{ name }}</button>
+                {% endfor %}
+            </form>
+        </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="msp-title">
+        <div class="section-heading">
+            <div>
+                <h3 id="msp-title">{% if request.LANGUAGE_CODE == 'te' %}ప్రభుత్వ మద్దతు ధరలు{% else %}Government support prices{% endif %}</h3>
+                <p>{% if request.LANGUAGE_CODE == 'te' %}విక్రయానికి ముందు మీ పంటకు ఉన్న ప్రస్తుత MSP ధరను తెలుసుకోండి.{% else %}Check the current MSP for your crop before you decide where to sell.{% endif %}</p>
+            </div>
+            <span class="badge rounded-pill text-bg-success px-3 py-2">{% if request.LANGUAGE_CODE == 'te' %}ప్రతి క్వింటాల్‌కు{% else %}Per quintal{% endif %}</span>
+        </div>
+        <div class="row g-3">
+            {% for crop in crops %}
+            <div class="col-md-6">
+                <article class="crop-price-card">
+                    <div class="crop-card-top">
+                        <div class="crop-symbol {% if crop.name|lower == 'groundnut' %}peanut{% endif %}">{% if crop.name|lower == 'groundnut' %}🥜{% else %}🌾{% endif %}</div>
+                        <div>
+                            <h4 class="crop-name">{% if crop.name|lower == 'paddy' and request.LANGUAGE_CODE == 'te' %}వరి{% elif crop.name|lower == 'groundnut' and request.LANGUAGE_CODE == 'te' %}వేరుశనగ{% else %}{{ crop.name }}{% endif %}</h4>
+                            <span class="msp-tag">{% if request.LANGUAGE_CODE == 'te' %}ప్రభుత్వ మద్దతు ధర (MSP){% else %}Government support price (MSP){% endif %}</span>
+                        </div>
+                    </div>
+                    <div class="crop-price">₹{{ crop.msp_per_quintal|floatformat:0 }}</div>
+                    <div class="crop-unit">{% if request.LANGUAGE_CODE == 'te' %}క్వింటాల్‌కు (100 కిలోలు){% else %}per quintal (100 kg){% endif %}</div>
+                    <div class="price-note">{% if request.LANGUAGE_CODE == 'te' %}ఈ ధరను ప్రైవేట్ కొనుగోలుదారుల ఆఫర్లతో పోల్చవచ్చు.{% else %}Compare this with private buyer offers before you sell.{% endif %}</div>
+                </article>
+            </div>
+            {% empty %}
+            <div class="col-12"><div class="crop-price-card">{% if request.LANGUAGE_CODE == 'te' %}ప్రభుత్వ ధరలు త్వరలో నవీకరించబడతాయి.{% else %}Government prices will be updated soon.{% endif %}</div></div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="choices-title">
+        <div class="section-heading">
+            <div>
+                <h3 id="choices-title">{% if request.LANGUAGE_CODE == 'te' %}అమ్మకం మీ ఎంపిక{% else %}Choose how you sell{% endif %}</h3>
+                <p>{% if request.LANGUAGE_CODE == 'te' %}రెండు మార్గాల ధరలు చూసి, మీకు నచ్చినదాన్ని ఎంచుకోండి.{% else %}Compare both options and choose the one that suits you.{% endif %}</p>
+            </div>
+        </div>
+        <div class="choice-grid">
+            <article class="choice-card">
+                <span>🏛️</span>
+                <div>
+                    <h4>{% if request.LANGUAGE_CODE == 'te' %}ప్రభుత్వ కొనుగోలు{% else %}Government procurement{% endif %}</h4>
+                    <p>{% if request.LANGUAGE_CODE == 'te' %}మీ భూమి వివరాలు ధృవీకరించాక, పంటను విక్రయించడానికి స్లాట్ బుక్ చేసుకోండి. వర్తించే MSP ధరను ముందే చూడండి.{% else %}After your land details are verified, book a slot to sell your crop. Check the applicable MSP first.{% endif %}</p>
+                </div>
+            </article>
+            <article class="choice-card">
+                <span>🏪</span>
+                <div>
+                    <h4>{% if request.LANGUAGE_CODE == 'te' %}ప్రైవేట్ కొనుగోలుదారుల ఆఫర్లు{% else %}Private buyer offers{% endif %}</h4>
+                    <p>{% if request.LANGUAGE_CODE == 'te' %}బియ్యం మిల్లులు, వ్యాపారులు ఇచ్చే ఆఫర్లను చూసి, ప్రభుత్వ MSP ధరతో పోల్చుకోండి.{% else %}See offers from rice mills and traders, then compare them with the Government MSP.{% endif %}</p>
+                </div>
+            </article>
+        </div>
+        <div class="offer-note">
+            <p>{% if request.LANGUAGE_CODE == 'te' %}కొనుగోలుదారుల పేర్లు, ధరలు లాగిన్ అయిన తర్వాత కనిపిస్తాయి. మీ నిర్ణయం తీసుకునే ముందు అన్ని వివరాలు పరిశీలించండి.{% else %}Buyer names and prices are shown after you log in. Review the details before you decide.{% endif %}</p>
+            <a class="btn btn-success" href="{% url 'login' %}">{% if request.LANGUAGE_CODE == 'te' %}ధరలను పోల్చండి{% else %}Compare offers{% endif %} →</a>
+        </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="steps-title">
+        <div class="section-heading">
+            <div>
+                <h3 id="steps-title">{% if request.LANGUAGE_CODE == 'te' %}ప్రారంభించడం సులభం{% else %}Getting started is simple{% endif %}</h3>
+                <p>{% if request.LANGUAGE_CODE == 'te' %}మీ ఖాతా నుంచి పంట విక్రయం వరకు — ప్రతి అడుగులో మీకు స్పష్టమైన సమాచారం ఉంటుంది.{% else %}From creating your account to selling your crop, each step is clear.{% endif %}</p>
+            </div>
+        </div>
+        <div class="steps-row">
+            <article class="step-card"><div class="step-count">1</div><h4>{% if request.LANGUAGE_CODE == 'te' %}నమోదు చేసుకోండి{% else %}Create your account{% endif %}</h4><p>{% if request.LANGUAGE_CODE == 'te' %}మీ ఆధార్, బ్యాంక్, భూమి వివరాలు సిద్ధంగా ఉంచండి.{% else %}Keep your Aadhaar, bank and land details ready.{% endif %}</p></article>
+            <article class="step-card"><div class="step-count">2</div><h4>{% if request.LANGUAGE_CODE == 'te' %}భూమి వివరాల తనిఖీ{% else %}Land details are checked{% endif %}</h4><p>{% if request.LANGUAGE_CODE == 'te' %}కొనుగోలు అధికారి మీ భూమి వివరాలను పరిశీలిస్తారు.{% else %}A procurement officer reviews your land details.{% endif %}</p></article>
+            <article class="step-card"><div class="step-count">3</div><h4>{% if request.LANGUAGE_CODE == 'te' %}ధర చూసి నిర్ణయించండి{% else %}Compare and choose{% endif %}</h4><p>{% if request.LANGUAGE_CODE == 'te' %}MSP లేదా కొనుగోలుదారుల ఆఫర్లలో మీకు నచ్చినదాన్ని ఎంచుకోండి.{% else %}Choose between the MSP and private buyer offers.{% endif %}</p></article>
+            <article class="step-card"><div class="step-count">4</div><h4>{% if request.LANGUAGE_CODE == 'te' %}విక్రయం, చెల్లింపు{% else %}Sell and get paid{% endif %}</h4><p>{% if request.LANGUAGE_CODE == 'te' %}మీ విక్రయం, చెల్లింపు వివరాలను ఖాతాలో చూసుకోండి.{% else %}Keep track of your sale and payment in your account.{% endif %}</p></article>
+        </div>
+    </section>
+
+    {% if announcements %}
+    <section class="home-section" aria-labelledby="announcements-title">
+        <div class="section-heading"><div><h3 id="announcements-title">{% if request.LANGUAGE_CODE == 'te' %}తాజా ప్రకటనలు{% else %}Latest announcements{% endif %}</h3></div></div>
+        <div class="row g-3">
+            {% for ann in announcements %}
+            <div class="col-md-6"><article class="crop-price-card"><h4 class="crop-name">{{ ann.title }}</h4><p class="mb-0 mt-2 text-secondary">{{ ann.content|truncatewords:30 }}</p></article></div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="home-section" aria-labelledby="need-title">
+<div class="section-heading"><div><h3 id="need-title">{% if request.LANGUAGE_CODE == 'te' %}నమోదుకు ఇవి సిద్ధంగా ఉంచుకోండి{% else %}Keep these ready to register{% endif %}</h3><p>{% if request.LANGUAGE_CODE == 'te' %}నమోదుకు కొన్ని నిమిషాలు చాలు. స్లాట్ బుక్ చేసే ముందు అధికారి మీ భూమి వివరాలను ధృవీకరిస్తారు.{% else %}Registration takes a few minutes. Our officer verifies your land before you can book a slot.{% endif %}</p></div></div>
+<div class="need-list">
+<div class="need-item"><div style="font-size:1.6rem">🪪</div><b>{% if request.LANGUAGE_CODE == 'te' %}ఆధార్ నంబర్{% else %}Aadhaar number{% endif %}</b><span>{% if request.LANGUAGE_CODE == 'te' %}మీ గుర్తింపు ధృవీకరణకు{% else %}Needed to verify you{% endif %}</span></div>
+<div class="need-item"><div style="font-size:1.6rem">🏦</div><b>{% if request.LANGUAGE_CODE == 'te' %}బ్యాంకు ఖాతా{% else %}Bank account{% endif %}</b><span>{% if request.LANGUAGE_CODE == 'te' %}చెల్లింపు కోసం ఖాతా నంబర్, IFSC{% else %}Account number and IFSC, so payment reaches you{% endif %}</span></div>
+<div class="need-item"><div style="font-size:1.6rem">📍</div><b>{% if request.LANGUAGE_CODE == 'te' %}గ్రామం, మండలం{% else %}Village and mandal{% endif %}</b><span>{% if request.LANGUAGE_CODE == 'te' %}జిల్లా, పిన్‌కోడ్‌తో పాటు{% else %}Plus district and pincode{% endif %}</span></div>
+<div class="need-item"><div style="font-size:1.6rem">🌱</div><b>{% if request.LANGUAGE_CODE == 'te' %}భూమి వివరాలు{% else %}Land details{% endif %}</b><span>{% if request.LANGUAGE_CODE == 'te' %}సర్వే నంబర్, విస్తీర్ణం{% else %}Survey number and area of your land{% endif %}</span></div>
+</div></section>
+
+    <section class="home-bottom-cta">
+        <h3>{% if request.LANGUAGE_CODE == 'te' %}మీ పంటను అమ్మడానికి సిద్ధమా?{% else %}Ready to sell your crop?{% endif %}</h3>
+        <p>{% if request.LANGUAGE_CODE == 'te' %}ఇప్పుడే రైతు ఖాతా తెరిచి, మీకు అందుబాటులో ఉన్న మార్గాలను చూడండి.{% else %}Create your farmer account and see the selling options available to you.{% endif %}</p>
+        <a href="{% url 'farmer_register' %}" class="btn btn-warning">{% if request.LANGUAGE_CODE == 'te' %}రైతుగా నమోదు చేసుకోండి{% else %}Register as a farmer{% endif %} →</a>
+    </section>
+</div>
+{% endblock %}

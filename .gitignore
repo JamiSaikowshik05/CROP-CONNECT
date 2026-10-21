@@ -1,8 +1,38 @@
 
-
-.venv/
-**/.venv/
+# Python and virtual environments
 __pycache__/
 *.py[cod]
-.ipynb_checkpoints/
+*.pyo
+.venv/
+venv/
+env/
+
+# Django generated files
+db.sqlite3
+*.sqlite3
+staticfiles/
+media/
+
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Local data and generated databases
+data/*.db
+
+# Editor and operating system files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Test and coverage files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Marketplace{% endblock %}
+{% block extra_css %}{% include 'admin/_style.html' %}{% endblock %}
+
+{% block content %}
+<div class="admin-head mb-4">
+    <a href="{% url 'admin_dashboard' %}" class="admin-back">← Back to dashboard</a>
+    <h2>Marketplace</h2>
+    <p>Private buyers (rice mills, wholesalers and exporters), the offers they post, and the deals they make with farmers.</p>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ total_buyers }}</div><div class="name">Approved buyers</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ active_offers }}</div><div class="name">Offers open now</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ total_deals }}</div><div class="name">Deals made</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">₹{{ completed_val|floatformat:0 }}</div><div class="name">Value of completed deals</div></div></div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="admin-card">
+            <div class="label">Buyers by type</div>
+            {% for bt in buyers_by_type %}
+            <div class="d-flex justify-content-between py-2 border-bottom">
+                <span>{{ bt.buyer_type }}</span><strong>{{ bt.c }}</strong>
+            </div>
+            {% empty %}
+            <p class="text-muted mb-0">No approved buyers yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="table-card">
+            <div class="p-3 pb-0 fw-bold text-dark">Recent deals</div>
+            <div class="table-responsive">
+                <table class="table table-sm align-middle mb-0 mt-2">
+                    <thead><tr><th>Farmer</th><th>Buyer</th><th>Crop</th><th>Amount</th><th>Status</th></tr></thead>
+                    <tbody>
+                    {% for deal in recent_deals %}
+                    <tr>
+                        <td>{{ deal.farmer.user.get_full_name|default:deal.farmer.user.username }}</td>
+                        <td>{{ deal.offer.buyer.company_name }}</td>
+                        <td>{{ deal.offer.crop.name }}</td>
+                        <td>₹{{ deal.total_amount }}</td>
+                        <td>{{ deal.get_status_display|default:deal.status }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="5" class="text-muted py-3">No deals yet.</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="{% url 'admin_manage_buyers' %}" class="btn btn-outline-success">Manage private buyers</a>
+{% endblock %}

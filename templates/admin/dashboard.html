@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block title %}Admin dashboard{% endblock %}
+{% block extra_css %}{% include 'admin/_style.html' %}{% endblock %}
+
+{% block content %}
+<div class="admin-head mb-3">
+    <h2>Admin dashboard</h2>
+    <p>Start with <strong>Needs your action</strong>. Everything below it is for reference.</p>
+</div>
+
+<div class="admin-section">Needs your action</div>
+<div class="row g-3">
+    <div class="col-md-6">
+        <div class="admin-card {% if pending_buyers %}needs-action{% else %}all-clear{% endif %}">
+            <div class="label">Buyers waiting for approval</div>
+            <div class="count">{{ pending_buyers }}</div>
+            {% if pending_buyers %}
+                <p class="hint">A buyer cannot log in or post offers until you approve them.</p>
+                <a href="{% url 'admin_manage_buyers' %}" class="btn btn-success btn-sm">Review buyers</a>
+            {% else %}
+                <p class="clear-text mb-0">No buyers are waiting.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="admin-card {% if pending_payments %}needs-action{% else %}all-clear{% endif %}">
+            <div class="label">Payments waiting for approval</div>
+            <div class="count">{{ pending_payments }}</div>
+            {% if pending_payments %}
+                <p class="hint">Approve each payment after you have made the bank transfer.</p>
+                <a href="{% url 'admin_approve_payments' %}" class="btn btn-success btn-sm">Go to payments</a>
+            {% else %}
+                <p class="clear-text mb-0">No payments are waiting.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="small-group">Waiting for officers (for your information only)</div>
+<div class="row g-3">
+    <div class="col-md-6">
+        <div class="admin-card">
+            <div class="label">Land details to verify</div>
+            <div class="count" style="font-size:1.7rem;">{{ pending_land }}</div>
+            <p class="hint mb-0">Officers verify each farmer's land. A farmer cannot book a slot until it is verified.</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="admin-card">
+            <div class="label">Bookings waiting for approval</div>
+            <div class="count" style="font-size:1.7rem;">{{ pending_bookings }}</div>
+            <p class="hint mb-0">Officers approve each booking before the crop is collected.</p>
+        </div>
+    </div>
+</div>
+
+<div class="admin-section">Totals so far</div>
+<div class="row g-3">
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ total_farmers }}</div><div class="name">Farmers registered</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ total_bookings }}</div><div class="name">Slot bookings made</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">{{ total_procurements }}</div><div class="name">Procurements completed</div></div></div>
+    <div class="col-6 col-md-3"><div class="admin-card admin-stat"><div class="value">₹{{ total_amount|floatformat:0 }}</div><div class="name">Total billed to farmers</div></div></div>
+</div>
+
+<div class="admin-section">Where to go</div>
+<div class="row g-3">
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_manage_users' %}"><strong>Users</strong><span>See every account, its role and whether it is active.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_set_msp' %}"><strong>Set MSP rates</strong><span>Change the government price for each crop.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_reports' %}"><strong>Reports</strong><span>All admin reports in one place.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'admin_marketplace_overview' %}"><strong>Marketplace</strong><span>Private buyers, their offers and deals.</span></a></div>
+    <div class="col-md-4"><a class="menu-link" href="{% url 'ml_dashboard' %}"><strong>ML dashboard</strong><span>Yield, quality and fraud checks.</span></a></div>
+</div>
+
+<div class="admin-section">Amount billed per crop (₹)</div>
+<div class="row g-3">
+    <div class="col-md-6">
+        <div class="admin-card"><canvas id="cropChart" height="200"></canvas></div>
+    </div>
+    <div class="col-md-6">
+        <div class="table-card">
+            <table class="table mb-0">
+                <thead><tr><th>Crop</th><th>Total billed (₹)</th></tr></thead>
+                <tbody>
+                    {% for s in crop_stats %}
+                    <tr><td><strong>{{ s.name }}</strong></td><td>₹{{ s.total_amt|floatformat:0 }}</td></tr>
+                    {% empty %}
+                    <tr><td colspan="2" class="text-muted text-center py-3">No bills yet</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('cropChart');
+    if (ctx) {
+        const labels = [{% for s in crop_stats %}'{{ s.name }}'{% if not forloop.last %}, {% endif %}{% endfor %}];
+        const data = [{% for s in crop_stats %}{{ s.total_amt|default:0 }}{% if not forloop.last %}, {% endif %}{% endfor %}];
+        if (labels.length) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels.map(label => window.CropConnectI18n.translate(label)),
+                    datasets: [{ label: window.CropConnectI18n.translate('Total billed (₹)'), data: data, backgroundColor: 'rgba(27,94,32,0.8)' }]
+                },
+                options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+            });
+        }
+    }
+});
+</script>
+{% endblock %}
